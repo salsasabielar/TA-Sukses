@@ -129,7 +129,7 @@
                                         <br>
                                         <div class="checkbox">
                                             <label for="checkbox3" class="form-check-label ">
-                                                <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Option 3
+                                                <input type="checkbox" id="checkbox17" name="checkbox17" value="option3" class="form-check-input"> Option 3
                                             </label>
                                         </div>
 
