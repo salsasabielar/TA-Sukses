@@ -1,17 +1,17 @@
 <!doctype html>
 <html class="no-js" lang="en">
 
-<?php include 'header.php';?>
+<?php include 'header.php'; ?>
 
 <body>
 
-<?php include 'sidebar.php';?>
+    <?php include 'sidebar.php'; ?>
 
-<!-- Right Panel -->
+    <!-- Right Panel -->
 
     <div id="right-panel" class="right-panel">
 
-    <?php include 'sidebar2.php';?>
+        <?php include 'sidebar2.php'; ?>
 
         <div class="breadcrumbs">
             <div class="col-sm-4">
@@ -27,7 +27,7 @@
 
     <!-- Right Panel -->
 
-<?php include 'footer.php';?>
+    <?php include 'footer.php'; ?>
 
 </body>
 
