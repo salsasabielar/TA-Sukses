@@ -23,6 +23,43 @@
             </div>
         </div>
 
+        <div class="col-lg-12">
+            <div class="card">
+
+                <div class="card-body card-block">
+                    <form action="" method="post" class="form-horizontal">
+                        <div class="row form-group">
+                            <div class="col col-md-2"><label for="hf-email" class=" form-control-label">Username</label></div>
+                            <div class="col-12 col-md-5"><input type="email" id="hf-email" name="hf-email" placeholder="Masukkan Username..." class="form-control"><span class="help-block"></span></div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col col-md-2"><label for="hf-email" class=" form-control-label">Password</label></div>
+                            <div class="col-12 col-md-5"><input type="email" id="hf-email" name="hf-email" placeholder="Masukkan Password..." class="form-control"><span class="help-block"></span></div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col col-md-2"><label for="select" class=" form-control-label">Roles</label></div>
+                            <div class="col-12 col-md-5">
+                                <select name="select" id="select" class="form-control">
+                                    <option value="0">Pilih Role</option>
+                                    <option value="1">Admin</option>
+                                    <option value="2">Surveyor</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <a href="a-kriteria.php">
+                        <button type="submit" class="btn btn-primary btn-sm">
+                            <i class="fa fa-dot-circle-o"></i> Submit
+                        </button>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
     </div><!-- /#right-panel -->
 
     <!-- Right Panel -->
