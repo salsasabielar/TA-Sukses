@@ -23,11 +23,13 @@
             </div>
         </div>
 
-        <div class="col-lg-12">
-            <div class="card">
+        <form action="p-tambah_user.php" method="post" class="form-horizontal">
 
-                <div class="card-body card-block">
-                    <form action="p-tambah_user.php" method="post" class="form-horizontal">
+            <div class="col-lg-12">
+                <div class="card">
+
+                    <div class="card-body card-block">
+
                         <div class="row form-group">
                             <div class="col col-md-2"><label for="hf-email" class=" form-control-label">Username</label></div>
                             <div class="col-12 col-md-5"><input type="text" name="username" placeholder="Masukkan Username..." class="form-control"><span class="help-block"></span></div>
@@ -46,19 +48,22 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="card-footer">
+
+                    </div>
+                    <div class="card-footer">
                         <button type="submit" class="btn btn-primary btn-sm">
                             <i class="fa fa-dot-circle-o"></i> Submit
                         </button>
-                    </a>
+                        </a>
+
+                    </div>
 
                 </div>
-                    </form>
-                </div>
-                
+
+
             </div>
 
-        </div>
+        </form>
 
     </div><!-- /#right-panel -->
 
