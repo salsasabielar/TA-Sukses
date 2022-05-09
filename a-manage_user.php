@@ -66,7 +66,7 @@
                                                 <td><?php echo $data['role']; ?></td>
                                                 <td>
                                                     <a class="btn btn-sm btn-primary" href="a-form_edit_user.php?id_user=<?php echo $data['id_user']; ?>">Edit</a>
-                                                    <a class="btn btn-sm btn-primary" href="crudManageUser/delete.php?id_user=<?php echo $data['id_user']; ?>">Hapus</a>
+                                                    <a class="btn btn-sm btn-primary" href="p-hapus_user.php?id_user=<?php echo $data['id_user']; ?>" onclick="return confirm()">Hapus</a>
                                                 </td>
                                             </tr>
 
