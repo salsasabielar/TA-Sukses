@@ -22,29 +22,30 @@
                 </div>
             </div>
         </div>
+        <form action="p-tambah_kriteria.php" method="post" class="form-horizontal">
+            <div class="col-lg-12">
+                <div class="card">
 
-        <div class="col-lg-12">
-            <div class="card">
+                    <div class="card-body card-block">
 
-                <div class="card-body card-block">
-                    <form action="" method="post" class="form-horizontal">
                         <div class="row form-group">
-                            <div class="col col-md-2"><label for="textarea-input" class=" form-control-label">Masukkan Kriteria</label></div>
-                            <div class="col-12 col-md-7"><textarea name="textarea-input" id="textarea-input" rows="7" placeholder="Content..." class="form-control"></textarea></div>
+                            <div class="col col-md-2"><label for="nama" class=" form-control-label">Masukkan Kriteria</label></div>
+                            <div class="col-12 col-md-7"><textarea name="nama" rows="7" placeholder="Content..." class="form-control"></textarea></div>
                         </div>
-                    </form>
-                </div>
-                <div class="card-footer">
-                    <a href="a-kriteria.php">
-                        <button type="submit" class="btn btn-primary btn-sm">
-                            <i class="fa fa-dot-circle-o"></i> Submit
-                        </button>
-                    </a>
 
+                    </div>
+                    <div class="card-footer">
+                        <a href="a-tambah_kriteria.php">
+                            <button type="submit" class="btn btn-primary btn-sm">
+                                <i class="fa fa-dot-circle-o"></i> Submit
+                            </button>
+                        </a>
+
+                    </div>
                 </div>
+
             </div>
-
-        </div>
+        </form>
 
     </div><!-- /#right-panel -->
 

@@ -23,18 +23,20 @@
             </div>
         </div>
 
-        <div class="col-lg-12">
-            <div class="card">
+        <form action="p-update_data.php" method="post" class="form-horizontal">
 
-                <div class="card-body card-block">
-                    <?php
-                    include "config.php";
-                    $id_warga = $_GET['id_warga'];
-                    $query_mysqli = mysqli_query($koneksi, "SELECT * FROM warga WHERE id_warga='$id_warga'") or die(mysqli_error($koneksi));
-                    $nomor = 1;
-                    while ($data = mysqli_fetch_array($query_mysqli)) {
-                    ?>
-                        <form action="p-update.php" method="post" class="form-horizontal">
+            <div class="col-lg-12">
+                <div class="card">
+
+                    <div class="card-body card-block">
+                        <?php
+                        include "config.php";
+                        $id_warga = $_GET['id_warga'];
+                        $query_mysqli = mysqli_query($koneksi, "SELECT * FROM warga WHERE id_warga='$id_warga'") or die(mysqli_error($koneksi));
+                        $nomor = 1;
+                        while ($data = mysqli_fetch_array($query_mysqli)) {
+                        ?>
+
                             <div class="row form-group">
                                 <div class="col col-md-2"><label for="hf-email" class=" form-control-label">NIK</label></div>
                                 <input type="hidden" name="id_warga" value="<?php echo $data['id_warga'] ?>">
@@ -78,78 +80,80 @@
 
 
                         <?php } ?>
-                        </form>
 
-                </div>
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <strong class="card-title">Kriteria Penerimaan</strong>
-                        </div>
-                        <div class="card-body">
-                            
-                            <table class="table">
-                                <thead class="thead-light">
 
-                                    <tr>
-                                        
-                                        <?php
-                                        $tampil = "SELECT * FROM kriteria";
-                                        $hasil = mysqli_query($koneksi, $tampil);
-                                        $no1 = 0;
-                                        $no2 = 0;
-                                        $nomor = 1;
-                                        while ($data = mysqli_fetch_array($hasil)) {
-                                        ?>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Kriteria Penerimaan</strong>
+                            </div>
+                            <div class="card-body">
 
-                                    <tr>
-                                        <!-- <td><?php echo $nomor; ?></td> -->
-                                        
-                                        <td>
-                                            <input type=checkbox name=ya[] value=<?php echo $data['id_kriteria'];
-                                                                                    $query = "SELECT * FROM kriteria_warga WHERE id_warga='$id_warga'";
-                                                                                    $result = mysqli_query($koneksi, $query);
-                                                                                    while ($row = mysqli_fetch_array($result)) {
-                                                                                        if ($data['id_kriteria'] == $row['id_kriteria']) {
-                                                                                    ?> checked=checked <?php
-                                                                                        }
-                                                                                    }     ?>>
+                                <table class="table">
+                                    <thead class="thead-light">
 
-                                        </td>
-                                        <td><?php echo $data['nama']; ?></td>
-                                    </tr> <?php
-                                            $nomor++;
-                                            $no1++;
-                                            $no2++;
-                                        }
+                                        <tr>
 
+                                            <?php
+                                            $tampil = "SELECT * FROM kriteria";
+                                            $hasil = mysqli_query($koneksi, $tampil);
+                                            $no1 = 0;
+                                            $no2 = 0;
+                                            $nomor = 1;
+                                            while ($data = mysqli_fetch_array($hasil)) {
                                             ?>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
+
+                                        <tr>
+                                            <!-- <td><?php echo $nomor; ?></td> -->
+
+                                            <td>
+                                                <input type=checkbox name=ya[] value=<?php echo $data['id_kriteria'];
+                                                                                        $query = "SELECT * FROM kriteria_warga WHERE id_warga='$id_warga'";
+                                                                                        $result = mysqli_query($koneksi, $query);
+                                                                                        while ($row = mysqli_fetch_array($result)) {
+                                                                                            if ($data['id_kriteria'] == $row['id_kriteria']) {
+                                                                                        ?> checked=checked <?php
+                                                                                                    }
+                                                                                                }     ?>>
+
+                                            </td>
+                                            <td><?php echo $data['nama']; ?></td>
+                                        </tr> <?php
+                                                $nomor++;
+                                                $no1++;
+                                                $no2++;
+                                            }
+
+                                                ?>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
 
 
+                            </div>
                         </div>
                     </div>
+
+                    <div class="card-footer">
+                        <a href="a-tambah_data.php">
+                            <button type="submit" class="btn btn-primary btn-sm">
+                                <i class="fa fa-dot-circle-o"></i> Update
+                            </button>
+                        </a>
+
+                    </div>
+
                 </div>
+        </form>
+        <?php  ?>
+        <!-- /#right-panel -->
 
-                <div class="card-footer">
-                    <a href="a-tambah_data.php">
-                        <button type="submit" class="btn btn-primary btn-sm">
-                            <i class="fa fa-dot-circle-o"></i> Update
-                        </button>
-                    </a>
+        <!-- Right Panel -->
 
-                </div>
-
-            </div>
-            <!-- /#right-panel -->
-
-            <!-- Right Panel -->
-
-            <?php include 'footer.php'; ?>
+        <?php include 'footer.php'; ?>
 
 </body>
 

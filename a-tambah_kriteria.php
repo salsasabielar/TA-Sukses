@@ -62,7 +62,7 @@
                                                 <td><?php echo $data['nama']; ?></td>
                                                 <td>
                                                     <a class="btn btn-sm btn-primary" href="a-form_edit_kriteria.php?id_kriteria=<?php echo $data['id_kriteria']; ?>">Edit</a>
-                                                    <a class="btn btn-sm btn-primary" href="deleteKriteria.php?id_kriteria=<?php echo $data['id_kriteria']; ?>">Hapus</a>
+                                                    <a class="btn btn-sm btn-primary" href="p-hapus_kriteria.php?id_kriteria=<?php echo $data['id_kriteria']; ?>" onclick="return confirm()">Hapus</a>
                                                 </td>
                                             </tr>
                                     <?php }
