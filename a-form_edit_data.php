@@ -23,7 +23,7 @@
             </div>
         </div>
 
-        <form action="p-update_data.php" method="post" class="form-horizontal">
+        <form action="p-update.php" method="post" class="form-horizontal">
 
             <div class="col-lg-12">
                 <div class="card">
