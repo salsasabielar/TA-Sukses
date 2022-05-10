@@ -17,7 +17,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Informasi Data Warga</h1>
+                        <h1>Survey Data Warga</h1>
                     </div>
                 </div>
             </div>
@@ -29,11 +29,7 @@
 
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="card-header">
-                                <a href="s-form_tambah_data.php">
-                                    <button type="button" class="btn btn-primary">Tambah Data</button>
-                                </a>
-                            </div>
+                            
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                     <thead>
@@ -42,10 +38,8 @@
                                             <th>NIK</th>
                                             <th>Nama</th>
                                             <th>Alamat</th>
-                                            <th>Tanggal Lahir</th>
                                             <th>Pekerjaan</th>
-                                            <th>Jenis Kelamin</th>
-                                            <!-- <th>Tanggal Survey</th> -->
+                                            <th>Tanggal Survey</th>
                                             <th>Status</th>
                                             <th>Aksi</th>
                                         </tr>
@@ -69,13 +63,13 @@
                                                 <td><?php echo $data['nik']; ?></td>
                                                 <td><?php echo $data['nama']; ?></td>
                                                 <td><?php echo $data['alamat']; ?></td>
-                                                <td><?php echo $data['ttl']; ?></td>
+                                                <!-- <td><?php echo $data['ttl']; ?></td> -->
                                                 <td><?php echo $data['pekerjaan']; ?></td>
-                                                <td><?php echo $data['jenisKelamin']; ?></td>
-                                                <!-- <td><?php echo $data['tanggalsurvey']; ?></td> -->
+                                                <!-- <td><?php echo $data['jenisKelamin']; ?></td> -->
+                                                <td><?php echo $data['tanggalsurvey']; ?></td>
                                                 <td><?php echo $data['status']; ?></td>
                                                 <td>
-                                                    <a class="btn btn-sm btn-primary" href="s-form_edit_data.php?id_warga=<?php echo $data['id_warga']; ?>">Edit</a>
+                                                    <a class="btn btn-sm btn-primary" href="s-form_edit_data.php?id_warga=<?php echo $data['id_warga']; ?>">Survey</a>
                                                     <!-- <a class="btn btn-sm btn-primary" href="p-delete_data.php?id_warga=<?php echo $data['id_warga']; ?>" onclick="return confirm()">Hapus</a> -->
                                                     <a class="btn btn-sm btn-primary" href="s-detail.php?id_warga=<?php echo $data['id_warga']; ?>">Detail</a>
 

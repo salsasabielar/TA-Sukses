@@ -23,7 +23,7 @@
             </div>
         </div>
 
-        <form action="p-update.php" method="post" class="form-horizontal">
+        <form action="p-update_data.php" method="post" class="form-horizontal">
 
             <div class="col-lg-12">
                 <div class="card">
@@ -74,67 +74,14 @@
                                 </div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-2"><label for="hf-email" class=" form-control-label">Tanggal Survey</label></div>
-                                <div class="col-12 col-md-5"><input type="date" name="tanggalsurvey" value="<?php echo $data['tanggalsurvey'] ?>" placeholder="Masukkan Survey..." class="form-control"><span class="help-block"></span></div>
+                                <!-- <div class="col col-md-2"><label for="hf-email" class=" form-control-label">Tanggal Survey</label></div> -->
+                                <div class="col-12 col-md-5"><input type="hidden" name="tanggalsurvey" value="<?php echo $data['tanggalsurvey'] ?>" placeholder="Masukkan Survey..." class="form-control"><span class="help-block"></span></div>
                             </div>
 
 
                         <?php } ?>
 
 
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">Kriteria Penerimaan</strong>
-                            </div>
-                            <div class="card-body">
-
-                                <table class="table">
-                                    <thead class="thead-light">
-
-                                        <tr>
-
-                                            <?php
-                                            $tampil = "SELECT * FROM kriteria";
-                                            $hasil = mysqli_query($koneksi, $tampil);
-                                            $no1 = 0;
-                                            $no2 = 0;
-                                            $nomor = 1;
-                                            while ($data = mysqli_fetch_array($hasil)) {
-                                            ?>
-
-                                        <tr>
-                                            <!-- <td><?php echo $nomor; ?></td> -->
-
-                                            <td>
-                                                <input type=checkbox name=ya[] value=<?php echo $data['id_kriteria'];
-                                                                                        $query = "SELECT * FROM kriteria_warga WHERE id_warga='$id_warga'";
-                                                                                        $result = mysqli_query($koneksi, $query);
-                                                                                        while ($row = mysqli_fetch_array($result)) {
-                                                                                            if ($data['id_kriteria'] == $row['id_kriteria']) {
-                                                                                        ?> checked=checked <?php
-                                                                                                        }
-                                                                                                    }     ?>>
-
-                                            </td>
-                                            <td><?php echo $data['nama']; ?></td>
-                                        </tr> <?php
-                                                $nomor++;
-                                                $no1++;
-                                                $no2++;
-                                            }
-
-                                                ?>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                                </table>
-
-
-                            </div>
-                        </div>
                     </div>
 
                     <div class="card-footer">

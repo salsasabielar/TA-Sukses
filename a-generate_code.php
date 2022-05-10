@@ -28,28 +28,27 @@
 
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="card-header">
-                            </div>
-        <div class="card-body">
-        <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
-        <thead>
-                      <tr>
-                      <th>No.</th>
-                        <th>NIK</th>
-                        <th>Nama</th>
-                        <th>Alamat</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                      <?php 
-                          include "config.php";
-                            $sql=mysqli_query($koneksi, "SELECT * FROM warga ORDER BY id_warga ASC");
-                            $no=1;
-                            while($d=mysqli_fetch_array($sql)){
-						echo "<tr>
+                            
+                            <div class="card-body">
+                                <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>NIK</th>
+                                            <th>Nama</th>
+                                            <th>Alamat</th>
+                                            <th>Jenis Kelamin</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <?php
+                                            include "config.php";
+                                            $sql = mysqli_query($koneksi, "SELECT * FROM warga ORDER BY id_warga ASC");
+                                            $no = 1;
+                                            while ($d = mysqli_fetch_array($sql)) {
+                                                echo "<tr>
 							<td width='40px' align='center'>$no</td>
 							<td>$d[nik]</td>
 							<td>$d[nama]</td>
@@ -60,18 +59,18 @@
 								<a class='btn btn-success btn-sm' href='p-cetak_qrcode.php?id_warga=$d[id_warga]' target='_blank'>Cetak</a>
 							</td>
 						</tr>";
-						$no++;
-					}
-                          ?> 
-                            <?php ?>
-                      
-                    </tbody>
-                  </table>
-    </div><!-- /#right-panel -->
+                                                $no++;
+                                            }
+                                            ?>
+                                            <?php ?>
 
-    <!-- Right Panel -->
+                                    </tbody>
+                                </table>
+                            </div><!-- /#right-panel -->
 
-    <?php include 'footer.php'; ?>
+                            <!-- Right Panel -->
+
+                            <?php include 'footer.php'; ?>
 
 </body>
 

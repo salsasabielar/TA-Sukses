@@ -36,7 +36,7 @@ if (mysqli_query($koneksi,"DELETE FROM kriteria_warga WHERE id_warga='$id_warga'
                         
                     echo $status;
         if(mysqli_query($koneksi,"UPDATE warga SET status='$status' WHERE id_warga='$id_warga'")){
-           header("location:s-tambah_data.php");
+           header("location:s-data_survey.php");
            
         }
 

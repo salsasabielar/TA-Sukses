@@ -10,7 +10,7 @@ $pekerjaan = $_POST['pekerjaan'];
 $jenisKelamin = $_POST['jenisKelamin'];
 $tanggalsurvey = $_POST['tanggalsurvey'];
  
-if (mysqli_query($koneksi,"UPDATE warga SET nik='$nik', nama='$nama', ttl='$ttl',pekerjaan='$pekerjaan',jenisKelamin='$jenisKelamin', tanggalsurvey='$tanggalsurvey'
+if (mysqli_query($koneksi,"UPDATE warga SET nik='$nik', nama='$nama',  alamat='$alamat', ttl='$ttl',pekerjaan='$pekerjaan',jenisKelamin='$jenisKelamin', tanggalsurvey='$tanggalsurvey'
 WHERE id_warga='$id_warga'")) {
             header("location:a-tambah_data.php");
 } else{
