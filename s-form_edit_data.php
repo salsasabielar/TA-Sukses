@@ -23,7 +23,7 @@
             </div>
         </div>
 
-        <form action="p-update.php" method="post" class="form-horizontal">
+        <form action="ps-update.php" method="post" class="form-horizontal">
 
             <div class="col-lg-12">
                 <div class="card">
@@ -138,7 +138,7 @@
                     </div>
 
                     <div class="card-footer">
-                        <a href="a-tambah_data.php">
+                        <a href="s-tambah_data.php">
                             <button type="submit" class="btn btn-primary btn-sm">
                                 <i class="fa fa-dot-circle-o"></i> Update
                             </button>

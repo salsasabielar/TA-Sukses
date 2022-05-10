@@ -30,7 +30,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <a href="a-form_tambah_data.php">
+                                <a href="s-form_tambah_data.php">
                                     <button type="button" class="btn btn-primary">Tambah Data</button>
                                 </a>
                             </div>
@@ -75,9 +75,9 @@
                                                 <!-- <td><?php echo $data['tanggalsurvey']; ?></td> -->
                                                 <td><?php echo $data['status']; ?></td>
                                                 <td>
-                                                    <a class="btn btn-sm btn-primary" href="a-form_edit_data.php?id_warga=<?php echo $data['id_warga']; ?>">Edit</a>
-                                                    <a class="btn btn-sm btn-primary" href="p-delete_data.php?id_warga=<?php echo $data['id_warga']; ?>" onclick="return confirm()">Hapus</a>
-                                                    <a class="btn btn-sm btn-primary" href="a-detail.php?id_warga=<?php echo $data['id_warga']; ?>">Detail</a>
+                                                    <a class="btn btn-sm btn-primary" href="s-form_edit_data.php?id_warga=<?php echo $data['id_warga']; ?>">Edit</a>
+                                                    <!-- <a class="btn btn-sm btn-primary" href="p-delete_data.php?id_warga=<?php echo $data['id_warga']; ?>" onclick="return confirm()">Hapus</a> -->
+                                                    <a class="btn btn-sm btn-primary" href="s-detail.php?id_warga=<?php echo $data['id_warga']; ?>">Detail</a>
 
                                                 </td>
                                             </tr>
