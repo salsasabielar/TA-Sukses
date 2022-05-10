@@ -47,16 +47,18 @@
                                 <div class="col-12 col-md-5"><input type="text" name="password" value="<?php echo $data['password'] ?>" placeholder="Masukkan Password..." class="form-control"><span class="help-block"></span></div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-2"><label for="select" class=" form-control-label">Roles</label></div>
-                                <div class="col-12 col-md-5">
-                                    <select class="form-control" name="role" value="<?php echo $data['role'] ?>">
-                                        <option <?php if ($id_user == 'Admin') {
-                                                    echo "selected";
-                                                } ?> value='Admin'>Admin</option>
-                                        <option <?php if ($id_user == 'Surveyor') {
-                                                    echo "selected";
-                                                } ?> value='Surveyor'>Surveyor</option>
-                                    </select>
+                                <div class="col col-md-2"><label class=" form-control-label">Role</label></div>
+                                <div class="col col-md-9">
+                                    <div class="form-check-inline form-check">
+                                        <label for="inline-radio1" class="form-check-label ">
+                                            <input type="radio" id="inline-radio1" name="role" value="Admin" <?php echo ($data['role'] == 'Admin') ? 'checked' : ' ' ?> class="form-check-input">Admin
+                                        </label>
+                                        <p style="text-indent: 5em;">&nbsp</p>
+                                        <label for="inline-radio2" class="form-check-label ">
+                                            <input type="radio" id="inline-radio2" name="role" value="Surveyor" <?php echo ($data['role'] == 'Surveyor') ? 'checked' : ' ' ?> class="form-check-input">Surveyor
+                                        </label>
+
+                                    </div>
                                 </div>
                             </div>
                             

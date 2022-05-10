@@ -1,3 +1,8 @@
+<?php 
+// session_start();
+// if(isset($_SESSION['login'])){
+	include "config.php";
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,6 +56,13 @@
     .tengah{
         text-align: center;
     }
+	.element {
+        position: absolute;
+        right: 0;
+        bottom: 100px;
+        width: 200px;
+        border: 1px solid #000;
+    }
  </style>
  <table>
 				<center>
@@ -90,12 +102,18 @@
  <td><?php echo $d['pekerjaan']; ?> </td>
  <td><?php echo $d['jenisKelamin']; ?> </td>
  <td><?php echo $d['status']; ?> </td>
- <td><?php echo $d['tanggalsurvey']; ?> </td>
+ <td><?php echo $d['tanggalsurvey']; date('Y-m-d');?> </td>
  </tr>
- <?php 
- }
+ <?php }
  ?>
     </table>
+	<!-- <div class="element">
+    <p>Kepala Desa Banturejo, <?php echo tglIndonesia(date('Y-m-d')); ?></p>
+	<br/>
+	<br/>
+	<br/>
+	<p><b>KUSNANTO</b></p>
+	</div> -->
     <script>
  window.print();
  </script>
