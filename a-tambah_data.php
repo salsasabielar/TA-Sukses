@@ -78,6 +78,7 @@
                                 <a class="btn btn-sm btn-primary" href="a-form_edit_data.php?id_warga=<?php echo $data['id_warga']; ?>">Edit</a> 
                                 <a class="btn btn-sm btn-primary" href="p-delete_data.php?id_warga=<?php echo $data['id_warga']; ?>" onclick="return confirm()">Hapus</a> 
                                 <a class="btn btn-sm btn-primary" href="a-detail.php?id_warga=<?php echo $data['id_warga']; ?>">Detail</a>
+                                <!-- <a class="btn btn-sm btn-primary" href="p-generate_code.php?nik=$d[nik]&nomor=$d[nik]">Bukti Survey</a> -->
                                 
                               </td>
                             </tr>
