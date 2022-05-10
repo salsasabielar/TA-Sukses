@@ -72,17 +72,18 @@
                                                 <td><?php echo $data['ttl']; ?></td>
                                                 <td><?php echo $data['pekerjaan']; ?></td>
                                                 <td><?php echo $data['jenisKelamin']; ?></td>
-                                                <!-- <td><?php echo $data['tanggalsurvey']; ?></td>
-                              <td><?php echo $data['status']; ?></td> -->
-                              <td>
-                                <a class="btn btn-sm btn-primary" href="a-form_edit_data.php?id_warga=<?php echo $data['id_warga']; ?>">Edit</a> 
-                                <a class="btn btn-sm btn-primary" href="p-delete_data.php?id_warga=<?php echo $data['id_warga']; ?>" onclick="return confirm()">Hapus</a> 
-                                <a class="btn btn-sm btn-primary" href="a-detail.php?id_warga=<?php echo $data['id_warga']; ?>">Detail</a>
-                                
-                              </td>
-                            </tr>
-                            <?php } }?>
-                                    
+                                                <!-- <td><?php echo $data['tanggalsurvey']; ?></td> -->
+                                                <td><?php echo $data['status']; ?></td>
+                                                <td>
+                                                    <a class="btn btn-sm btn-primary" href="a-form_edit_data.php?id_warga=<?php echo $data['id_warga']; ?>">Edit</a>
+                                                    <a class="btn btn-sm btn-primary" href="p-delete_data.php?id_warga=<?php echo $data['id_warga']; ?>" onclick="return confirm()">Hapus</a>
+                                                    <a class="btn btn-sm btn-primary" href="a-detail.php?id_warga=<?php echo $data['id_warga']; ?>">Detail</a>
+
+                                                </td>
+                                            </tr>
+                                    <?php }
+                                    } ?>
+
                                 </table>
                             </div>
                         </div>

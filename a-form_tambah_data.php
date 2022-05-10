@@ -73,7 +73,7 @@
 
                     </div>
                     <div class="card-footer">
-                        <a href="a-tambah_data.php">
+                        <a href="a-kriteria.php">
                             <button type="submit" class="btn btn-primary btn-sm">
                                 <i class="fa fa-dot-circle-o"></i> Simpan
                             </button>

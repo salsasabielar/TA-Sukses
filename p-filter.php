@@ -34,7 +34,7 @@ if ($count >= 11) {
 
 echo $status;
 if (mysqli_query($koneksi, "UPDATE warga SET status='$status' WHERE id_warga='$id_warga'")) {
-    header("location:tambahData.php");
+    header("location:a-tambah_data.php");
 }
 //echo $ceka[0];
 

@@ -23,130 +23,59 @@
             </div>
         </div>
 
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-body card-block">
-                    <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
-                        <div class="row form-group">
+        <form action="p-filter.php" method="post" class="form-horizontal">
 
-                            <div class="col col-md-9">
-                                <div class="form-check">
-                                    <div class="checkbox">
-                                        <label for="checkbox1" class="form-check-label ">
-                                            <input type="checkbox" id="checkbox1" name="checkbox1" value="option1" class="form-check-input">Option 1
-                                        </label>
-                                    </div>
-                                    <br>
-                                    <div class="checkbox">
-                                        <label for="checkbox2" class="form-check-label ">
-                                            <input type="checkbox" id="checkbox2" name="checkbox2" value="option2" class="form-check-input"> Option 2
-                                        </label>
-                                    </div>
-                                    <br>
-                                    <div class="checkbox">
-                                        <label for="checkbox3" class="form-check-label ">
-                                            <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Option 3
-                                        </label>
-                                    </div>
-                                    <br>
-                                    <div class="checkbox">
-                                        <label for="checkbox3" class="form-check-label ">
-                                            <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Option 3
-                                        </label>
-                                    </div>
-                                    <br>
-                                    <div class="checkbox">
-                                        <label for="checkbox3" class="form-check-label ">
-                                            <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Option 3
-                                        </label>
-                                    </div>
-                                    <br>
-                                    <div class="checkbox">
-                                        <label for="checkbox3" class="form-check-label ">
-                                            <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Option 3
-                                        </label>
-                                    </div>
-                                    <br>
-                                    <div class="checkbox">
-                                        <label for="checkbox3" class="form-check-label ">
-                                            <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Option 3
-                                        </label>
-                                    </div>
-                                    <br>
-                                    <div class="checkbox">
-                                        <label for="checkbox3" class="form-check-label ">
-                                            <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Option 3
-                                        </label>
-                                    </div>
-                                    <br>
-                                    <div class="checkbox">
-                                        <label for="checkbox3" class="form-check-label ">
-                                            <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Option 3
-                                        </label>
-                                    </div>
-                                    <br>
-                                    <div class="checkbox">
-                                        <label for="checkbox3" class="form-check-label ">
-                                            <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Option 3
-                                        </label>
-                                    </div>
-                                    <br>
-                                    <div class="checkbox">
-                                        <label for="checkbox3" class="form-check-label ">
-                                            <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Option 3
-                                        </label>
-                                    </div>
-                                    <br>
-                                    <div class="checkbox">
-                                        <label for="checkbox3" class="form-check-label ">
-                                            <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Option 3
-                                        </label>
-                                    </div>
-                                    <br>
-                                    <div class="checkbox">
-                                        <label for="checkbox3" class="form-check-label ">
-                                            <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Option 3
-                                        </label>
-                                    </div>
-                                    <br>
-                                    <div class="checkbox">
-                                        <label for="checkbox3" class="form-check-label ">
-                                            <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Option 3
-                                        </label>
-                                    </div>
-                                    <br>
-                                    <div class="checkbox">
-                                        <label for="checkbox3" class="form-check-label ">
-                                            <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Option 3
-                                        </label>
-                                    </div>
-                                    <br>
-                                    <div class="checkbox">
-                                        <label for="checkbox3" class="form-check-label ">
-                                            <input type="checkbox" id="checkbox3" name="checkbox3" value="option3" class="form-check-input"> Option 3
-                                        </label>
-                                    </div>
-                                    <br>
-                                    <div class="checkbox">
-                                        <label for="checkbox3" class="form-check-label ">
-                                            <input type="checkbox" id="checkbox17" name="checkbox17" value="option3" class="form-check-input"> Option 3
-                                        </label>
-                                    </div>
+            <div class="col-lg-12">
+                <div class="card">
 
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="card-footer">
-                    <a href="a-tambah_data.php">
-                        <button type="submit" class="btn btn-primary btn-sm">
-                            <i class="fa fa-dot-circle-o"></i> Submit
-                        </button>
-                    </a>
+                    <div class="card-body">
+
+                        <table class="table">
+                            <thead class="thead-light">
+
+                                <tr>
+
+                                    <?php
+                                    include "config.php";
+
+                                    $tampil = "SELECT * FROM kriteria ORDER BY id_kriteria asc";
+                                    $hasil = mysqli_query($koneksi, $tampil);
+                                    $no1 = 0;
+                                    $no2 = 0;
+
+                                    $nomor = 1;
+                                    while ($data = mysqli_fetch_array($hasil)) {
+
+                                        echo "<tr >
+                                    
+                                    <td><input type=checkbox name=ya[] value=$data[id_kriteria] id=id1$no1></td>
+                                    <td>$data[nama]</td>";
+
+                                        $nomor++;
+                                        $no1++;
+                                        $no2++;
+
+                                    ?>
+                                    <?php } ?>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                    <div class="card-footer">
+                        <a href="a-tambah_data.php">
+                            <button type="submit" class="btn btn-primary btn-sm">
+                                <i class="fa fa-dot-circle-o"></i> Submit
+                            </button>
+                        </a>
+
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
 
 
     </div><!-- /#right-panel -->
