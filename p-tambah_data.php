@@ -14,7 +14,7 @@ $tanggalsurvey = $_POST['tanggalsurvey'];
 if (mysqli_query($koneksi, "INSERT INTO warga VALUES('','$nik','$nama','$alamat','$ttl','$pekerjaan','$jenisKelamin','$tanggalsurvey','status')")) {
     $id_warga =  mysqli_insert_id($koneksi);
     if (mysqli_query($koneksi, "INSERT INTO penerimaan VALUES('','$id_warga','')")) {
-        header("location:a-kriteria.php");
+        header("location:a-tambah_data.php");
     }
 } else {
     echo mysqli_error($koneksi);

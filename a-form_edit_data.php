@@ -27,7 +27,6 @@
 
             <div class="col-lg-12">
                 <div class="card">
-
                     <div class="card-body card-block">
                         <?php
                         include "config.php";
@@ -36,7 +35,6 @@
                         $nomor = 1;
                         while ($data = mysqli_fetch_array($query_mysqli)) {
                         ?>
-
                             <div class="row form-group">
                                 <div class="col col-md-2"><label for="hf-email" class=" form-control-label">NIK</label></div>
                                 <input type="hidden" name="id_warga" value="<?php echo $data['id_warga'] ?>">
@@ -78,9 +76,7 @@
                                 <div class="col-12 col-md-5"><input type="hidden" name="tanggalsurvey" value="<?php echo $data['tanggalsurvey'] ?>" placeholder="Masukkan Survey..." class="form-control"><span class="help-block"></span></div>
                             </div>
 
-
                         <?php } ?>
-
 
                     </div>
 
@@ -95,7 +91,6 @@
 
                 </div>
         </form>
-        <?php  ?>
         <!-- /#right-panel -->
 
         <!-- Right Panel -->

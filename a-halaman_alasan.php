@@ -38,7 +38,7 @@
           
         </div>
         <div class="card-footer">
-          <a href="a-kriteria.php">
+          <a href="s-data_survey.php">
             <button type="submit" class="btn btn-primary btn-sm">
               <i class="fa fa-dot-circle-o"></i> Submit
             </button>
