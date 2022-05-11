@@ -71,7 +71,7 @@
                                                 <td>
                                                     <a class="btn btn-sm btn-primary" href="s-form_edit_data.php?id_warga=<?php echo $data['id_warga']; ?>">Survey</a>
                                                     <a class="btn btn-sm btn-primary" href="p-delete_data.php?id_warga=<?php echo $data['id_warga']; ?>" onclick="return confirm()">Hapus</a>
-                                                    <a class="btn btn-sm btn-primary" href="s-detail.php?id_warga=<?php echo $data['id_warga']; ?>">Detail</a>
+                                                    <a class="btn btn-sm btn-primary" href="a-detail.php?id_warga=<?php echo $data['id_warga']; ?>">Detail</a>
 
                                                 </td>
                                             </tr>
