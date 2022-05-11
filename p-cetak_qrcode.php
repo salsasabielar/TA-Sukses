@@ -1,7 +1,7 @@
 <?php 
 // session_start();
 // if(isset($_SESSION['login'])){
-	include "config.php";
+	include "config_tgl.php";
 ?>
 
 <!DOCTYPE html>
@@ -34,8 +34,10 @@
 	<td>
 	<table width="100%">
 		<?php
-		$sql=mysqli_query($koneksi, "SELECT * FROM warga WHERE id_warga='$_GET[id_warga]'");
-		$d=mysqli_fetch_array($sql);
+		$sql=mysqli_query($koneksi, "SELECT * FROM warga");
+		while ($d=mysqli_fetch_array($sql)){
+		// $sql=mysqli_query($koneksi, "SELECT * FROM warga WHERE nik='$_GET[nik]'");
+		// while ($d=mysqli_fetch_array($sql)){
 		?>
 		<tr>
 			<td colspan="3">
@@ -68,14 +70,14 @@
 				<br/>
 				<p><b>KUSNANTO</b></p>
 			</td>
-		</tr>
+		</tr> <?php }; ?>
 	</table>
 	</td>
 </tr>
 </table>
-<script>
+<!-- <script>
  window.print();
- </script>
+ </script> -->
 <br>
 
 </body>
