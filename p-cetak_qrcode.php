@@ -1,7 +1,7 @@
 <?php 
 // session_start();
 // if(isset($_SESSION['login'])){
-	include "config.php";
+	include "config_tgl.php";
 ?>
 
 <!DOCTYPE html>
