@@ -96,7 +96,7 @@
         resultFunction: function(result) {
             //$('.hasilscan').append($('<input name="noijazah" value=' + result.code + ' readonly><input type="submit" value="Cek"/>'));
            // $.post("../cek.php", { noijazah: result.code} );
-            var redirect = '../cek.php';
+            var redirect = 'cek.php';
             $.redirectPost(redirect, {nik: result.code});
         }
     };
