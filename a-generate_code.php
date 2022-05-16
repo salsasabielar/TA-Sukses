@@ -56,7 +56,7 @@
 							<td>$d[jenisKelamin]</td>
 							<td width='180px' align='center'>
 								<a class='btn btn-danger btn-sm' href='p-generate_code.php?nik=$d[nik]&nomor=$d[nik]'>Generate</a>
-								<a class='btn btn-success btn-sm' href='p-cetak_qrcode.php?id_warga=$d[id_warga]' target='_blank'>Cetak</a>
+								<a class='btn btn-success btn-sm' href='p-cetak_qrcode.php?nik=$d[nik]' target='_blank'>Cetak</a>
 							</td>
 						</tr>";
                                                 $no++;
