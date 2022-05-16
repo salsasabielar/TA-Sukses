@@ -1,7 +1,7 @@
 <?php
-// include 'config.php';
-// $id_warga = $_GET['id_warga'];
-// mysqli_query($koneksi, "SELECT * FROM warga")or die(mysqli_error($koneksi));
+include 'config_tgl.php';
+$id_warga = $_GET['id_warga'];
+mysqli_query($koneksi, "SELECT * FROM warga")or die(mysqli_error($koneksi));
 
 if(isset($_GET['nomor']) && $_GET['nomor'] !=''){
     //tampung data kiriman
@@ -30,7 +30,7 @@ if(isset($_GET['nomor']) && $_GET['nomor'] !=''){
     QRCode::png($isi_teks,$tempdir.$namafile,$quality,$ukuran,$padding);
 
     // header('location:a-generate_code.php');
-    header('location:p-cetak_qrcode.php?nik=$nik');
+    header('location:p-cetak_qrcode.php?nik=' . $nik);
 }
 // }else{
 //     header('location:a-generate_code.php');

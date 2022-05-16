@@ -34,10 +34,11 @@
 	<td>
 	<table width="100%">
 		<?php
-		$sql=mysqli_query($koneksi, "SELECT * FROM warga");
-		while ($d=mysqli_fetch_array($sql)){
-		// $sql=mysqli_query($koneksi, "SELECT * FROM warga WHERE nik='$_GET[nik]'");
-		// while ($d=mysqli_fetch_array($sql)){
+		// $sql=mysqli_query($koneksi, "SELECT * FROM warga ");
+		
+		$sql=mysqli_query($koneksi, "SELECT * FROM warga WHERE nik='$_GET[nik]'");
+		while($d=mysqli_fetch_array($sql)){
+		// $d=mysqli_fetch_array($sql);
 		?>
 		<tr>
 			<td colspan="3">
@@ -70,7 +71,8 @@
 				<br/>
 				<p><b>KUSNANTO</b></p>
 			</td>
-		</tr> <?php }; ?>
+		</tr>
+		<?php }; ?>
 	</table>
 	</td>
 </tr>
