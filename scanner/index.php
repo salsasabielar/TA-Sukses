@@ -91,14 +91,12 @@
   <script type="text/javascript" src="js/webcodecamjquery.js"></script>
   <script type="text/javascript">
     var arg = {
-      resultFunction: function(result) {
-        //$('.hasilscan').append($('<input name="noijazah" value=' + result.code + ' readonly><input type="submit" value="Cek"/>'));
-        // $.post("../cek.php", { noijazah: result.code} );
-        var redirect = '../cek.php';
-        $.redirectPost(redirect, {
-          nik: result.code
-        });
-      }
+        resultFunction: function(result) {
+            //$('.hasilscan').append($('<input name="noijazah" value=' + result.code + ' readonly><input type="submit" value="Cek"/>'));
+           // $.post("../cek.php", { noijazah: result.code} );
+            var redirect = 'cek.php';
+            $.redirectPost(redirect, {nik: result.code});
+        }
     };
 
     var decoder = $("canvas").WebCodeCamJQuery(arg).data().plugin_WebCodeCamJQuery;
