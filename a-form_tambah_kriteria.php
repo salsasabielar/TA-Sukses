@@ -22,6 +22,7 @@
                 </div>
             </div>
         </div>
+        
         <form action="p-tambah_kriteria.php" method="post" class="form-horizontal">
             <div class="col-lg-12">
                 <div class="card">
