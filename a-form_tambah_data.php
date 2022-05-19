@@ -24,12 +24,10 @@
         </div>
 
         <form action="p-tambah_data.php" method="post" class="form-horizontal">
-
+        <br></br>
             <div class="col-lg-12">
                 <div class="card">
-
                     <div class="card-body card-block">
-
                         <div class="row form-group">
                             <div class="col col-md-2"><label for="nik" class=" form-control-label">NIK</label></div>
                             <div class="col-12 col-md-5"><input type="text" name="nik" placeholder="Masukkan NIK..." class="form-control"><span class="help-block"></span></div>
@@ -40,7 +38,18 @@
                         </div>
                         <div class="row form-group">
                             <div class="col col-md-2"><label for="alamat" class=" form-control-label">Alamat</label></div>
-                            <div class="col-12 col-md-5"><input type="text" name="alamat" placeholder="Masukkan Alamat..." class="form-control"><span class="help-block"></span></div>
+                            <div class="col-12 col-md-5">
+                            <select class="form-control" aria-label="Default select example" name="alamat">
+                            <option selected>Pilih Alamat</option>
+                            <?php 
+                                include "config.php";
+                                $nama_alamat = mysqli_query($koneksi, "SELECT * FROM alamat");
+                            ?>
+                            <?php while($row = mysqli_fetch_array($nama_alamat)) { ?>
+                            <option value="<?=$row['nama_alamat']?>"><?=$row['nama_alamat']?></option>
+                            <?php } ?>
+                            </select>
+                            </div>
                         </div>
                         <div class="row form-group">
                             <div class="col col-md-2"><label for="ttl" class=" form-control-label">Tanggal Lahir</label></div>
