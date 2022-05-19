@@ -109,9 +109,8 @@
                                                     <td>
                                                         <a class='btn btn-danger btn-sm' href='a-surat_miskin.php?id_warga=<?=$tpeg['id_warga']?>'>Surat Kehilangan Mata Pencaharian</a>
                                                         <!-- <input type="submit" value="Save"> -->
-                                                        <button type="submit" class="btn btn-primary btn-sm">
-                                                            Surat Keterangan Penyakit Kronis
-                                                        </button>
+                                                        <a class='btn btn-primary btn-sm' href='a-surat_penyakit.php?id_warga=<?=$tpeg['id_warga']?>'>Surat Penyakit Kronis</a>
+                                                        
 
 
                                                 </tr>

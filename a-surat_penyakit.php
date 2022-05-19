@@ -16,8 +16,8 @@ include "config_tgl.php";
                 <td colspan="3">
                     <div align="center">
                         <span style="font-family: Verdana; font-size: x-medium;"><b>SURAT PERNYATAAN <br>
-                                KEHILANGAN PEKERJAAN/MATA PENCAHARIAN <BR>
-                                AKIBAT DAMPAK COVID-19
+                                MEMPUNYAI ANGGOTA KELUARGA <BR>
+                                RENTAN SAKIT MENAHUN/KRONIS/TERKENA COVID-19
 
                             </b></span>
                         <hr />
@@ -87,28 +87,23 @@ include "config_tgl.php";
                     <td></td>
                 </tr>
                 <tr>
-                    <td colspan="3" height="270" valign="top">
+                    <td colspan="3" height="180" valign="top">
 
                         <div align="justify">
                             <span style="font-size: x-medium;">
-                                Menyatakan dengan sebenarnya, bahwa saya telah kehilangan pekerjaan/mata pencaharian akibat dampak COVID-19, sehingga berdampak pada saya yaitu:
-                                <br> <br>1. Saya tidak memiliki penghasilan;
-                                <br><br>2. Keluarga saya menjadi miskin mendadak;
-                                <br><br>3. Kebutuhan hidup sehari-hari keluarga bergantung kepada saya; dan
-                                <br><br>4. Saya tidak memiliki aset.
+                                Menyatakan dengan sebenarnya, bahwa saya mempunyai anggota keluarga yang rentan sakit menahun atau kronis, termasuk yang positif terkena COVID-19 dan harus melakukan isolasi diri.
+
                             </span>
                         </div>
                         <br>
 
                         <div align="justify">
                             <span style="font-size: x-medium;">
-
                                 Demikian surat pernyataan ini saya buat dengan sebenarnya dan apabila ternyata pernyataan ini tidak benar, saya sanggup dituntut sesuai dengan hukum dan ketentuan peraturan perundang-undangan yang berlaku.</span>
-                        </div>
                         </div>
                     </td>
                 <tr>
-                    <td><br><br><br></td>
+
                 <tr>
                     <td>
                         <div align="center">
