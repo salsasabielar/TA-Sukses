@@ -8,7 +8,7 @@
     <div id="right-panel" class="right-panel">
         <?php include 'sidebar2.php'; ?>
         <div class="breadcrumbs">
-            <div class="col-sm-4">
+            <div class="col-sm-auto">
                 <div class="page-header float-left">
                     <div class="page-title">
                         <h1>Laporan Status Data Calon Penerima BLTDD</h1>
@@ -67,9 +67,7 @@
                                             <td><?php echo $data['jenisKelamin']; ?></td>
                                             <td><?php echo $data['status']; ?></td>
                                             <td><?php echo $data['tanggalsurvey']; ?></td>
-                                            <td>
-                                            </td>
-                                        </tr>
+                                                                                    </tr>
                                 <?php }
                                             } ?>
                                 </tr>

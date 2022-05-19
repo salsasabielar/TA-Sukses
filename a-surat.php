@@ -55,9 +55,7 @@
                                             Cari
                                         </button>
                                         <p style="text-indent: 1em;">&nbsp</p>
-                                        <!-- <a href="/a-surat.php">
-                                            <button type="submit" class="btn btn-outline-danger ">Refresh</button>
-                                        </a> -->
+
                                         <a href="./a-surat.php" class="btn btn-outline-danger">Refresh</a>
 
                                     </div>
@@ -106,6 +104,7 @@
                                                 <tr>
                                                     <td></td>
                                                     <td>
+                                                        <a class='btn btn-danger btn-sm' href='a-surat_miskin.php?id_warga=$d[id_warga]'>Cetak A</a>
                                                         <!-- <input type="submit" value="Save"> -->
                                                         <button type="submit" class="btn btn-primary btn-sm">
                                                             Surat Keterangan Tidak Mampu
