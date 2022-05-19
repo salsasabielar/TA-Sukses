@@ -39,6 +39,7 @@
                                                 <option selected>Cari Nama...</option>
                                                 <?php
                                                 include "config.php";
+                                                $id_warga = $_GET['id_warga'];
                                                 //query menampilkan nip pegawai ke dalam combobox
                                                 $query    = mysqli_query($koneksi, "SELECT * FROM warga ORDER BY nama");
                                                 while ($data = mysqli_fetch_array($query)) {
@@ -65,13 +66,15 @@
 
                             </div>
                             <div class="card-body">
+                            <?php error_reporting (E_ALL ^ E_NOTICE); ?>
                                 <?php
-                                if (isset($_GET['id_warga'])) {
-                                    $id_warga = $_GET['id_warga'];
+                                $tamPeg = mysqli_query($koneksi, "SELECT * FROM warga WHERE id_warga='$_GET[id_warga]'");
+                                while($tpeg =mysqli_fetch_array($tamPeg)){
+                                // $tpeg = mysqli_fetch_array($tamPeg);
+                                // if(isset($_GET['id_warga']) && $_GET['id_warga'] !=''){
+                                //     $id_warga = $_GET['id_warga'];
 
                                     //menampilkan data pegawai berdasarkan pilihan combobox ke dalam form
-                                    $tamPeg = mysqli_query($koneksi, "SELECT * FROM warga WHERE id_warga='$id_warga'");
-                                    $tpeg = mysqli_fetch_array($tamPeg);
 
                                 ?>
                                     <form action="#" method="POST">
@@ -104,7 +107,7 @@
                                                 <tr>
                                                     <td></td>
                                                     <td>
-                                                        <a class='btn btn-danger btn-sm' href='a-surat_miskin.php?id_warga=$d[id_warga]'>Cetak A</a>
+                                                        <a class='btn btn-danger btn-sm' href='a-surat_miskin.php?id_warga=<?=$tpeg['id_warga']?>'>Cetak A</a>
                                                         <!-- <input type="submit" value="Save"> -->
                                                         <button type="submit" class="btn btn-primary btn-sm">
                                                             Surat Keterangan Tidak Mampu

@@ -27,8 +27,8 @@ include "config_tgl.php";
             <?php
             // $sql=mysqli_query($koneksi, "SELECT * FROM warga ");
 
-            $sql = mysqli_query($koneksi, "SELECT * FROM warga WHERE nik='$_GET[id_warga]'");
-            while ($d = mysqli_fetch_array($sql)) {
+            $sql = mysqli_query($koneksi, "SELECT * FROM warga WHERE id_warga='$_GET[id_warga]'");
+            while($d=mysqli_fetch_array($sql)){
                 // $d=mysqli_fetch_array($sql);
             ?>
                 <tr>
