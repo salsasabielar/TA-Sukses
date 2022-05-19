@@ -107,13 +107,10 @@
                                                 <tr>
                                                     <td></td>
                                                     <td>
-                                                        <a class='btn btn-danger btn-sm' href='a-surat_miskin.php?id_warga=<?= $tpeg['id_warga'] ?>'>Cetak A</a>
+                                                        <a class='btn btn-danger btn-sm' href='a-surat_miskin.php?id_warga=<?=$tpeg['id_warga']?>'>Surat Kehilangan Mata Pencaharian</a>
                                                         <!-- <input type="submit" value="Save"> -->
                                                         <button type="submit" class="btn btn-primary btn-sm">
-                                                            Surat Keterangan Tidak Mampu
-                                                        </button>
-                                                        <button type="submit" class="btn btn-primary btn-sm">
-                                                            Surat Kehilangan Mata Pencaharian
+                                                            Surat Keterangan Penyakit Kronis
                                                         </button>
 
 
