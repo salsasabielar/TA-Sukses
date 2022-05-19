@@ -89,7 +89,7 @@
  $koneksi = mysqli_connect("localhost","root","","bantuan");
 
  // menampilkan data pegawai
- $data = mysqli_query($koneksi,"select * from warga");
+ $data = mysqli_query($koneksi,"select * from warga where alamat like '%%'");
  $nomor = 1;
  while($d = mysqli_fetch_array($data)){
  ?>

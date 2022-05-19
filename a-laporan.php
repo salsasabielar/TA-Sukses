@@ -22,8 +22,17 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <a href="p-cetak.php">
-                                    <button type="button" class="btn btn-primary">Cetak Data</button>
+                                <a href="cetak laporan/p-cetak.php">
+                                    <button type="button" class="btn btn-primary">Cetak All</button>
+                                </a>
+                                <a href="cetak laporan/p-cetak_rw1.php">
+                                    <button type="button" class="btn btn-primary">Cetak RW.01</button>
+                                </a>
+                                <a href="cetak laporan/p-cetak_rw2.php">
+                                    <button type="button" class="btn btn-primary">Cetak RW.02</button>
+                                </a>
+                                <a href="cetak laporan/p-cetak_rw3.php">
+                                    <button type="button" class="btn btn-primary">Cetak RW.03</button>
                                 </a>
                             </div>
                             <div class="card-body">
@@ -44,28 +53,11 @@
                                         <tr>
                                             <?php
                                             include "config.php";
-                                            $query_mysqli = mysqli_query($koneksi, "SELECT * FROM warga") or die(mysqli_error());
-
-                                            if (isset($_POST['cari'])) {
-                                                $thn = $_POST['thn_ini'];
-                                                $query = mysqli_query($koneksi, "SELECT * from warga where tanggalsurvey LIKE '%$_POST[thn_ini]%'");
-                                            } else {
-                                                $query = mysqli_query($koneksi, "SELECT * from warga");
-                                            }
+                                            $query_mysqli = mysqli_query($koneksi, "SELECT * FROM warga ") or die(mysqli_error());
                                             $nomor = 1;
-                                            if ($query) {
-                                                while ($data = mysqli_fetch_array($query)) {
+                                            if ($query_mysqli) {
+                                                while ($data = mysqli_fetch_array($query_mysqli)) {
                                             ?>
-                                                    <!-- if (isset($_POST['cari'])){
-                                                            $thn=$_POST['thn_ini'];
-                                                            $query= mysqli_query($koneksi, "SELECT * from coba where tanggal LIKE '%$_POST[thn_ini]%'");
-                                                            }else{
-                                                            $query = mysqli_query($koneksi,"SELECT * from coba");
-                                                            }
-                                                            $nomor=1;
-                                                            $total=0;
-                                                            if($query){
-                                                            while($data = mysqli_fetch_array($query)){ -->
                                         <tr>
                                             <td><?php echo $nomor++; ?></td>
                                             <td><?php echo $data['nik']; ?></td>

@@ -77,9 +77,9 @@
 	</td>
 </tr>
 </table>
-<!-- <script>
+<script>
  window.print();
- </script> -->
+ </script>
 <br>
 
 </body>
