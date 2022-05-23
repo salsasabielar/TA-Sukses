@@ -7,7 +7,7 @@
     
         //menangkap variabel
         $img        = $_POST['image'];
-        $name       = $_POST['name'];
+        $nama       = $_POST['nama'];
     
         $img        = str_replace('data:image/jpeg;base64,', '', $img);
         $img        = str_replace(' ', '+', $img);
@@ -16,11 +16,13 @@
         $data       = base64_decode($img);
     
         //menamai file, file dinamai secara random dengan unik
-        $file       = $name . '.png';
+        $file       = $nama . '-KK.png';
         
         //memindahkan file ke folder upload
         file_put_contents(UPLOAD_DIR.$file, $data);
     
         //memasukkan data ke dalam tabel biodata
-        mysqli_query($koneksi, "insert into galeri set name='$name', gambar='$file'");
+        mysqli_query($koneksi, "UPDATE warga SET nama='$nama', gambar='$file WHERE id_warga='$id_warga'");
+       
+
     ?>

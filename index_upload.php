@@ -1,3 +1,8 @@
+<?php
+// session_start();
+// if(isset($_SESSION['login'])){
+include "config_tgl.php";
+?>  
 <!DOCTYPE html>
 <html>
 
@@ -20,17 +25,25 @@
                     <div class="card-body">
                         <!-- form  -->
                         <form id="form">
-                            <div class="form-group">
-                                <label>name</label>
-                                <input type="text" class="form-control" name="name" id="name" required>
-                            </div>
+                            <?php
+                            // $sql=mysqli_query($koneksi, "SELECT * FROM warga ");
 
-                            <!-- kamera webcam akan ditampilkan di dalam id="my_camera" -->
-                            <div id="my_camera">
-                            </div>
-                            <br>
-                            <hr>
-                            <button type="submit" class="tombol-simpan btn btn-primary">Register</button>
+                            $sql = mysqli_query($koneksi, "SELECT * FROM warga WHERE id_warga='$_GET[id_warga]'");
+                            while ($d = mysqli_fetch_array($sql)) {
+                                // $d=mysqli_fetch_array($sql);
+                            ?>
+                                <div class="form-group">
+                                    <label>Nama Warga</label>
+                                    <div class="col-12 col-md-5"><input name="nama" value="<?php echo $d['nama'] ?>" placeholder="Masukkan Nama..." class="form-control"><span class="help-block"></span></div>
+                                </div>
+
+                                <!-- kamera webcam akan ditampilkan di dalam id="my_camera" -->
+                                <div id="my_camera">
+                                </div>
+                                <br>
+                                <hr>
+                                <button type="submit" class="tombol-simpan btn btn-primary">Register</button>
+                            <?php }; ?>
                         </form>
                     </div>
                 </div>
@@ -78,7 +91,7 @@
             var image = '';
 
             //mengambil data uername dari form di atas dengan id name
-            var name = $('#name').val();
+            var nama = $('#nama').val();
 
             //mengambil data email dari form di atas dengan id email
             var email = $('#email').val();
@@ -93,7 +106,7 @@
                 url: 'action.php',
                 type: 'POST',
                 data: {
-                    name: name,
+                    nama: nama,
                     email: email,
                     image: image
                 },
