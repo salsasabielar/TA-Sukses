@@ -80,7 +80,7 @@
                                                 <td><?php echo $d['jenisKelamin']; ?></td>
                                                 <td><?php echo $d['tanggalsurvey']; ?></td>
                                                 <td>
-                                                    <a class="btn btn-sm btn-primary" href="../s-form_edit_data.php?id_warga=<?php echo $d['id_warga']; ?>">Survey</a>
+                                                    <a class="btn btn-sm btn-primary" href="../s-form_edit_data.php?nik=<?php echo $d['nik']; ?>">Survey</a>
                                                 </td>
                                             </tr>
                                         </table>

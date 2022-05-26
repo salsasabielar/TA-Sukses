@@ -55,7 +55,7 @@
                                 <div class="col-12 col-md-5"><input type="date" name="tanggalsurvey" value="<?php echo $data['tanggalsurvey'] ?>" placeholder="Masukkan Survey..." class="form-control"><span class="help-block"></span></div>
                             </div>
 
-                            <a class="btn btn-sm btn-primary" href="index_upload.php?id_warga=<?php echo $data['id_warga']; ?>">Upload KK</a>
+                            <!-- <a class="btn btn-sm btn-primary" href="index_upload.php?id_warga=<?php echo $data['id_warga']; ?>">Upload KK</a> -->
                             <!-- <a class="btn btn-sm btn-primary" href="s-form_edit_data.php?id_warga=<?php echo $data['id_warga']; ?>">Upload KTP</a> -->
 
                         <?php } ?>

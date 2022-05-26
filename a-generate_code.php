@@ -45,7 +45,7 @@
                                         <tr>
                                             <?php
                                             include "config.php";
-                                            $sql = mysqli_query($koneksi, "SELECT * FROM warga ORDER BY id_warga ASC");
+                                            $sql = mysqli_query($koneksi, "SELECT * FROM warga ORDER BY nik ASC");
                                             $no = 1;
                                             while ($d = mysqli_fetch_array($sql)) {
                                                 echo "<tr>

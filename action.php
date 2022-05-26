@@ -22,7 +22,8 @@
         file_put_contents(UPLOAD_DIR.$file, $data);
     
         //memasukkan data ke dalam tabel biodata
-        mysqli_query($koneksi, "UPDATE warga SET nama='$nama', gambar='$file WHERE id_warga='$id_warga'");
+        mysqli_query($koneksi,"INSERT INTO warga WHERE upload_kk='$file'");
+        // mysqli_query($koneksi, "UPDATE warga SET upload_kk='$file' WHERE id_warga='$id_warga'");
        
 
     ?>

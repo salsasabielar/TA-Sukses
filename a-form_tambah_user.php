@@ -43,16 +43,30 @@
                             <div class="col col-md-9">
                                 <div class="form-check-inline form-check">
                                     <label for="inline-radio1" class="form-check-label ">
-                                        <input type="radio" id="inline-radio1" name="role"" value="Admin" class="form-check-input">Admin
+                                        <input type="radio" id="inline-radio1" name="role" value="admin" class="form-check-input">Admin
                                     </label>
                                     <p style="text-indent: 5em;">&nbsp</p>
                                     <label for="inline-radio2" class="form-check-label ">
-                                        <input type="radio" id="inline-radio2" name="role" value="Surveyor" class="form-check-input">Surveyor
+                                        <input type="radio" id="inline-radio2" name="role" value="surveyor" class="form-check-input">Surveyor
                                     </label>
 
                                 </div>
                             </div>
                         </div>
+                        <!-- <div class="row form-group">
+                            <div class="col col-md-2"><label class=" form-control-label">Role</label></div>
+                            <div class="col col-md-9">
+                                <div class="form-check-inline form-check">
+                                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
+                                <select name="role" >
+                                <option value="admin">Admin</option>
+                                <option value="surveyor">Surveyor</option>
+                                </select> 
+                                </form>
+
+                                </div>
+                            </div>
+                        </div> -->
 
                     </div>
                     <div class="card-footer">

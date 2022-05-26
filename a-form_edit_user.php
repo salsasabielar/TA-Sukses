@@ -51,16 +51,30 @@
                                 <div class="col col-md-9">
                                     <div class="form-check-inline form-check">
                                         <label for="inline-radio1" class="form-check-label ">
-                                            <input type="radio" id="inline-radio1" name="role" value="Admin" <?php echo ($data['role'] == 'Admin') ? 'checked' : ' ' ?> class="form-check-input">Admin
+                                            <input type="radio" id="inline-radio1" name="role" value="admin" <?php echo ($data['role'] == 'admin-Laki') ? 'checked' : ' ' ?> class="form-check-input">Admin
                                         </label>
                                         <p style="text-indent: 5em;">&nbsp</p>
                                         <label for="inline-radio2" class="form-check-label ">
-                                            <input type="radio" id="inline-radio2" name="role" value="Surveyor" <?php echo ($data['role'] == 'Surveyor') ? 'checked' : ' ' ?> class="form-check-input">Surveyor
+                                            <input type="radio" id="inline-radio2" name="role" value="surveyor" <?php echo ($data['role'] == 'surveyor') ? 'checked' : ' ' ?> class="form-check-input">Surveyor
                                         </label>
 
                                     </div>
                                 </div>
                             </div>
+                            <!-- <div class="row form-group">
+                                <div class="col col-md-2"><label class=" form-control-label">Role</label></div>
+                                <div class="col col-md-9">
+                                <select class="form-control" aria-label="Default select example" name="role">
+                                <option selected><?php echo $data['role'] ?></option>
+                                <option value="admin">Admin</option>
+                                <option value="surveyor">Surveyor</option>
+                                <?php 
+                                    include "config.php";
+                                    $nama_alamat = mysqli_query($koneksi, "SELECT * FROM user WHERE role");
+                                ?>
+                            </select>
+                                </div>
+                            </div> -->
                             
                     <?php } ?>
                     

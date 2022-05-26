@@ -1,6 +1,6 @@
 <?php 
  
-	$koneksi = mysqli_connect("localhost","root","","bantuan");
+	$koneksi = mysqli_connect("localhost","root","","bltdd");
 	
 	// Check connection
 	if (mysqli_connect_errno()){

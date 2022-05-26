@@ -32,6 +32,10 @@
 
                 </li>
                 <li>
+                    <a href="a-status.php" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Status</a>
+
+                </li>
+                <li>
                     <a href="scanner/index.php"> <i class="menu-icon fa fa-laptop"></i>Scanner</a>
                 </li>
                 <li>

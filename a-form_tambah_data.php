@@ -37,6 +37,10 @@
                             <div class="col-12 col-md-5"><input type="text" name="nama" placeholder="Masukkan Nama..." class="form-control"><span class="help-block"></span></div>
                         </div>
                         <div class="row form-group">
+                            <div class="col col-md-2"><label for="nama" class=" form-control-label">Alamat</label></div>
+                            <div class="col-12 col-md-5"><input type="text" name="alamat" placeholder="Masukkan Alamat..." class="form-control"><span class="help-block"></span></div>
+                        </div>
+                        <!-- <div class="row form-group">
                             <div class="col col-md-2"><label for="alamat" class=" form-control-label">Alamat</label></div>
                             <div class="col-12 col-md-5">
                             <select class="form-control" aria-label="Default select example" name="alamat">
@@ -50,10 +54,14 @@
                             <?php } ?>
                             </select>
                             </div>
+                        </div> -->
+                        <div class="row form-group">
+                            <div class="col col-md-2"><label for="nama" class=" form-control-label">Tempat Lahir</label></div>
+                            <div class="col-12 col-md-5"><input type="text" name="tempat" placeholder="Masukkan Tempat Lahir..." class="form-control"><span class="help-block"></span></div>
                         </div>
                         <div class="row form-group">
                             <div class="col col-md-2"><label for="ttl" class=" form-control-label">Tanggal Lahir</label></div>
-                            <div class="col-12 col-md-5"><input type="date" name="ttl" placeholder="Masukkan Tanggal Lahir..." class="form-control"><span class="help-block"></span></div>
+                            <div class="col-12 col-md-5"><input type="date" name="tgl_lahir" placeholder="Masukkan Tanggal Lahir..." class="form-control"><span class="help-block"></span></div>
                         </div>
                         <div class="row form-group">
                             <div class="col col-md-2"><label for="pekerjaan" class=" form-control-label">Pekerjaan</label></div>

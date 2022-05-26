@@ -30,14 +30,14 @@
                     <div class="card-body card-block">
                         <?php
                         include "config.php";
-                        $id_warga = $_GET['id_warga'];
-                        $query_mysqli = mysqli_query($koneksi, "SELECT * FROM warga WHERE id_warga='$id_warga'") or die(mysqli_error($koneksi));
+                        $nik = $_GET['nik'];
+                        $query_mysqli = mysqli_query($koneksi, "SELECT * FROM warga WHERE nik='$nik'") or die(mysqli_error($koneksi));
                         $nomor = 1;
                         while ($data = mysqli_fetch_array($query_mysqli)) {
                         ?>
                             <div class="row form-group">
                                 <div class="col col-md-2"><label for="hf-email" class=" form-control-label">NIK</label></div>
-                                <input type="hidden" name="id_warga" value="<?php echo $data['id_warga'] ?>">
+                                <input type="hidden" name="nik" value="<?php echo $data['nik'] ?>">
                                 <div class="col-12 col-md-5"><input type="text" name="nik" value="<?php echo $data['nik'] ?>" placeholder="Masukkan NIK..." class="form-control"><span class="help-block"></span></div>
                             </div>
                             <div class="row form-group">
@@ -45,6 +45,14 @@
                                 <div class="col-12 col-md-5"><input type="text" name="nama" value="<?php echo $data['nama'] ?>" placeholder="Masukkan Nama..." class="form-control"><span class="help-block"></span></div>
                             </div>
                             <div class="row form-group">
+                                <div class="col col-md-2"><label for="hf-email" class=" form-control-label">Alamat</label></div>
+                                <div class="col-12 col-md-5"><input type="text" name="alamat" value="<?php echo $data['alamat'] ?>" placeholder="Masukkan Alamat..." class="form-control"><span class="help-block"></span></div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-2"><label for="hf-email" class=" form-control-label">Tempat Lahir</label></div>
+                                <div class="col-12 col-md-5"><input type="text" name="tempat" value="<?php echo $data['tempat'] ?>" placeholder="Masukkan Tempat Lahir..." class="form-control"><span class="help-block"></span></div>
+                            </div>
+                            <!-- <div class="row form-group">
                             <div class="col col-md-2"><label for="select" class=" form-control-label">Alamat</label></div>
                             <div class="col-12 col-md-5">
                             <select class="form-control" aria-label="Default select example" name="alamat">
@@ -58,10 +66,10 @@
                                 <?php } ?>
                             </select>
                             </div>
-                            </div>
+                            </div> -->
                             <div class="row form-group">
                                 <div class="col col-md-2"><label for="hf-email" class=" form-control-label">Tanggal Lahir</label></div>
-                                <div class="col-12 col-md-5"><input type="date" name="ttl" value="<?php echo $data['ttl'] ?>" placeholder="Masukkan Tanggal Lahir..." class="form-control"><span class="help-block"></span></div>
+                                <div class="col-12 col-md-5"><input type="date" name="tgl_lahir" value="<?php echo $data['tgl_lahir'] ?>" placeholder="Masukkan Tanggal Lahir..." class="form-control"><span class="help-block"></span></div>
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-2"><label for="hf-email" class=" form-control-label">Pekerjaan</label></div>
@@ -81,10 +89,6 @@
 
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row form-group">
-                                <!-- <div class="col col-md-2"><label for="hf-email" class=" form-control-label">Tanggal Survey</label></div> -->
-                                <div class="col-12 col-md-5"><input type="hidden" name="tanggalsurvey" value="<?php echo $data['tanggalsurvey'] ?>" placeholder="Masukkan Survey..." class="form-control"><span class="help-block"></span></div>
                             </div>
 
                             <?php } ?>

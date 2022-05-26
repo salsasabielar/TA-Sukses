@@ -34,17 +34,17 @@
 
                                     <div class="row form-group">
                                         <div class="col-12 col-md-5">
-                                            <select name="id_warga" id="select" class="form-control">
+                                            <select name="nik" id="select" class="form-control">
 
                                                 <option selected>Cari Nama...</option>
                                                 <?php
                                                 include "config.php";
-                                                $id_warga = $_GET['id_warga'];
+                                                $nik = $_GET['nik'];
                                                 //query menampilkan nip pegawai ke dalam combobox
                                                 $query    = mysqli_query($koneksi, "SELECT * FROM warga ORDER BY nama");
                                                 while ($data = mysqli_fetch_array($query)) {
                                                 ?>
-                                                    <option value="<?= $data['id_warga']; ?>"><?php echo $data['nama']; ?></option>
+                                                    <option value="<?= $data['nik']; ?>"><?php echo $data['nama']; ?></option>
                                                 <?php
                                                 }
                                                 ?>
@@ -68,7 +68,7 @@
                             <div class="card-body">
                                 <?php error_reporting(E_ALL ^ E_NOTICE); ?>
                                 <?php
-                                $tamPeg = mysqli_query($koneksi, "SELECT * FROM warga WHERE id_warga='$_GET[id_warga]'");
+                                $tamPeg = mysqli_query($koneksi, "SELECT * FROM warga WHERE nik='$_GET[nik]'");
                                 while ($tpeg = mysqli_fetch_array($tamPeg)) {
                                     // $tpeg = mysqli_fetch_array($tamPeg);
                                     // if(isset($_GET['id_warga']) && $_GET['id_warga'] !=''){
@@ -93,8 +93,8 @@
                                                     <td><?php echo $tpeg['alamat'] ?></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Tanggal Lahir</td>
-                                                    <td><?php echo $tpeg['ttl'] ?></td>
+                                                    <td>Tempat,Tanggal Lahir</td>
+                                                    <td><?php echo $tpeg['tempat'] ?>, <?php echo $tpeg['tgl_lahir'] ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Pekerjaan</td>
@@ -107,9 +107,9 @@
                                                 <tr>
                                                     <td></td>
                                                     <td>
-                                                        <a class='btn btn-danger btn-sm' href='a-surat_miskin.php?id_warga=<?=$tpeg['id_warga']?>'>Surat Kehilangan Mata Pencaharian</a>
+                                                        <a class='btn btn-danger btn-sm' href='a-surat_miskin.php?nik=<?=$tpeg['nik']?>'>Surat Kehilangan Mata Pencaharian</a>
                                                         <!-- <input type="submit" value="Save"> -->
-                                                        <a class='btn btn-primary btn-sm' href='a-surat_penyakit.php?id_warga=<?=$tpeg['id_warga']?>'>Surat Penyakit Kronis</a>
+                                                        <a class='btn btn-primary btn-sm' href='a-surat_penyakit.php?nik=<?=$tpeg['nik']?>'>Surat Penyakit Kronis</a>
                                                         
 
 
