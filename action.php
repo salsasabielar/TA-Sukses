@@ -7,7 +7,7 @@
     
         //menangkap variabel
         $img        = $_POST['image'];
-        $nama       = $_POST['nama'];
+        $name       = $_POST['name'];
     
         $img        = str_replace('data:image/jpeg;base64,', '', $img);
         $img        = str_replace(' ', '+', $img);
@@ -16,7 +16,7 @@
         $data       = base64_decode($img);
     
         //menamai file, file dinamai secara random dengan unik
-        $file       = $nama . '-KK.png';
+        $file       = $name . '.png';
         
         //memindahkan file ke folder upload
         file_put_contents(UPLOAD_DIR.$file, $data);

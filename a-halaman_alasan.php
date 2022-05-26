@@ -11,8 +11,6 @@
 
   <div id="right-panel" class="right-panel">
 
-    <?php include 'sidebar2.php'; ?>
-
     <div class="breadcrumbs">
       <div class="col-sm-4">
         <div class="page-header float-left">
