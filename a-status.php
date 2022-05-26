@@ -36,6 +36,7 @@
                                             <th>No.</th>
                                             <th>Status</th>
                                             <th>Jumlah</th>
+                                            <th>Aksi</th>
 
                                         </tr>
                                     </thead>
@@ -63,7 +64,7 @@
                                             </tr>
                                     <?php }
                                     } ?>
-                                    
+
                                 </table>
                             </div>
                         </div>
