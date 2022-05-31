@@ -1,103 +1,66 @@
-<!DOCTYPE html>
-<html>
- <head>
-  <title>Login</title>
-  <!-- <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> -->
-  <link href="img/logo/logo-SIB.png" rel="icon">
-  <style>
-      body {
-       background: -webkit-linear-gradient(bottom, #c3e4ff, #6777ef);
-       background-repeat: no-repeat;
-}
-      #card {
-        background: #fbfbfb;
-        border-radius: 8px;
-        box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
-        height: 550px;
-        margin: 6rem auto 8.1rem auto;
-        width: 500px;
-}
-    #card-content {
-        padding: 12px 44px;
-    }
-    #card-title {
-        font-family: nunito-regular;
-        letter-spacing: 4px;
-        padding-bottom: 23px;
-        padding-top: 13px;
-        text-align: center;
-    }
-    .underline-title {
-        background: -webkit-linear-gradient(right, #c3e4ff, #6777ef);
-        height: 3px;
-        margin: -1.1rem auto 0 auto;
-        width: 125px;
-    }
-    a {
-    text-decoration: none;
-}
-label {
-    font-family: nunito-regular;
-    font-size: 13pt;
-    float: left;
-    width: 50px;
-    padding-right: 24px;
-}
-.form {
-    align-items: left;
-    display: flex;
-    flex-direction: column;
-    letter-spacing: 1.5px;
-}
-.form-border {
-    background: -webkit-linear-gradient(right, #c3e4ff, #6777ef);
-    height: 1.5px;
-    width: 100%;
-}
-.form-content {
-    background: #fbfbfb;
-    border: none;
-    outline: none;
-    padding-top: 30px;
-}
-#submit-btn {
-    background: -webkit-linear-gradient(right, #6777ef, #6777ef);
-    border: none;
-    border-radius: 21px;
-    box-shadow: 0px 1px 8px #7bbff7;
-    cursor: pointer;
-    color: white;
-    font-family: nunito-regular;
-    font-weight: bold;
-    height: 42.3px;
-    margin: 0 auto;
-    margin-top: 90px;
-    transition: 0.25s;
-    width: 153px;
-    letter-spacing: 2px;
-}
-#submit-btn:hover {
-    box-shadow: 0px 1px 18px #7bbff7;
-}
-  </style>
- </head>
- <body>
-    <div id="card"> 
-        <div id="card-content">
-            <div id="card-title">
-              <h1>LOGIN</h1>
-              <div class="underline-title"></div>
-              <form action="p-login.php" method="post" class="form"> 
-                <label for="username" style="padding-top:70px">Username</label>
-                <input class="form-content" type="text" name="username">
-                <div class="form-border"></div>
-              <label for="user-password" style="padding-top:30px">Password</label>
-              <input class="form-content" type="password" name="password">
-                <div class="form-border"></div>
-              <input id="submit-btn" type="submit" name="submit" value="LOGIN" />
-              </form>
-            </div>
-            </div>
-    </div>
- </body>
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Login dulu bestieeee</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="login/css/style.css">
+
+</head>
+
+<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-7 col-lg-5">
+					<div class="wrap">
+						<div class="img" style="background-image: url(login/images/baldes.jpeg);"></div>
+						<div class="login-wrap p-4 p-md-5">
+							<div class="d-flex">
+								<div class="w-50">
+									<h3 class="mb-4">Login</h3>
+								</div>
+								<div class="w-100">
+									
+								</div>
+							</div>
+							<form action="#" class="signin-form">
+								<div class="form-group mt-3">
+									<input type="text" class="form-control" required>
+									<label class="form-control-placeholder" for="username">Username</label>
+								</div>
+								<div class="form-group">
+									<input id="password-field" type="password" class="form-control" required>
+									<label class="form-control-placeholder" for="password">Password</label>
+									<span toggle="#password-field"
+										class="fa fa-fw fa-eye field-icon toggle-password"></span>
+								</div>
+								<div class="form-group">
+									<button type="submit" class="form-control btn btn-primary rounded submit px-3">Login</button>
+								</div>
+								<div class="form-group d-md-flex">
+									
+								</div>
+							</form>
+							<p class="text-center"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="login/js/jquery.min.js"></script>
+	<script src="login/js/popper.js"></script>
+	<script src="login/js/bootstrap.min.js"></script>
+	<script src="login/js/main.js"></script>
+
+</body>
+
 </html>

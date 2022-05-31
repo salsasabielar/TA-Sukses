@@ -44,10 +44,8 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                             </span>
                             <br>
                         </div>
-
-
-
                     </div>
+                    
                 </div>
 
             </div><!-- .animated -->
