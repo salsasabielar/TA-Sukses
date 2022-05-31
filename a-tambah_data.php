@@ -1,3 +1,11 @@
+<?php
+session_start(); // Start session nya
+// Kita cek apakah user sudah login atau belum
+// Cek nya dengan cara cek apakah terdapat session username atau tidak
+if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti dia belum login
+  header("location: index.php"); // Kita Redirect ke halaman index.php karena belum login
+}
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -20,10 +28,11 @@
                     <div class="header-left">
                         <button class="search-trigger"><i class="fa fa-search"></i></button>
                         <div class="form-inline">
-                            <form class="search-form">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
-                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
-                            </form>
+                            <!-- <form action="a-tambah_data.php" class="search-form" method="get">
+                                <input class="form-control mr-sm-2" type="text" name="cari" placeholder="Search ..." aria-label="Search">
+                                <button class="search-close" type="submit" value="cari"><i class="fa fa-close"></i></button>
+                            </form> -->
+                            
                         </div>
                     </div>
                 </div>
@@ -62,6 +71,20 @@
                                     <button type="button" class="btn btn-primary">Tambah Data</button>
                                 </a>
                             </div>
+                            <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                            <form action="a-tambah_data.php" method="get">
+                                    <input type="text" name="cari">
+                                    <input type="submit" value="Cari">
+                                </form>
+                                <?php 
+                        if(isset($_GET['cari'])){
+                            $cari = $_GET['cari'];
+                            echo "<b>Hasil pencarian : ".$cari."</b>";
+                        }
+                    ?>
+                    </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                     <thead>

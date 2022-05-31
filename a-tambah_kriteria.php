@@ -63,6 +63,18 @@
                                     <button type="button" class="btn btn-primary">Tambah Data</button>
                                 </a>
                             </div>
+                            <div class="card-header">
+                            <form action="a-tambah_kriteria.php" method="get">
+                                <input type="text" name="cari">
+                                <input type="submit" value="Cari">
+                            </form>
+                            <?php 
+                                    if(isset($_GET['cari'])){
+                                        $cari = $_GET['cari'];
+                                        echo "<b>Hasil pencarian : ".$cari."</b>";
+                                    }
+                                ?>
+                            </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                     <thead>
@@ -78,7 +90,7 @@
 
                                     if (isset($_GET['cari'])) {
                                         $cari = $_GET['cari'];
-                                        $query = mysqli_query($koneksi, "SELECT * FROM kriteria WHERE nama LIKE '%" . $cari . "%' OR nik LIKE '%" . $cari . "%'");
+                                        $query = mysqli_query($koneksi, "SELECT * FROM kriteria WHERE nama LIKE '%" . $cari . "%'");
                                     } else {
                                         $query = mysqli_query($koneksi, "SELECT * FROM kriteria");
                                     }

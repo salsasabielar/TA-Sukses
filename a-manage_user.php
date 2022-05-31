@@ -64,6 +64,18 @@
                                     <button type="button" class="btn btn-primary">Tambah Data</button>
                                 </a>
                             </div>
+                            <div class="card-header">
+                            <form action="a-manage_user.php" method="get">
+                                <input type="text" name="cari">
+                                <input type="submit" value="Cari">
+                            </form>
+                            <?php 
+                                    if(isset($_GET['cari'])){
+                                        $cari = $_GET['cari'];
+                                        echo "<b>Hasil pencarian : ".$cari."</b>";
+                                    }
+                                ?>
+                            </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                     <thead>
@@ -78,7 +90,13 @@
                                     <?php
                                     include "config.php";
                                     $query = mysqli_query($koneksi, "SELECT * FROM user") or die(mysqli_error());
-
+                                    if(isset($_GET['cari'])){
+                                        $cari = $_GET['cari'];
+                                        $query = mysqli_query($koneksi,"SELECT * FROM user WHERE username LIKE '%".$cari."%'"); 
+                                      }
+                                        else{
+                                            $query = mysqli_query($koneksi,"SELECT * FROM user"); 
+                                        }
                                     $nomor = 1;
                                     if ($query) {
                                         while ($data = mysqli_fetch_array($query)) {
