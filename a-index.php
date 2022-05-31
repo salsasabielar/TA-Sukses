@@ -36,10 +36,8 @@
                             </span>
                             <br>
                         </div>
-
-
-
                     </div>
+                    
                 </div>
 
             </div><!-- .animated -->

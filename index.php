@@ -1,33 +1,65 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en">
 
-<?php include 'header.php'; ?>
+<head>
+	<title>Login dulu bestieeee</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="login/css/style.css">
+
+</head>
 
 <body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-7 col-lg-5">
+					<div class="wrap">
+						<div class="img" style="background-image: url(login/images/baldes.jpeg);"></div>
+						<div class="login-wrap p-4 p-md-5">
+							<div class="d-flex">
+								<div class="w-50">
+									<h3 class="mb-4">Login</h3>
+								</div>
+								<div class="w-100">
+									
+								</div>
+							</div>
+							<form action="#" class="signin-form">
+								<div class="form-group mt-3">
+									<input type="text" class="form-control" required>
+									<label class="form-control-placeholder" for="username">Username</label>
+								</div>
+								<div class="form-group">
+									<input id="password-field" type="password" class="form-control" required>
+									<label class="form-control-placeholder" for="password">Password</label>
+									<span toggle="#password-field"
+										class="fa fa-fw fa-eye field-icon toggle-password"></span>
+								</div>
+								<div class="form-group">
+									<button type="submit" class="form-control btn btn-primary rounded submit px-3">Login</button>
+								</div>
+								<div class="form-group d-md-flex">
+									
+								</div>
+							</form>
+							<p class="text-center"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-    <?php include 'sidebar.php'; ?>
-
-    <!-- Right Panel -->
-
-    <div id="right-panel" class="right-panel">
-
-        <?php include 'sidebar2.php'; ?>
-
-        <div class="breadcrumbs">
-            <div class="col-sm-4">
-                <div class="page-header float-left">
-                    <div class="page-title">
-                        <h1>Dashboard</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div><!-- /#right-panel -->
-
-    <!-- Right Panel -->
-
-    <?php include 'footer.php'; ?>
+	<script src="login/js/jquery.min.js"></script>
+	<script src="login/js/popper.js"></script>
+	<script src="login/js/bootstrap.min.js"></script>
+	<script src="login/js/main.js"></script>
 
 </body>
 
