@@ -14,7 +14,7 @@
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a href="../index.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                    <a href="../a-index.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                 </li>
                 <h3 class="menu-title">Menu</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
@@ -22,7 +22,7 @@
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-book"></i><a href="../a-tambah_data.php">Tambah Data</a></li>
                         <li><i class="fa fa-bars"></i><a href="../s-data_survey.php">Data Survey</a></li>
-                        <li><i class="fa fa-id-card-o"></i><a href="../a-generate_code.php">Generate QR-Code</a></li>
+                        <!-- <li><i class="fa fa-id-card-o"></i><a href="../a-generate_code.php">Generate QR-Code</a></li> -->
                         <li><i class="fa fa-exclamation-triangle"></i><a href="../a-data_terhapus.php">Data Terhapus</a></li>
                         <li><i class="fa fa-file-word-o"></i><a href="../a-surat.php">Surat</a></li>
                     </ul>
@@ -32,14 +32,21 @@
 
                 </li>
                 <li>
-                    <a href="../a-scanner.php"> <i class="menu-icon fa fa-laptop"></i>Scanner</a>
+                    <a href="../a-status.php" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Status</a>
+
+                </li>
+                <li>
+                    <a href="index.php"> <i class="menu-icon fa fa-laptop"></i>Scanner</a>
                 </li>
                 <li>
                     <a href="../a-laporan.php" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Laporan</a>
                 </li>
                 <li>
                     <a href="../a-manage_user.php" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Manajemen User</a>
-
+                </li>
+                <h3 class="menu-title"></h3>
+                <li>
+                    <a href="p-logout.php" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sign-out"></i>Logout</a>
                 </li>
             </ul>
         </div><!-- /.navbar-collapse -->
