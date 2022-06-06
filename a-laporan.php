@@ -78,6 +78,7 @@
                                             <th>Jenis Kelamin</th>
                                             <th>Status</th>
                                             <th>Tanggal Survey</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -98,6 +99,7 @@
                                             <td><?php echo $data['jenisKelamin']; ?></td>
                                             <td><?php echo $data['status']; ?></td>
                                             <td><?php echo $data['tanggalsurvey']; ?></td>
+                                            <td><a class="btn btn-sm btn-warning" href="a-detail.php?id_warga=<?php echo $data['id_warga']; ?>">Detail</a></td>
                                         </tr>
                                 <?php }
                                             } ?>

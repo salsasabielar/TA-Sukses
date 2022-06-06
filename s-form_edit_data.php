@@ -30,8 +30,8 @@
                     <div class="card-body card-block">
                         <?php
                         include "config.php";
-                        $id_warga = $_GET['id_warga'];
-                        $query_mysqli = mysqli_query($koneksi, "SELECT * FROM warga WHERE id_warga='$id_warga'") or die(mysqli_error($koneksi));
+                        $id_warga = $_GET['nik'];
+                        $query_mysqli = mysqli_query($koneksi, "SELECT * FROM warga WHERE nik='$nik'") or die(mysqli_error($koneksi));
                         $nomor = 1;
                         while ($data = mysqli_fetch_array($query_mysqli)) {
                         ?>

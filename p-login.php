@@ -23,7 +23,7 @@ if($cek > 0) {
 	if($role == "admin"){
 		header("location:a-index.php");
 	}else{
-		header("location:a-tambah_data.php");
+		header("location:s-index.php");
 	}
 	$_SESSION['id_login'] = $data['id'];
 	

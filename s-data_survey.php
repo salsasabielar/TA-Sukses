@@ -65,10 +65,7 @@
                                             <th>No.</th>
                                             <th>NIK</th>
                                             <th>Nama</th>
-                                            <!-- <th>Alamat</th>
-                                            <th>Pekerjaan</th> -->
-                                            <th>Tanggal Survey</th>
-                                            <th>Status</th>
+                                            <th>Alamat</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -90,16 +87,11 @@
                                                 <td><?php echo $nomor++; ?></td>
                                                 <td><?php echo $data['nik']; ?></td>
                                                 <td><?php echo $data['nama']; ?></td>
-                                                <!-- <td><?php echo $data['alamat']; ?></td> -->
-                                                <!-- <td><?php echo $data['ttl']; ?></td> -->
-                                                <!-- <td><?php echo $data['pekerjaan']; ?></td> -->
-                                                <!-- <td><?php echo $data['jenisKelamin']; ?></td> -->
-                                                <td><?php echo $data['tanggalsurvey']; ?></td>
-                                                <td><?php echo $data['status']; ?></td>
+                                                <td><?php echo $data['alamat']; ?></td>
                                                 <td>
-                                                    <a class="btn btn-sm btn-primary" href="s-form_edit_data.php?id_warga=<?php echo $data['id_warga']; ?>">Survey</a>
+                                                    <a class="btn btn-sm btn-primary" href="s-form_edit_data.php?nik=<?php echo $data['nik']; ?>">Survey</a>
                                                     <a class="btn btn-danger btn-sm" href="p-delete_data.php?id_warga=<?php echo $data['id_warga']; ?>" onclick="return confirm()">Hapus</a>
-                                                    <a class="btn btn-sm btn-warning" href="a-detail.php?id_warga=<?php echo $data['id_warga']; ?>">Detail</a>
+                                                    <!-- <a class="btn btn-sm btn-warning" href="a-detail.php?id_warga=<?php echo $data['id_warga']; ?>">Detail</a> -->
                                                     <a class='btn btn-success btn-sm' href="p-generate_code.php?nik=<?php echo $data['nik']; ?> && nomor=<?php echo $data['nik']; ?>">QR-Code</a>
 
                                                 </td>

@@ -30,19 +30,19 @@
 									
 								</div>
 							</div>
-							<form action="#" class="signin-form">
+							<form action="p-login.php" method="post" class="signin-form">
 								<div class="form-group mt-3">
-									<input type="text" class="form-control" required>
+									<input type="text" name="username" class="form-control" required>
 									<label class="form-control-placeholder" for="username">Username</label>
 								</div>
 								<div class="form-group">
-									<input id="password-field" type="password" class="form-control" required>
+									<input id="password-field" type="password" name="password" class="form-control" required>
 									<label class="form-control-placeholder" for="password">Password</label>
 									<span toggle="#password-field"
 										class="fa fa-fw fa-eye field-icon toggle-password"></span>
 								</div>
 								<div class="form-group">
-									<button type="submit" class="form-control btn btn-primary rounded submit px-3">Login</button>
+									<button type="submit" name="submit" value="LOGIN" class="form-control btn btn-primary rounded submit px-3">Login</button>
 								</div>
 								<div class="form-group d-md-flex">
 									
