@@ -1,3 +1,11 @@
+<?php
+session_start(); // Start session nya
+// Kita cek apakah user sudah login atau belum
+// Cek nya dengan cara cek apakah terdapat session username atau tidak
+if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti dia belum login
+  header("location: index.php"); // Kita Redirect ke halaman index.php karena belum login
+}
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -69,7 +77,6 @@
                                                 <th>Alamat</th>
                                                 <th>Pekerjaan</th>
                                                 <th>Jenis Kelamin</th>
-                                                <th>Tanggal Survey</th>
                                                 <th>Action</th>
                                             </tr>
                                             <tr>
@@ -78,9 +85,8 @@
                                                 <td><?php echo $d['alamat']; ?></td>
                                                 <td><?php echo $d['pekerjaan']; ?></td>
                                                 <td><?php echo $d['jenisKelamin']; ?></td>
-                                                <td><?php echo $d['tanggalsurvey']; ?></td>
                                                 <td>
-                                                    <a class="btn btn-sm btn-primary" href="../s-form_edit_data.php?nik=<?php echo $d['nik']; ?>">Survey</a>
+                                                    <a class="btn btn-sm btn-primary" href="../as-kriteria.php?nik=<?php echo $d['nik']; ?>">Survey</a>
                                                 </td>
                                             </tr>
                                         </table>

@@ -1,3 +1,11 @@
+<?php
+session_start(); // Start session nya
+// Kita cek apakah user sudah login atau belum
+// Cek nya dengan cara cek apakah terdapat session username atau tidak
+if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti dia belum login
+  header("location: index.php"); // Kita Redirect ke halaman index.php karena belum login
+}
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -23,9 +31,14 @@
             </div>
         </div>
 
-        <form action="p-filter.php" method="post" class="form-horizontal">
+        <form action="p-filter.php?nik=<?= $_GET['nik'] ?>" method="post" class="form-horizontal">
 
             <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-12">
+                        <input type="date" name="tgl" id="tgl" class="form-control">
+                    </div>
+                </div>
                 <div class="card">
 
                     <div class="card-body">
@@ -38,7 +51,7 @@
                                     <?php
                                     include "config.php";
 
-                                    $tampil = "SELECT * FROM kriteria ORDER BY id_kriteria asc";
+                                    $tampil = "SELECT * FROM kriteria ORDER BY id_kriteria";
                                     $hasil = mysqli_query($koneksi, $tampil);
                                     $no1 = 0;
                                     $no2 = 0;
@@ -48,7 +61,7 @@
 
                                         echo "<tr >
                                     
-                                    <td><input type=checkbox name=ya[] value=$data[id_kriteria] id=id1$no1></td>
+                                    <td><input type=checkbox name='ya[]' value=$data[id_kriteria] id=id1$no1></td>
                                     <td>$data[nama]</td>";
 
                                         $nomor++;
@@ -66,11 +79,14 @@
 
                     </div>
                     <div class="card-footer">
-                        <a href="a-tambah_data.php">
+                        <button type="submit" class="btn btn-primary btn-sm">
+                            <i class="fa fa-dot-circle-o"></i> Submit
+                        </button>
+                        <!-- <a href="a-tambah_data.php">
                             <button type="submit" class="btn btn-primary btn-sm">
                                 <i class="fa fa-dot-circle-o"></i> Submit
                             </button>
-                        </a>
+                        </a> -->
 
                     </div>
                 </div>

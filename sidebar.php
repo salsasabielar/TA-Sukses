@@ -21,7 +21,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Data Warga</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-book"></i><a href="a-tambah_data.php">Tambah Data</a></li>
-                        <li><i class="fa fa-bars"></i><a href="s-data_survey.php">Data Survey</a></li>
+                        <li><i class="fa fa-bars"></i><a href="a-data_survey.php">Data Survey</a></li>
                         <!-- <li><i class="fa fa-id-card-o"></i><a href="a-generate_code.php">Generate QR-Code</a></li> -->
                         <!-- <li><i class="fa fa-exclamation-triangle"></i><a href="a-data_terhapus.php">Data Terhapus</a></li> -->
                         <li><i class="fa fa-file-word-o"></i><a href="a-surat.php">Surat</a></li>
