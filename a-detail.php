@@ -1,3 +1,11 @@
+<?php
+session_start(); // Start session nya
+// Kita cek apakah user sudah login atau belum
+// Cek nya dengan cara cek apakah terdapat session username atau tidak
+if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti dia belum login
+  header("location: index.php"); // Kita Redirect ke halaman index.php karena belum login
+}
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -38,7 +46,7 @@
                             die("Error. No ID Selected!");
                         }
                         include "config.php";
-                        $query    = mysqli_query($koneksi, "SELECT * FROM warga WHERE id_warga='$id_warga'");
+                        $query    = mysqli_query($koneksi, "SELECT * FROM warga WHERE nik='$id_warga'");
                         $data    = mysqli_fetch_array($query);
                         ?>
 
@@ -81,7 +89,7 @@
                             </tr>
                             <tr>
                                 <th scope="row">Tanggal Lahir</th>
-                                <td><?php echo $data['ttl'] ?></td>
+                                <td><?php echo $data['tgl_lahir'] ?></td>
                                 <td></td>
                                 <td>
                                 <td></td>
@@ -115,7 +123,7 @@
                                 <td></td>
                                 <td></td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <th scope="row">Tanggal Survey</th>
                                 <td><?php echo $data['tanggalsurvey'] ?></td>
                                 <td></td>
@@ -138,7 +146,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                            </tr>
+                            </tr> -->
 
                         </tbody>
                     </table>
@@ -156,7 +164,7 @@
                             <?php
                             include "config.php";
                             $id_warga = $_GET['id_warga'];
-                            $query_mysqli = mysqli_query($koneksi, "SELECT * FROM warga WHERE id_warga='$id_warga'") or die(mysqli_error($koneksi));
+                            $query_mysqli = mysqli_query($koneksi, "SELECT * FROM warga WHERE nik='$id_warga'") or die(mysqli_error($koneksi));
                             $nomor = 1;
                             while ($data = mysqli_fetch_array($query_mysqli)) {
                             ?>
@@ -164,24 +172,29 @@
                                 <table class="table align-items-center table-flush">
                                     <thead class="thead-light">
                                         <?php
+                                        $id_warga = $_GET['id_warga'];
+                                        $id_survey = $_GET['id_survey'];
                                         $tampil = "SELECT * FROM kriteria";
+                                        $surveyData = mysqli_query($koneksi, "SELECT * FROM jawaban_survey WHERE id_survey='$id_survey'");
+                                        $surveyDatas = mysqli_fetch_array($surveyData);
                                         $hasil = mysqli_query($koneksi, $tampil);
                                         $no1 = 0;
                                         $no2 = 0;
                                         $nomor = 1;
+
                                         while ($data = mysqli_fetch_array($hasil)) {
                                         ?>
-                                            
-                                            <td>
-                                                <input type=checkbox name=ya[] value=<?php echo $data['id_kriteria'];
-                                                                                        $query = "SELECT * FROM kriteria_warga WHERE id_warga='$id_warga'";
-                                                                                        $result = mysqli_query($koneksi, $query);
-                                                                                        while ($row = mysqli_fetch_array($result)) {
-                                                                                            if ($data['id_kriteria'] == $row['id_kriteria']) {
-                                                                                        ?> checked=checked disabled= disabled<?php
-                                                                                                        }
-                                                                                                    }     ?>>
 
+                                            <td>
+                                                <input type="checkbox" name="ya[]" id="s" <?php foreach($surveyData as $sr){
+                                                                                                if($sr['id_kriteria'] == $data['id_kriteria']){
+                                                                                                    echo "checked";
+                                                                                                }
+                                                                                            } ?> <?php foreach($surveyData as $sr){
+                                                                                                if($sr['id_kriteria'] == $data['id_kriteria']){
+                                                                                                    echo "disabled";
+                                                                                                }
+                                                                                            } ?>>
                                             </td>
                                             <td><?php echo $data['nama']; ?></td>
                                             </tr> <?php
@@ -197,7 +210,7 @@
                                     <tbody>
                                     </tbody>
                                 </table>
-                                
+
                                 <?php  ?>
                         </tbody>
                     </table>

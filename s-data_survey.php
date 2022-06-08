@@ -1,46 +1,25 @@
+<?php
+session_start(); // Start session nya
+// Kita cek apakah user sudah login atau belum
+// Cek nya dengan cara cek apakah terdapat session username atau tidak
+if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti dia belum login
+  header("location: index.php"); // Kita Redirect ke halaman index.php karena belum login
+}
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 
-<?php include 'header.php'; ?>
+<?php include 's-header.php'; ?>
 
 <body>
 
-    <?php include 'sidebar.php'; ?>
+    <?php include 's-sidebar.php'; ?>
 
     <!-- Right Panel -->
 
     <div id="right-panel" class="right-panel">
-        <!-- Header-->
-        <header id="header" class="header">
 
-            <div class="header-menu">
-
-                <div class="col-sm-7">
-                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
-                    <div class="header-left">
-                        <button class="search-trigger"><i class="fa fa-search"></i></button>
-                        <div class="form-inline">
-                            <form class="search-form">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
-                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-5">
-                    <div class="user-area dropdown float-right">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-
-        </header><!-- /header -->
-        <!-- Header-->
-
+        <?php include 's-sidebar2.php'; ?>
         <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
@@ -89,10 +68,10 @@
                                                 <td><?php echo $data['nama']; ?></td>
                                                 <td><?php echo $data['alamat']; ?></td>
                                                 <td>
-                                                    <a class="btn btn-sm btn-primary" href="s-form_edit_data.php?nik=<?php echo $data['nik']; ?>">Survey</a>
-                                                    <a class="btn btn-danger btn-sm" href="p-delete_data.php?nik=<?php echo $data['nik']; ?>" onclick="return confirm()">Hapus</a>
+                                                    <a class="btn btn-sm btn-primary" href="s-kriteria.php?nik=<?php echo $data['nik']; ?>">Survey</a>
+                                                    <a class="btn btn-danger btn-sm" href="p-delete_data.php?id_warga=<?php echo $data['id_warga']; ?>" onclick="return confirm()">Hapus</a>
                                                     <!-- <a class="btn btn-sm btn-warning" href="a-detail.php?id_warga=<?php echo $data['id_warga']; ?>">Detail</a> -->
-                                                    <a class='btn btn-success btn-sm' href="p-generate_code.php?nik=<?php echo $data['nik']; ?> && nomor=<?php echo $data['nik']; ?>">QR-Code</a>
+                                                    <a class='btn btn-success btn-sm' href="p-generate_code.php?nik=<?php echo $data['nik']; ?>&& nomor=<?php echo $data['nik']; ?>">QR-Code</a>
 
                                                 </td>
                                             </tr>

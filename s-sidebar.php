@@ -19,7 +19,7 @@
                 <h3 class="menu-title">Menu</h3><!-- /.menu-title -->
                 
                 <li>
-                    <a href="a-data_survey.php"><i class="menu-icon fa fa-bars"></i>Data Survey</a>
+                    <a href="s-data_survey.php"><i class="menu-icon fa fa-bars"></i>Data Survey</a>
                 </li>
                 <!-- <li>
                     <a href="s-generate_code.php"><i class="menu-icon fa fa-id-card-o"></i>Generate QR-Code</a>
@@ -29,6 +29,9 @@
                 </li>
                 <li>
                     <a href="scanner/s-index.php"> <i class="menu-icon fa fa-laptop"></i>Scanner</a>
+                </li>
+                <li>
+                    <a href="s-laporan.php"> <i class="menu-icon fa fa-laptop"></i>Laporan</a>
                 </li>
                 <h3 class="menu-title"></h3>
                 <li>

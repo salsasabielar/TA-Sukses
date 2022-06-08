@@ -1,11 +1,19 @@
+<?php
+session_start(); // Start session nya
+// Kita cek apakah user sudah login atau belum
+// Cek nya dengan cara cek apakah terdapat session username atau tidak
+if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti dia belum login
+  header("location: index.php"); // Kita Redirect ke halaman index.php karena belum login
+}
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 
-<?php include 's-header.php'; ?>
+<?php include 'header.php'; ?>
 
 <body>
 
-    <?php include 's-sidebar.php'; ?>
+    <?php include 'sidebar.php'; ?>
 
     <!-- Right Panel -->
 
@@ -31,7 +39,7 @@
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
+                        <?php echo $_SESSION['username'] ?><img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
                         </a>
                     </div>
 
@@ -65,16 +73,13 @@
                                             <th>No.</th>
                                             <th>NIK</th>
                                             <th>Nama</th>
-                                            <!-- <th>Alamat</th>
-                                            <th>Pekerjaan</th> -->
-                                            <th>Tanggal Survey</th>
-                                            <th>Status</th>
+                                            <th>Alamat</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <?php
                                     include "config.php";
-                                    $query_mysqli = mysqli_query($koneksi, "SELECT * FROM warga") or die(mysqli_error());
+                                    $query_mysqli = mysqli_query($koneksi, "SELECT * FROM warga") or die(mysqli_error($koneksi));
 
                                     if (isset($_GET['cari'])) {
                                         $cari = $_GET['cari'];
@@ -90,17 +95,12 @@
                                                 <td><?php echo $nomor++; ?></td>
                                                 <td><?php echo $data['nik']; ?></td>
                                                 <td><?php echo $data['nama']; ?></td>
-                                                <!-- <td><?php echo $data['alamat']; ?></td> -->
-                                                <!-- <td><?php echo $data['ttl']; ?></td> -->
-                                                <!-- <td><?php echo $data['pekerjaan']; ?></td> -->
-                                                <!-- <td><?php echo $data['jenisKelamin']; ?></td> -->
-                                                <td><?php echo $data['tanggalsurvey']; ?></td>
-                                                <td><?php echo $data['status']; ?></td>
+                                                <td><?php echo $data['alamat']; ?></td>
                                                 <td>
-                                                    <a class="btn btn-sm btn-primary" href="s-form_edit_data.php?id_warga=<?php echo $data['id_warga']; ?>">Survey</a>
-                                                    <a class="btn btn-danger btn-sm" href="p-delete_data.php?id_warga=<?php echo $data['id_warga']; ?>" onclick="return confirm()">Hapus</a>
-                                                    <a class="btn btn-sm btn-warning" href="a-detail.php?id_warga=<?php echo $data['id_warga']; ?>">Detail</a>
-                                                    <a class='btn btn-success btn-sm' href="p-generate_code.php?nik=<?php echo $data['nik']; ?> && nomor=<?php echo $data['nik']; ?>">QR-Code</a>
+                                                    <a class="btn btn-sm btn-primary" href="a-kriteria.php?nik=<?php echo $data['nik']; ?>">Survey</a>
+                                                    <!-- <a class="btn btn-sm btn-primary" href="s-form_edit_data.php?nik=<?php echo $data['nik']; ?>">Survey</a> -->
+                                                    <a class="btn btn-danger btn-sm" href="p-delete_data.php?id_warga=<?= $data['nik']; ?>" onclick="return confirm()">Hapus</a>
+                                                    <a class='btn btn-success btn-sm' href="p-generate_code.php?nik=<?php echo $data['nik']; ?>&& nomor=<?php echo $data['nik']; ?>">QR-Code</a>
 
                                                 </td>
                                             </tr>
@@ -124,7 +124,7 @@
 
     <!-- Right Panel -->
 
-    <?php include 's-footer.php'; ?>
+    <?php include 'footer.php'; ?>
 
 </body>
 

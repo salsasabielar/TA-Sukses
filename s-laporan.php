@@ -11,7 +11,7 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
 <?php include 'header.php'; ?>
 
 <body>
-    <?php include 'sidebar.php'; ?>
+    <?php include 's-sidebar.php'; ?>
     <!-- Right Panel -->
     <div id="right-panel" class="right-panel">
 
@@ -36,7 +36,7 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <?php echo $_SESSION['username'] ?><img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
+                        <?php echo $_SESSION['username'] ?> <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
                         </a>
                     </div>
 
@@ -61,7 +61,7 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <a href="cetak laporan/p-cetak.php">
+                                <!-- <a href="cetak laporan/p-cetak.php">
                                     <button type="button" class="btn btn-primary">Cetak All</button>
                                 </a>
                                 <a href="cetak laporan/p-cetak_rw1.php">
@@ -81,7 +81,7 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                                         <?php endfor; ?>
                                     </select>
                                     <button type="submit" class="btn btn-primary">Cetak</button>
-                                </form>
+                                </form> -->
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
