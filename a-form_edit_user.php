@@ -68,23 +68,7 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
 
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="row form-group">
-                                <div class="col col-md-2"><label class=" form-control-label">Jenis Kelamin</label></div>
-                                <div class="col col-md-9">
-                                    <div class="form-check-inline form-check">
-                                        <label for="inline-radio1" class="form-check-label ">
-                                            <input type="radio" id="inline-radio1" name="jenisKelamin" value="Laki-Laki" <?php echo ($data['jenisKelamin'] == 'Laki-Laki') ? 'checked' : ' ' ?> class="form-check-input">Laki-Laki
-                                        </label>
-                                        <p style="text-indent: 5em;">&nbsp</p>
-                                        <label for="inline-radio2" class="form-check-label ">
-                                            <input type="radio" id="inline-radio2" name="jenisKelamin" value="Perempuan" <?php echo ($data['jenisKelamin'] == 'Perempuan') ? 'checked' : ' ' ?> class="form-check-input">Perempuan
-                                        </label>
-
-                                    </div>
-                                </div>
-                            </div>
+                            </div>                          
 
                         <?php } ?>
 

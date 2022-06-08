@@ -18,37 +18,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
     <!-- Right Panel -->
 
     <div id="right-panel" class="right-panel">
-        <!-- Header-->
-        <header id="header" class="header">
-
-            <div class="header-menu">
-
-                <div class="col-sm-7">
-                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
-                    <div class="header-left">
-                        <button class="search-trigger"><i class="fa fa-search"></i></button>
-                        <div class="form-inline">
-                            <!-- <form action="a-tambah_data.php" class="search-form" method="get">
-                                <input class="form-control mr-sm-2" type="text" name="cari" placeholder="Search ..." aria-label="Search">
-                                <button class="search-close" type="submit" value="cari"><i class="fa fa-close"></i></button>
-                            </form> -->
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-5">
-                    <div class="user-area dropdown float-right">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <?php echo $_SESSION['username'] ?><img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-
-        </header><!-- /header -->
-        <!-- Header-->
+        <?php include 'sidebar2.php'; ?>
 
         <div class="breadcrumbs">
             <div class="col-sm-4">
@@ -74,7 +44,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                             <div class="card-header">
                                 <form action="a-tambah_data.php" method="get">
                                     <input type="text" name="cari">
-                                    <input type="submit" value="Cari">
+                                    <input class="btn btn-outline-primary btn-sm" type="submit" value="Cari">
                                 </form>
                                 <?php
                                 if (isset($_GET['cari'])) {
