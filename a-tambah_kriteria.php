@@ -64,15 +64,15 @@
                                 </a>
                             </div>
                             <div class="card-header">
-                            <form action="a-tambah_kriteria.php" method="get">
-                                <input type="text" name="cari">
-                                <input type="submit" value="Cari">
-                            </form>
-                            <?php 
-                                    if(isset($_GET['cari'])){
-                                        $cari = $_GET['cari'];
-                                        echo "<b>Hasil pencarian : ".$cari."</b>";
-                                    }
+                                <form action="a-tambah_kriteria.php" method="get">
+                                    <input type="text" name="cari">
+                                    <input type="submit" value="Cari">
+                                </form>
+                                <?php
+                                if (isset($_GET['cari'])) {
+                                    $cari = $_GET['cari'];
+                                    echo "<b>Hasil pencarian : " . $cari . "</b>";
+                                }
                                 ?>
                             </div>
                             <div class="card-body">

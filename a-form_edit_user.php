@@ -25,18 +25,18 @@
 
         <form action="p-edit_user.php" method="post" class="form-horizontal">
 
-        <div class="col-lg-12">
-            <div class="card">
+            <div class="col-lg-12">
+                <div class="card">
 
-                <div class="card-body card-block">
-                    <?php
-                    include "config.php";
-                    $id_user = $_GET['id_user'];
-                    $query_mysqli = mysqli_query($koneksi, "SELECT * FROM user WHERE id_user='$id_user'") or die(mysqli_error($koneksi));
-                    $nomor = 1;
-                    while ($data = mysqli_fetch_array($query_mysqli)) {
-                    ?>
-                        
+                    <div class="card-body card-block">
+                        <?php
+                        include "config.php";
+                        $id_user = $_GET['id_user'];
+                        $query_mysqli = mysqli_query($koneksi, "SELECT * FROM user WHERE id_user='$id_user'") or die(mysqli_error($koneksi));
+                        $nomor = 1;
+                        while ($data = mysqli_fetch_array($query_mysqli)) {
+                        ?>
+
                             <div class="row form-group">
                                 <div class="col col-md-2"><label class=" form-control-label">Username</label></div>
                                 <input type="hidden" name="id_user" value="<?php echo $data['id_user'] ?>">
@@ -51,7 +51,7 @@
                                 <div class="col col-md-9">
                                     <div class="form-check-inline form-check">
                                         <label for="inline-radio1" class="form-check-label ">
-                                            <input type="radio" id="inline-radio1" name="role" value="admin" <?php echo ($data['role'] == 'admin-Laki') ? 'checked' : ' ' ?> class="form-check-input">Admin
+                                            <input type="radio" id="inline-radio1" name="role" value="admin" <?php echo ($data['role'] == 'admin') ? 'checked' : ' ' ?> class="form-check-input">Admin
                                         </label>
                                         <p style="text-indent: 5em;">&nbsp</p>
                                         <label for="inline-radio2" class="form-check-label ">
@@ -61,35 +61,37 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="row form-group">
-                                <div class="col col-md-2"><label class=" form-control-label">Role</label></div>
-                                <div class="col col-md-9">
-                                <select class="form-control" aria-label="Default select example" name="role">
-                                <option selected><?php echo $data['role'] ?></option>
-                                <option value="admin">Admin</option>
-                                <option value="surveyor">Surveyor</option>
-                                <?php 
-                                    include "config.php";
-                                    $nama_alamat = mysqli_query($koneksi, "SELECT * FROM user WHERE role");
-                                ?>
-                            </select>
-                                </div>
-                            </div> -->
-                            
-                    <?php } ?>
-                    
-                </div>
-                <div class="card-footer">
-                                <button type="submit" class="btn btn-primary btn-sm">
-                                    <i class="fa fa-dot-circle-o"></i> Update
-                                </button>
-                                </a>
 
+                            <div class="row form-group">
+                                <div class="col col-md-2"><label class=" form-control-label">Jenis Kelamin</label></div>
+                                <div class="col col-md-9">
+                                    <div class="form-check-inline form-check">
+                                        <label for="inline-radio1" class="form-check-label ">
+                                            <input type="radio" id="inline-radio1" name="jenisKelamin" value="Laki-Laki" <?php echo ($data['jenisKelamin'] == 'Laki-Laki') ? 'checked' : ' ' ?> class="form-check-input">Laki-Laki
+                                        </label>
+                                        <p style="text-indent: 5em;">&nbsp</p>
+                                        <label for="inline-radio2" class="form-check-label ">
+                                            <input type="radio" id="inline-radio2" name="jenisKelamin" value="Perempuan" <?php echo ($data['jenisKelamin'] == 'Perempuan') ? 'checked' : ' ' ?> class="form-check-input">Perempuan
+                                        </label>
+
+                                    </div>
+                                </div>
                             </div>
+
+                        <?php } ?>
+
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary btn-sm">
+                            <i class="fa fa-dot-circle-o"></i> Update
+                        </button>
+                        </a>
+
+                    </div>
+                </div>
+
             </div>
 
-        </div>
-        
         </form>
 
     </div><!-- /#right-panel -->

@@ -90,7 +90,7 @@
                                                 <td><?php echo $data['alamat']; ?></td>
                                                 <td>
                                                     <a class="btn btn-sm btn-primary" href="s-form_edit_data.php?nik=<?php echo $data['nik']; ?>">Survey</a>
-                                                    <a class="btn btn-danger btn-sm" href="p-delete_data.php?id_warga=<?php echo $data['id_warga']; ?>" onclick="return confirm()">Hapus</a>
+                                                    <a class="btn btn-danger btn-sm" href="p-delete_data.php?nik=<?php echo $data['nik']; ?>" onclick="return confirm()">Hapus</a>
                                                     <!-- <a class="btn btn-sm btn-warning" href="a-detail.php?id_warga=<?php echo $data['id_warga']; ?>">Detail</a> -->
                                                     <a class='btn btn-success btn-sm' href="p-generate_code.php?nik=<?php echo $data['nik']; ?> && nomor=<?php echo $data['nik']; ?>">QR-Code</a>
 
