@@ -38,13 +38,14 @@ include "config_tgl.php";
                                 <table class="table">
 
                                     <?php
-                                    if (isset($_GET['id_warga'])) {
-                                        $id_warga    = $_GET['id_warga'];
+                                    $tglSurvey = $_GET['id_survey'];
+                                    if (isset($_GET['nik'])) {
+                                        $nik    = $_GET['nik'];
                                     } else {
                                         die("Error. No ID Selected!");
                                     }
                                     include "config.php";
-                                    $query    = mysqli_query($koneksi, "SELECT * FROM warga WHERE nik='$id_warga'");
+                                    $query    = mysqli_query($koneksi, "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik WHERE survey.id_survey='$tglSurvey'");
                                     $data    = mysqli_fetch_array($query);
                                     ?>
 
@@ -121,30 +122,30 @@ include "config_tgl.php";
                 <td></td>
                 <td></td>
             </tr>
-            <!-- <tr>
-                                <th scope="row">Tanggal Survey</th>
-                                <td><?php echo $data['tanggalsurvey'] ?></td>
-                                <td></td>
-                                <td>
-                                <td></td>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Status</th>
-                                <td><?php echo $data['status'] ?></td>
-                                <td></td>
-                                <td>
-                                <td></td>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr> -->
+            <tr>
+                <th scope="row">Tanggal Survey</th>
+                <td><?php echo $data['tglSurvey'] ?></td>
+                <td></td>
+                <td>
+                <td></td>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">Status</th>
+                <td><?php echo $data['status'] ?></td>
+                <td></td>
+                <td>
+                <td></td>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
 
         </tbody>
     </table>
@@ -159,8 +160,8 @@ include "config_tgl.php";
                     <tbody>
                         <?php
                         include "config.php";
-                        $id_warga = $_GET['id_warga'];
-                        $query_mysqli = mysqli_query($koneksi, "SELECT * FROM warga WHERE nik='$id_warga'") or die(mysqli_error($koneksi));
+                        $nik = $_GET['nik'];
+                        $query_mysqli = mysqli_query($koneksi, "SELECT * FROM warga WHERE nik='$nik'") or die(mysqli_error($koneksi));
                         $nomor = 1;
                         while ($data = mysqli_fetch_array($query_mysqli)) {
                         ?>
@@ -168,7 +169,7 @@ include "config_tgl.php";
                             <table class="table align-items-center table-flush">
                                 <thead class="thead-light">
                                     <?php
-                                    $id_warga = $_GET['id_warga'];
+                                    $nik = $_GET['nik'];
                                     $id_survey = $_GET['id_survey'];
                                     $tampil = "SELECT * FROM kriteria";
                                     $surveyData = mysqli_query($koneksi, "SELECT * FROM jawaban_survey WHERE id_survey='$id_survey'");
@@ -186,11 +187,7 @@ include "config_tgl.php";
                                                                                             if ($sr['id_kriteria'] == $data['id_kriteria']) {
                                                                                                 echo "checked";
                                                                                             }
-                                                                                        } ?> <?php foreach ($surveyData as $sr) {
-                                                                                                    if ($sr['id_kriteria'] == $data['id_kriteria']) {
-                                                                                                        echo "disabled";
-                                                                                                    }
-                                                                                                } ?>>
+                                                                                        }  ?> disabled>
                                         </td>
                                         <td><?php echo $data['nama']; ?></td>
                                         </tr> <?php
