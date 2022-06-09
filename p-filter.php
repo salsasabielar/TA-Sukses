@@ -47,7 +47,7 @@ while ($data = mysqli_fetch_array($hasil)) {
     
     mysqli_query($koneksi, "UPDATE survey SET `status` = '$status' WHERE id_survey = '$id_survey'");
     echo "<script>alert('Data Berhasil Disimpan');</script>";
-    header("location:s-data_survey.php");
+    header("location:a-data_survey.php");
 }
 
 ?>

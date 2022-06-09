@@ -2,8 +2,8 @@
 session_start(); // Start session nya
 // Kita cek apakah user sudah login atau belum
 // Cek nya dengan cara cek apakah terdapat session username atau tidak
-if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti dia belum login
-  header("location: index.php"); // Kita Redirect ke halaman index.php karena belum login
+if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti dia belum login
+    header("location: index.php"); // Kita Redirect ke halaman index.php karena belum login
 }
 ?>
 <!doctype html>
@@ -18,37 +18,7 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
     <!-- Right Panel -->
 
     <div id="right-panel" class="right-panel">
-        <!-- Header-->
-        <header id="header" class="header">
-
-            <div class="header-menu">
-
-                <div class="col-sm-7">
-                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
-                    <div class="header-left">
-                        <button class="search-trigger"><i class="fa fa-search"></i></button>
-                        <div class="form-inline">
-                            <!-- <form action="a-tambah_data.php" class="search-form" method="get">
-                                <input class="form-control mr-sm-2" type="text" name="cari" placeholder="Search ..." aria-label="Search">
-                                <button class="search-close" type="submit" value="cari"><i class="fa fa-close"></i></button>
-                            </form> -->
-                            
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-5">
-                    <div class="user-area dropdown float-right">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <?php echo $_SESSION['username'] ?><img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-
-        </header><!-- /header -->
-        <!-- Header-->
+        <?php include 'sidebar2.php'; ?>
 
         <div class="breadcrumbs">
             <div class="col-sm-4">
@@ -71,20 +41,20 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                                     <button type="button" class="btn btn-primary">Tambah Data</button>
                                 </a>
                             </div>
-                            <div class="col-md-12">
-                        <div class="card">
                             <div class="card-header">
-                            <form action="a-tambah_data.php" method="get">
+                                <form action="a-tambah_data.php" method="get">
                                     <input type="text" name="cari">
-                                    <input type="submit" value="Cari">
+                                    <input class="btn btn-outline-primary btn-sm" type="submit" value="Cari">
                                 </form>
-                                <?php 
-                        if(isset($_GET['cari'])){
-                            $cari = $_GET['cari'];
-                            echo "<b>Hasil pencarian : ".$cari."</b>";
-                        }
-                    ?>
-                    </div>
+                                <?php
+                                if (isset($_GET['cari'])) {
+                                    $cari = $_GET['cari'];
+                                    echo "<b>Hasil pencarian : " . $cari . "</b>";
+                                }
+                                ?>
+                            </div>
+
+
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                     <thead>
@@ -137,22 +107,20 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
 
                                 </table>
                             </div>
+
+
                         </div>
-                    </div>
-
-
-                </div>
-            </div><!-- .animated -->
-        </div><!-- .content -->
+                    </div><!-- .animated -->
+                </div><!-- .content -->
 
 
 
 
-    </div><!-- /#right-panel -->
+            </div><!-- /#right-panel -->
 
-    <!-- Right Panel -->
+            <!-- Right Panel -->
 
-    <?php include 'footer.php'; ?>
+            <?php include 'footer.php'; ?>
 
 </body>
 

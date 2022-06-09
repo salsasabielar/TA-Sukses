@@ -40,13 +40,14 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                     <table class="table">
 
                         <?php
-                        if (isset($_GET['id_warga'])) {
-                            $id_warga    = $_GET['id_warga'];
+                        $tglSurvey = $_GET['id_survey'];
+                        if (isset($_GET['nik'])) {
+                            $nik    = $_GET['nik'];
                         } else {
                             die("Error. No ID Selected!");
                         }
                         include "config.php";
-                        $query    = mysqli_query($koneksi, "SELECT * FROM warga WHERE nik='$id_warga'");
+                        $query    = mysqli_query($koneksi, "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik WHERE survey.id_survey='$tglSurvey'");
                         $data    = mysqli_fetch_array($query);
                         ?>
 
@@ -123,9 +124,9 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                                 <td></td>
                                 <td></td>
                             </tr>
-                            <!-- <tr>
+                            <tr>
                                 <th scope="row">Tanggal Survey</th>
-                                <td><?php echo $data['tanggalsurvey'] ?></td>
+                                <td><?php echo $data['tglSurvey'] ?></td>
                                 <td></td>
                                 <td>
                                 <td></td>
@@ -146,7 +147,7 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                            </tr> -->
+                            </tr>
 
                         </tbody>
                     </table>
@@ -163,8 +164,8 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                         <tbody>
                             <?php
                             include "config.php";
-                            $id_warga = $_GET['id_warga'];
-                            $query_mysqli = mysqli_query($koneksi, "SELECT * FROM warga WHERE nik='$id_warga'") or die(mysqli_error($koneksi));
+                            $nik = $_GET['nik'];
+                            $query_mysqli = mysqli_query($koneksi, "SELECT * FROM warga WHERE nik='$nik'") or die(mysqli_error($koneksi));
                             $nomor = 1;
                             while ($data = mysqli_fetch_array($query_mysqli)) {
                             ?>
@@ -172,7 +173,7 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                                 <table class="table align-items-center table-flush">
                                     <thead class="thead-light">
                                         <?php
-                                        $id_warga = $_GET['id_warga'];
+                                        $nik = $_GET['nik'];
                                         $id_survey = $_GET['id_survey'];
                                         $tampil = "SELECT * FROM kriteria";
                                         $surveyData = mysqli_query($koneksi, "SELECT * FROM jawaban_survey WHERE id_survey='$id_survey'");
@@ -190,11 +191,7 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                                                                                                 if($sr['id_kriteria'] == $data['id_kriteria']){
                                                                                                     echo "checked";
                                                                                                 }
-                                                                                            } ?> <?php foreach($surveyData as $sr){
-                                                                                                if($sr['id_kriteria'] == $data['id_kriteria']){
-                                                                                                    echo "disabled";
-                                                                                                }
-                                                                                            } ?>>
+                                                                                            } ?> disabled>
                                             </td>
                                             <td><?php echo $data['nama']; ?></td>
                                             </tr> <?php

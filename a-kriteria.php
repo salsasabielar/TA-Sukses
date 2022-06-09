@@ -2,8 +2,8 @@
 session_start(); // Start session nya
 // Kita cek apakah user sudah login atau belum
 // Cek nya dengan cara cek apakah terdapat session username atau tidak
-if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti dia belum login
-  header("location: index.php"); // Kita Redirect ke halaman index.php karena belum login
+if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti dia belum login
+    header("location: index.php"); // Kita Redirect ke halaman index.php karena belum login
 }
 ?>
 <!doctype html>
@@ -34,13 +34,14 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
         <form action="p-filter.php?nik=<?= $_GET['nik'] ?>" method="post" class="form-horizontal">
 
             <div class="col-lg-12">
-                <div class="row">
-                    <div class="col-12">
-                        <input type="date" name="tgl" id="tgl" class="form-control">
-                    </div>
-                </div>
-                <div class="card">
 
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row form-group">
+                            <div class="col col-md-2"><label for="nik" class=" form-control-label">Pilih Tanggal Survey</label></div>
+                            <div class="col-12 col-md-5"><input type="date" name="tgl" id="tgl" class="form-control"><span class="help-block"></span></div>
+                        </div>
+                    </div>
                     <div class="card-body">
 
                         <table class="table">
