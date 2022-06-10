@@ -12,7 +12,9 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
 
 <body>
     <?php include 'sidebar.php'; ?>
+
     <!-- Right Panel -->
+
     <div id="right-panel" class="right-panel">
 
         <?php include 'sidebar2.php'; ?>
@@ -32,10 +34,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <a href="cetak laporan/p-cetak.php">
-                                    <button type="button" class="btn btn-primary">Cetak All</button>
-                                </a>
-                                <a href="cetak laporan/p-cetak_rw1.php">
+                                <!-- <a href="cetak laporan/p-cetak_rw1.php">
                                     <button type="button" class="btn btn-primary">Cetak RW.01</button>
                                 </a>
                                 <a href="cetak laporan/p-cetak_rw2.php">
@@ -43,39 +42,11 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                 </a>
                                 <a href="cetak laporan/p-cetak_rw3.php">
                                     <button type="button" class="btn btn-primary">Cetak RW.03</button>
-                                </a>
-                                <div class="card">
-                            <div class="card-header">
-                            <!-- <input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"> -->
-                            <!-- <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
-                            <div class="form-group">
-                                <label for="sel1">Kata Kunci:</label>
-                                <?php
-                                $kata_kunci="";
-                                if (isset($_POST['kata_kunci'])) {
-                                    $kata_kunci=$_POST['kata_kunci'];
-                                }
-                                ?>
-                                <input type="text" name="kata_kunci" value="<?php echo $kata_kunci;?>" class="form-control"  required/>
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" class="btn btn-info" value="Cari">
-                            </div>
-                            </form> -->
-                            <form action="a-laporan.php" method="get">
-                                    <input type="text" name="cari">
-                                    <input type="submit" value="Cari">
-                                </form>
-                                <?php 
-                                    if(isset($_GET['cari'])){
-                                        $cari = $_GET['cari'];
-                                        echo "<b>Hasil pencarian : ".$cari."</b>";
-                                    }
-                                ?>
-                    </div>
+                                </a> -->
+
                                 <form action="cetak laporan/p-cetak_tahun.php" class="mt-4">
                                     <div class="row form-group">
-                                        <div class="col-12 col-md-3">
+                                        <div class="col-12 col-md-2">
                                             <select name="tahun" class="form-control" required>
                                                 <option value="">Pilih Tahun</option>
                                                 <?php for ($i = 1990; $i <= 2050; $i++) : ?>
@@ -91,8 +62,18 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
 
                                         <a href="cetak laporan/p-cetak.php" class="btn btn-outline-danger">Cetak Semua</a>
                                     </div>
-
                                 </form>
+                                <form action="a-laporan.php" method="get" class="mt-4">
+                                    <input type="text" name="cari">
+                                    <input class="btn btn-outline-primary btn-sm" type="submit" value="Cari">
+                                </form>
+                                <?php
+                                if (isset($_GET['cari'])) {
+                                    $cari = $_GET['cari'];
+                                    echo "<b>Hasil pencarian : " . $cari . "</b>";
+                                }
+                                ?>
+
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
@@ -115,12 +96,12 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                             include "config.php";
                                             // $query_mysqli = mysqli_query($koneksi, "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik ORDER BY id_survey DESC") or die(mysqli_error($koneksi));
                                             if (isset($_GET['cari'])) {
-                                                $cari=($_GET['cari']);
-                                                $sql="SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik where warga.nama like '%".$cari."%'";
+                                                $cari = ($_GET['cari']);
+                                                $sql = "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik where warga.nama like '%" . $cari . "%'";
                                                 $query_mysqli = mysqli_query($koneksi, $sql) or die(mysqli_error($koneksi));
                                             } else {
                                                 $query_mysqli = mysqli_query($koneksi, "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik ORDER BY id_survey DESC") or die(mysqli_error($koneksi));
-                                               }
+                                            }
                                             $nomor = 1;
                                             if ($query_mysqli) {
                                                 while ($data = mysqli_fetch_array($query_mysqli)) {
@@ -135,7 +116,10 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                             <td><?php echo $data['status']; ?></td>
                                             <td><?php echo $data['tglSurvey']; ?></td>
                                             <td><a class="btn btn-sm btn-warning" href="a-detail.php?nik=<?php echo $data['nik']; ?>&id_survey=<?= $data['id_survey'] ?>">Detail</a>
-                                                <a class="btn btn-danger btn-sm" href="a-cetak_detail.php?nik=<?php echo $data['nik']; ?>&id_survey=<?= $data['id_survey'] ?>">Cetak</a>
+
+                                                <a class="btn btn-danger btn-sm" href="a-cetak_detail.php?id_warga=<?php echo $data['nik']; ?>&id_survey=<?= $data['id_survey'] ?>">Cetak</a>
+
+
                                             </td>
                                         </tr>
                                 <?php }
