@@ -44,6 +44,35 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                 <a href="cetak laporan/p-cetak_rw3.php">
                                     <button type="button" class="btn btn-primary">Cetak RW.03</button>
                                 </a>
+                                <div class="card">
+                            <div class="card-header">
+                            <!-- <input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"> -->
+                            <!-- <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
+                            <div class="form-group">
+                                <label for="sel1">Kata Kunci:</label>
+                                <?php
+                                $kata_kunci="";
+                                if (isset($_POST['kata_kunci'])) {
+                                    $kata_kunci=$_POST['kata_kunci'];
+                                }
+                                ?>
+                                <input type="text" name="kata_kunci" value="<?php echo $kata_kunci;?>" class="form-control"  required/>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-info" value="Cari">
+                            </div>
+                            </form> -->
+                            <form action="a-laporan.php" method="get">
+                                    <input type="text" name="cari">
+                                    <input type="submit" value="Cari">
+                                </form>
+                                <?php 
+                                    if(isset($_GET['cari'])){
+                                        $cari = $_GET['cari'];
+                                        echo "<b>Hasil pencarian : ".$cari."</b>";
+                                    }
+                                ?>
+                    </div>
                                 <form action="cetak laporan/p-cetak_tahun.php" class="mt-4">
                                     <div class="row form-group">
                                         <div class="col-12 col-md-3">
@@ -60,7 +89,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                         </button>
                                         <p style="text-indent: 1em;">&nbsp</p>
 
-                                        <a href="./a-surat.php" class="btn btn-outline-danger">Cetak Semua</a>
+                                        <a href="cetak laporan/p-cetak.php" class="btn btn-outline-danger">Cetak Semua</a>
                                     </div>
 
                                 </form>
@@ -85,6 +114,12 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                             <?php
                                             include "config.php";
                                             $query_mysqli = mysqli_query($koneksi, "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik ORDER BY id_survey DESC") or die(mysqli_error($koneksi));
+                                            if (isset($_GET['cari'])) {
+                                                $cari=($_GET['cari']);
+                                                $sql="SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik where warga.nama like '%salsa%'";
+                                            } else {
+                                                $query_mysqli = mysqli_query($koneksi, "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik ORDER BY id_survey DESC") or die(mysqli_error($koneksi));
+                                               }
                                             $nomor = 1;
                                             if ($query_mysqli) {
                                                 while ($data = mysqli_fetch_array($query_mysqli)) {

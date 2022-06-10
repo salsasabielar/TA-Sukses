@@ -95,15 +95,15 @@
     </tr>
  <?php 
  // koneksi database
- $koneksi = mysqli_connect("localhost","root","","bantuan");
+ $koneksi = mysqli_connect("localhost","root","","bltdd");
 
  // menampilkan data pegawai
- $data = mysqli_query($koneksi,"select * from warga");
+ $data = mysqli_query($koneksi,"SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik ORDER BY id_survey DESC");
  $nomor = 1;
  while($d = mysqli_fetch_array($data)){
  ?>
  <tr>
- <!-- <td style='text-align: center;'><?php echo $d['id_warga'] ?></td> -->
+ <!-- <td style='text-align: center;'><?php echo $d['id_survey'] ?></td> -->
  <td><?php echo $nomor++; ?></td>
  <td><?php echo $d['nik']; ?></td>
  <td><?php echo $d['nama']; ?></td>
@@ -111,7 +111,7 @@
  <td><?php echo $d['pekerjaan']; ?> </td>
  <td><?php echo $d['jenisKelamin']; ?> </td>
  <td><?php echo $d['status']; ?> </td>
- <td><?php echo $d['tanggalsurvey']; date('Y-m-d');?> </td>
+ <td><?php echo $d['tglSurvey']; date('Y-m-d');?> </td>
  </tr>
  <?php }
  ?>
