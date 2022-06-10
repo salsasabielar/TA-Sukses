@@ -7,7 +7,7 @@
 <html>
 <head>
 	<title>Laporan Data Calon Penerima BLTDD</title>
-	<link rel="icon" href="./assets/img/logo.png">
+	<link rel="icon" href="assets/img/logo.png">
 	<style type="text/css">
 		body{
 			font-family: Arial;
@@ -86,15 +86,15 @@
     </tr>
  <?php 
  // koneksi database
- $koneksi = mysqli_connect("localhost","root","","bantuan");
+ $koneksi = mysqli_connect("localhost","root","","bltdd");
 
  // menampilkan data pegawai
- $data = mysqli_query($koneksi,"select * from warga where alamat LIKE '%Rw.003%'");
+ $data = mysqli_query($koneksi,"SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik where warga.alamat LIKE '%Rw 03%'");
  $nomor = 1;
  while($d = mysqli_fetch_array($data)){
  ?>
  <tr>
- <!-- <td style='text-align: center;'><?php echo $d['id_warga'] ?></td> -->
+ <!-- <td style='text-align: center;'><?php echo $d['id_survey'] ?></td> -->
  <td><?php echo $nomor++; ?></td>
  <td><?php echo $d['nik']; ?></td>
  <td><?php echo $d['nama']; ?></td>
@@ -102,13 +102,13 @@
  <td><?php echo $d['pekerjaan']; ?> </td>
  <td><?php echo $d['jenisKelamin']; ?> </td>
  <td><?php echo $d['status']; ?> </td>
- <td><?php echo $d['tanggalsurvey']; date('Y-m-d');?> </td>
+ <td><?php echo $d['tglSurvey']; date('Y-m-d');?> </td>
  </tr>
  <?php }
  ?>
     </table>
-    <script>
+	<!-- <script>
  window.print();
- </script>
+ </script> -->
 </body>
 </html>

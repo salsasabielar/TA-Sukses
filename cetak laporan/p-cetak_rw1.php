@@ -89,7 +89,7 @@
  $koneksi = mysqli_connect("localhost","root","","bltdd");
 
  // menampilkan data pegawai
- $data = mysqli_query($koneksi,"SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nama LIKE '%irma%'");
+ $data = mysqli_query($koneksi,"SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik where warga.alamat LIKE '%Rw 01%'");
  $nomor = 1;
  while($d = mysqli_fetch_array($data)){
  ?>
@@ -107,8 +107,8 @@
  <?php }
  ?>
     </table>
-	<script>
+	<!-- <script>
  window.print();
- </script>
+ </script> -->
 </body>
 </html>

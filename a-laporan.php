@@ -113,10 +113,11 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                         <tr>
                                             <?php
                                             include "config.php";
-                                            $query_mysqli = mysqli_query($koneksi, "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik ORDER BY id_survey DESC") or die(mysqli_error($koneksi));
+                                            // $query_mysqli = mysqli_query($koneksi, "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik ORDER BY id_survey DESC") or die(mysqli_error($koneksi));
                                             if (isset($_GET['cari'])) {
                                                 $cari=($_GET['cari']);
-                                                $sql="SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik where warga.nama like '%salsa%'";
+                                                $sql="SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik where warga.nama like '%".$cari."%'";
+                                                $query_mysqli = mysqli_query($koneksi, $sql) or die(mysqli_error($koneksi));
                                             } else {
                                                 $query_mysqli = mysqli_query($koneksi, "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik ORDER BY id_survey DESC") or die(mysqli_error($koneksi));
                                                }
