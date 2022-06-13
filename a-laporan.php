@@ -43,8 +43,83 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                 <a href="cetak laporan/p-cetak_rw3.php">
                                     <button type="button" class="btn btn-primary">Cetak RW.03</button>
                                 </a> -->
+                                <!-- <ul class="nav nav-pills">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cetak Laporan</a>
+                                        <div class="dropdown-menu">
 
-                                <form action="cetak laporan/p-cetak_tahun.php" class="mt-4">
+                                            <a class="dropdown-item" href="cetak laporan/p-cetak.php">Cetak Semua</a>
+                                            <a class="dropdown-item" href="cetak laporan/p-cetak_rw1.php">Cetak RW 01</a>
+                                            <a class="dropdown-item" href="cetak laporan/p-cetak_rw2.php">Cetak RW 02</a>
+                                            <a class="dropdown-item" href="cetak laporan/p-cetak_rw3.php">Cetak RW 03</a>
+                                        </div>
+                                    </li>
+                                </ul> -->
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="cetak laporan/p-cetak.php">Cetak Semua</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cetak Per RW<span class="caret"></span></a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="cetak laporan/p-cetak_rw1.php">Cetak RW 01</a>
+                                            <a class="dropdown-item" href="cetak laporan/p-cetak_rw2.php">Cetak RW 02</a>
+                                            <a class="dropdown-item" href="cetak laporan/p-cetak_rw3.php">Cetak RW 03</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cetak Per RT<span class="caret"></span></a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="">Cetak RT 01</a>
+                                            <a class="dropdown-item" href="">Cetak RT 02</a>
+                                            <a class="dropdown-item" href="">Cetak RT 03</a>
+                                            <a class="dropdown-item" href="">Cetak RT 04</a>
+                                            <a class="dropdown-item" href="">Cetak RT 05</a>
+                                            <a class="dropdown-item" href="">Cetak RT 06</a>
+                                            <a class="dropdown-item" href="">Cetak RT 07</a>
+                                            <a class="dropdown-item" href="">Cetak RT 08</a>
+                                            <a class="dropdown-item" href="">Cetak RT 09</a>
+                                            <a class="dropdown-item" href="">Cetak RT 10</a>
+                                            <a class="dropdown-item" href="">Cetak RT 11</a>
+                                            <a class="dropdown-item" href="">Cetak RT 12</a>
+                                            <a class="dropdown-item" href="">Cetak RT 13</a>
+                                            <a class="dropdown-item" href="">Cetak RT 14</a>
+                                            <a class="dropdown-item" href="">Cetak RT 15</a>
+                                            <a class="dropdown-item" href="">Cetak RT 16</a>
+                                            <a class="dropdown-item" href="">Cetak RT 17</a>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Menu 1</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Menu 2</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content pl-3 p-1" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <h3>Home</h3>
+                                        <p>Some content here.</p>
+                                    </div>
+                                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                        <h3>Menu 1</h3>
+                                        <p>Some content here.</p>
+                                    </div>
+                                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                        <h3>Menu 2</h3>
+                                        <p>Some content here.</p>
+                                    </div>
+                                </div> -->
+
+
+
+                                <!-- <form action="cetak laporan/p-cetak_tahun.php" class="mt-4">
                                     <div class="row form-group">
                                         <div class="col-12 col-md-2">
                                             <select name="tahun" class="form-control" required>
@@ -62,7 +137,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
 
                                         <a href="cetak laporan/p-cetak.php" class="btn btn-outline-danger">Cetak Semua</a>
                                     </div>
-                                </form>
+                                </form> -->
                                 <form action="a-laporan.php" method="get" class="mt-4">
                                     <input type="text" name="cari">
                                     <input class="btn btn-outline-primary btn-sm" type="submit" value="Cari">
