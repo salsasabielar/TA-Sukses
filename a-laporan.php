@@ -59,6 +59,9 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                     <li class="nav-item">
                                         <a class="nav-link active" href="cetak laporan/p-cetak.php">Cetak Semua</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Cetak Per Tahun</a>
+                                    </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cetak Per RW<span class="caret"></span></a>
                                         <div class="dropdown-menu">
@@ -95,27 +98,29 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                     <li class="nav-item">
                                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Menu 1</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Menu 2</a>
-                                    </li>
-                                </ul>
+                                    
+                                </ul> -->
                                 <div class="tab-content pl-3 p-1" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                        <h3>Home</h3>
-                                        <p>Some content here.</p>
+                                    <div class="tab-pane fade show" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <form action="cetak laporan/p-cetak_tahun.php" class="mt-4">
+                                            <div class="row form-group">
+                                                <div class="col-12 col-md-2">
+                                                    <select name="tahun" class="form-control" required>
+                                                        <option value="">Pilih Tahun</option>
+                                                        <?php for ($i = 1990; $i <= 2050; $i++) : ?>
+                                                            <option value="<?= $i ?>" <?= $i == date('Y') ? 'selected' : '' ?>><?= $i ?></option>
+                                                        <?php endfor; ?>
+                                                    </select>
+
+                                                </div>
+                                                <button type="submit" class="btn btn-primary btn-sm">
+                                                    Cetak
+                                                </button>
+                                            </div>
+                                        </form>
                                     </div>
-                                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                        <h3>Menu 1</h3>
-                                        <p>Some content here.</p>
-                                    </div>
-                                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                                        <h3>Menu 2</h3>
-                                        <p>Some content here.</p>
-                                    </div>
-                                </div> -->
+
+                                </div>
 
 
 

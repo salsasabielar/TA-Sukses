@@ -37,6 +37,19 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
 
                     <div class="col-md-12">
                         <div class="card">
+                            
+                            <div class="card-header">
+                                <form action="a-data_survey.php" method="get">
+                                    <input type="text" name="cari">
+                                    <input class="btn btn-outline-primary btn-sm" type="submit" value="Cari">
+                                </form>
+                                <?php
+                                if (isset($_GET['cari'])) {
+                                    $cari = $_GET['cari'];
+                                    echo "<b>Hasil pencarian : " . $cari . "</b>";
+                                }
+                                ?>
+                            </div>
 
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
@@ -55,7 +68,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
 
                                     if (isset($_GET['cari'])) {
                                         $cari = $_GET['cari'];
-                                        $query = mysqli_query($koneksi, "SELECT * FROM warga WHERE nama LIKE '%" . $cari . "%' OR nik LIKE '%" . $cari . "%'");
+                                        $query = mysqli_query($koneksi, "SELECT * FROM warga WHERE nama LIKE '%" . $cari . "%' OR nik LIKE '%" . $cari . "%' OR alamat LIKE '%" . $cari . "%'");
                                     } else {
                                         $query = mysqli_query($koneksi, "SELECT * FROM warga");
                                     }

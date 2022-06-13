@@ -77,7 +77,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
 
                                     if (isset($_GET['cari'])) {
                                         $cari = $_GET['cari'];
-                                        $query = mysqli_query($koneksi, "SELECT * FROM warga WHERE nama LIKE '%" . $cari . "%'");
+                                        $query = mysqli_query($koneksi, "SELECT * FROM warga WHERE nama LIKE '%" . $cari . "%' OR nik LIKE '%" . $cari . "%' OR alamat LIKE '%" . $cari . "%'");
                                     } else {
                                         $query = mysqli_query($koneksi, "SELECT * FROM warga");
                                     }
@@ -98,7 +98,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                                 <td>
                                                     <a class="btn btn-success btn-sm" href="a-form_edit_data.php?nik=<?php echo $data['nik']; ?>">Edit</a>
                                                     <a class="btn btn-danger btn-sm" href="p-hapus.php?nik=<?php echo $data['nik']; ?>" onclick="return confirm()">Hapus</a>
-                                                    <!-- <a class="btn btn-sm btn-primary" href="a-detail.php?id_warga=<?php echo $data['id_warga']; ?>">Detail</a> -->
+                                                    <a class="btn btn-sm btn-primary" href="a-detail_warga.php?nik=<?php echo $data['nik']; ?>">Detail</a>
 
                                                 </td>
                                             </tr>
