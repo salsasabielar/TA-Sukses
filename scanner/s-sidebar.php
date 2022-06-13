@@ -30,6 +30,9 @@
                 <li>
                     <a href="s-index.php"> <i class="menu-icon fa fa-laptop"></i>Scanner</a>
                 </li>
+                <li>
+                    <a href="../s-laporan.php" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Laporan</a>
+                </li>
                 <h3 class="menu-title"></h3>
                 <li>
                     <a href="p-logout.php" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sign-out"></i>Logout</a>

@@ -31,7 +31,7 @@
                     <a href="scanner/s-index.php"> <i class="menu-icon fa fa-laptop"></i>Scanner</a>
                 </li>
                 <li>
-                    <a href="s-laporan.php"> <i class="menu-icon fa fa-laptop"></i>Laporan</a>
+                    <a href="s-laporan.php"> <i class="menu-icon fa fa-table"></i>Laporan</a>
                 </li>
                 <h3 class="menu-title"></h3>
                 <li>

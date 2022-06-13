@@ -34,27 +34,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <!-- <a href="cetak laporan/p-cetak_rw1.php">
-                                    <button type="button" class="btn btn-primary">Cetak RW.01</button>
-                                </a>
-                                <a href="cetak laporan/p-cetak_rw2.php">
-                                    <button type="button" class="btn btn-primary">Cetak RW.02</button>
-                                </a>
-                                <a href="cetak laporan/p-cetak_rw3.php">
-                                    <button type="button" class="btn btn-primary">Cetak RW.03</button>
-                                </a> -->
-                                <!-- <ul class="nav nav-pills">
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cetak Laporan</a>
-                                        <div class="dropdown-menu">
-
-                                            <a class="dropdown-item" href="cetak laporan/p-cetak.php">Cetak Semua</a>
-                                            <a class="dropdown-item" href="cetak laporan/p-cetak_rw1.php">Cetak RW 01</a>
-                                            <a class="dropdown-item" href="cetak laporan/p-cetak_rw2.php">Cetak RW 02</a>
-                                            <a class="dropdown-item" href="cetak laporan/p-cetak_rw3.php">Cetak RW 03</a>
-                                        </div>
-                                    </li>
-                                </ul> -->
+                                
                                 <ul class="nav nav-tabs">
                                     <li class="nav-item">
                                         <a class="nav-link active" href="cetak laporan/p-cetak.php">Cetak Semua</a>
@@ -197,7 +177,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                             <td><?php echo $data['tglSurvey']; ?></td>
                                             <td><a class="btn btn-sm btn-warning" href="a-detail.php?nik=<?php echo $data['nik']; ?>&id_survey=<?= $data['id_survey'] ?>">Detail</a>
 
-                                                <a class="btn btn-danger btn-sm" href="a-cetak_detail.php?id_warga=<?php echo $data['nik']; ?>&id_survey=<?= $data['id_survey'] ?>">Cetak</a>
+                                                <a class="btn btn-danger btn-sm" href="a-cetak_detail.php?nik=<?php echo $data['nik']; ?>&id_survey=<?= $data['id_survey'] ?>">Cetak</a>
 
 
                                             </td>

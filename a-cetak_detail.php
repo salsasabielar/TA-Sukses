@@ -88,7 +88,7 @@ include "config_tgl.php";
             </tr>
             <tr>
                 <th scope="row">Tanggal Lahir</th>
-                <td><?php echo $data['tgl_lahir'] ?></td>
+                <td><?php echo $data['tempat']; ?>, <?php echo $data['tgl_lahir']; ?></td>
                 <td></td>
                 <td>
                 <td></td>
