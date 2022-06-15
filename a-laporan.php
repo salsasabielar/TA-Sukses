@@ -157,7 +157,12 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                             // $query_mysqli = mysqli_query($koneksi, "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik ORDER BY id_survey DESC") or die(mysqli_error($koneksi));
                                             if (isset($_GET['cari'])) {
                                                 $cari = ($_GET['cari']);
-                                                $sql = "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik where warga.nama like '%" . $cari . "%'";
+                                                if($cari == ""){
+                                                    $q = "";
+                                                }else{
+                                                    $q = "where warga.nama like '%" . $cari . "%'";
+                                                }
+                                                $sql = "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik ".$q;
                                                 $query_mysqli = mysqli_query($koneksi, $sql) or die(mysqli_error($koneksi));
                                             } else {
                                                 $query_mysqli = mysqli_query($koneksi, "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik ORDER BY id_survey DESC") or die(mysqli_error($koneksi));

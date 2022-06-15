@@ -60,21 +60,7 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                                 <div class="col col-md-2"><label for="hf-email" class=" form-control-label">Tempat Lahir</label></div>
                                 <div class="col-12 col-md-5"><input type="text" name="tempat" value="<?php echo $data['tempat'] ?>" placeholder="Masukkan Tempat Lahir..." class="form-control"><span class="help-block"></span></div>
                             </div>
-                            <!-- <div class="row form-group">
-                            <div class="col col-md-2"><label for="select" class=" form-control-label">Alamat</label></div>
-                            <div class="col-12 col-md-5">
-                            <select class="form-control" aria-label="Default select example" name="alamat">
-                            <option selected><?php echo $data['alamat'] ?></option>
-                                <?php 
-                                    include "config.php";
-                                    $nama_alamat = mysqli_query($koneksi, "SELECT * FROM alamat");
-                                ?>
-                                <?php while($row = mysqli_fetch_array($nama_alamat)) { ?>
-                                <option value="<?=$row['nama_alamat']?>"><?=$row['nama_alamat']?></option>
-                                <?php } ?>
-                            </select>
-                            </div>
-                            </div> -->
+                            
                             <div class="row form-group">
                                 <div class="col col-md-2"><label for="hf-email" class=" form-control-label">Tanggal Lahir</label></div>
                                 <div class="col-12 col-md-5"><input type="date" name="tgl_lahir" value="<?php echo $data['tgl_lahir'] ?>" placeholder="Masukkan Tanggal Lahir..." class="form-control"><span class="help-block"></span></div>
