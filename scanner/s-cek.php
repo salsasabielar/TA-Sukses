@@ -13,7 +13,7 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
 
 <body>
 
-    <?php include 'sidebar.php'; ?>
+    <?php include 's-sidebar.php'; ?>
 
     <!-- Right Panel -->
 
@@ -86,7 +86,7 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                                                 <td><?php echo $d['pekerjaan']; ?></td>
                                                 <td><?php echo $d['jenisKelamin']; ?></td>
                                                 <td>
-                                                    <a class="btn btn-sm btn-primary" href="as-kriteria.php?nik=<?php echo $d['nik']; ?>">Survey</a>
+                                                    <a class="btn btn-sm btn-primary" href="ss-kriteria.php?nik=<?php echo $d['nik']; ?>">Survey</a>
                                                 </td>
                                             </tr>
                                         </table>

@@ -76,12 +76,7 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="row form-group">
-                            <div class="col col-md-2"><label for="hf-email" class=" form-control-label">Tanggal Survey</label></div>
-                            <div class="col-12 col-md-5"><input type="date" id="hf-email" name="hf-email" placeholder="Masukkan Survey..." class="form-control"><span class="help-block"></span></div>
-                        </div> -->
-
-
+                        
                     </div>
                     <div class="card-footer">
                         <a href="a-kriteria.php">

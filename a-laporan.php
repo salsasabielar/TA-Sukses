@@ -179,7 +179,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                             <td><?php echo $data['pekerjaan']; ?></td>
                                             <td><?php echo $data['jenisKelamin']; ?></td>
                                             <td><?php echo $data['status']; ?></td>
-                                            <td><?php echo $data['tglSurvey']; ?></td>
+                                            <td><?php echo date('d-m-Y', strtotime($data["tglSurvey"])); ?></td>
                                             <td><a class="btn btn-sm btn-warning" href="a-detail.php?nik=<?php echo $data['nik']; ?>&id_survey=<?= $data['id_survey'] ?>">Detail</a>
 
                                                 <a class="btn btn-danger btn-sm" href="a-cetak_detail.php?nik=<?php echo $data['nik']; ?>&id_survey=<?= $data['id_survey'] ?>">Cetak</a>

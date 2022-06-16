@@ -84,8 +84,8 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                             <td><?php echo $data['jenisKelamin']; ?></td>
                                             <td><?php echo $data['status']; ?></td>
                                             <td><?php echo $data['tglSurvey']; ?></td>
-                                            <!-- <td><a class="btn btn-sm btn-warning" href="a-detail.php?nik=<?php echo $data['nik']; ?>&id_survey=<?= $data['id_survey'] ?>">Detail</a></td> -->
-                                            <td><a class="btn btn-sm btn-warning" href="#">Detail</a></td>
+                                            <td><a class="btn btn-sm btn-warning" href="s-detail.php?nik=<?php echo $data['nik']; ?>&id_survey=<?= $data['id_survey'] ?>">Detail</a></td>
+                                            
                                         </tr>
                                 <?php }
                                             } ?>

@@ -77,7 +77,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
 
                                     if (isset($_GET['cari'])) {
                                         $cari = $_GET['cari'];
-                                        $query = mysqli_query($koneksi, "SELECT * FROM warga WHERE nama LIKE '%" . $cari . "%' OR nik LIKE '%" . $cari . "%' OR alamat LIKE '%" . $cari . "%'");
+                                        $query = mysqli_query($koneksi, "SELECT * FROM warga WHERE nama LIKE '%" . $cari . "%' OR nik LIKE '%" . $cari . "%' OR alamat LIKE '%" . $cari . "%' OR pekerjaan LIKE '%" . $cari . "%' OR jenisKelamin LIKE '%" . $cari . "%'");
                                     } else {
                                         $query = mysqli_query($koneksi, "SELECT * FROM warga");
                                     }
@@ -86,11 +86,12 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                         while ($data = mysqli_fetch_array($query)) {
                                     ?>
                                             <tr>
+                                            
                                                 <td><?php echo $nomor++; ?></td>
                                                 <td><?php echo $data['nik']; ?></td>
                                                 <td><?php echo $data['nama']; ?></td>
                                                 <td><?php echo $data['alamat']; ?></td>
-                                                <td><?php echo $data['tempat']; ?>, <?php echo $data['tgl_lahir']; ?></td>
+                                                <td><?php echo $data['tempat']; ?>, <?php echo date('d M Y', strtotime($data["tgl_lahir"]));  ?></td>
                                                 <td><?php echo $data['pekerjaan']; ?></td>
                                                 <td><?php echo $data['jenisKelamin']; ?></td>
                                                 <!-- <td><?php echo $data['tanggalsurvey']; ?></td> -->

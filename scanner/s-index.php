@@ -115,7 +115,7 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
         resultFunction: function(result) {
           //$('.hasilscan').append($('<input name="noijazah" value=' + result.code + ' readonly><input type="submit" value="Cek"/>'));
           // $.post("../cek.php", { noijazah: result.code} );
-          var redirect = 'cek.php';
+          var redirect = 's-cek.php';
           $.redirectPost(redirect, {
             nik: result.code
           });

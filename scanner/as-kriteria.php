@@ -13,7 +13,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
 
 <body>
 
-    <?php include 's-sidebar.php'; ?>
+    <?php include 'sidebar.php'; ?>
 
     <!-- Right Panel -->
 
@@ -31,9 +31,10 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
             </div>
         </div>
 
-        <form action="ps-filter.php?nik=<?= $_GET['nik'] ?>" method="post" class="form-horizontal">
+        <form action="ap-filter.php?nik=<?= $_GET['nik'] ?>" method="post" class="form-horizontal">
 
             <div class="col-lg-12">
+                
                 <div class="card">
                     <div class="card-header">
                         <div class="row form-group">
@@ -50,9 +51,9 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                 <tr>
 
                                     <?php
-                                    include "config.php";
+                                    include "../config.php";
 
-                                    $tampil = "SELECT * FROM kriteria ORDER BY id_kriteria asc";
+                                    $tampil = "SELECT * FROM kriteria ORDER BY id_kriteria";
                                     $hasil = mysqli_query($koneksi, $tampil);
                                     $no1 = 0;
                                     $no2 = 0;
@@ -62,7 +63,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
 
                                         echo "<tr >
                                     
-                                    <td><input type=checkbox name=ya[] value=$data[id_kriteria] id=id1$no1></td>
+                                    <td><input type=checkbox name='ya[]' value=$data[id_kriteria] id=id1$no1></td>
                                     <td>$data[nama]</td>";
 
                                         $nomor++;
@@ -80,11 +81,14 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
 
                     </div>
                     <div class="card-footer">
-                        <a href="s-tambah_data.php">
+                        <button type="submit" class="btn btn-primary btn-sm">
+                            <i class="fa fa-dot-circle-o"></i> Submit
+                        </button>
+                        <!-- <a href="a-tambah_data.php">
                             <button type="submit" class="btn btn-primary btn-sm">
                                 <i class="fa fa-dot-circle-o"></i> Submit
                             </button>
-                        </a>
+                        </a> -->
 
                     </div>
                 </div>
