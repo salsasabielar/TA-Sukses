@@ -7,9 +7,10 @@ $tempat = $_POST['tempat'];
 $tgl_lahir = $_POST['tgl_lahir'];
 $pekerjaan = $_POST['pekerjaan'];
 $jenisKelamin = $_POST['jenisKelamin'];
+$ket = $_POST['ket'];
 // $status = $_POST['status'];
 
 // $submit  = $_POST['submit'];
-mysqli_query($koneksi, "INSERT INTO warga VALUES('$nik','$nama','$alamat','$tempat','$tgl_lahir','$pekerjaan','$jenisKelamin')");
+mysqli_query($koneksi, "INSERT INTO warga VALUES('$nik','$nama','$alamat','$tempat','$tgl_lahir','$pekerjaan','$jenisKelamin','$ket')");
     header("location:a-tambah_data.php");
 ?>
