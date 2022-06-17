@@ -166,7 +166,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                             <th>Jenis Kelamin</th>
                                             <th>Status</th>
                                             <th>Tanggal Survey</th>
-                                            <th>Action</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>

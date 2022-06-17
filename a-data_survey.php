@@ -37,20 +37,28 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
 
                     <div class="col-md-12">
                         <div class="card">
-                            
-                            <div class="card-header">
-                                <form action="a-data_survey.php" method="get">
-                                    <input type="text" name="cari">
-                                    <input class="btn btn-outline-primary btn-sm" type="submit" value="Cari">
-                                </form>
-                                <a href="p-refresh.php" class="btn btn-outline-danger">Refresh</a>
-                                <?php
-                                if (isset($_GET['cari'])) {
-                                    $cari = $_GET['cari'];
-                                    echo "<b>Hasil pencarian : " . $cari . "</b>";
-                                }
-                                ?>
-                            </div>
+                            <form action="a-data_survey.php" method="get">
+                                <div class="card-header">
+                                    <div class="row form-group">
+                                        <input type="text" name="cari">
+                                        <p style="text-indent: 1em;">&nbsp</p>
+
+                                        <input class="btn btn-outline-primary btn-sm" type="submit" value="Cari">
+
+                                        <p style="text-indent: 1em;">&nbsp</p>
+
+                                        <a href="p-refresh.php" class="btn btn-outline-danger">Refresh</a>
+
+
+                                    </div>
+                                    <?php
+                                    if (isset($_GET['cari'])) {
+                                        $cari = $_GET['cari'];
+                                        echo "<b>Hasil pencarian : " . $cari . "</b>";
+                                    }
+                                    ?>
+                                </div>
+                            </form>
 
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">

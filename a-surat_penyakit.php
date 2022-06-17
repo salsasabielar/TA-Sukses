@@ -6,6 +6,11 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
   header("location: index.php"); // Kita Redirect ke halaman index.php karena belum login
 }
 ?>
+<?php
+// session_start();
+// if(isset($_SESSION['login'])){
+include "config_tgl.php";
+?>
 <html>
 
 <head>

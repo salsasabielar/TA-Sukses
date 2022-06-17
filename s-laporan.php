@@ -32,7 +32,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <form action="a-laporan.php" method="get" class="mt-4">
+                                <form action="s-laporan.php" method="get" class="mt-4">
                                     <input type="text" name="cari">
                                     <input class="btn btn-outline-primary btn-sm" type="submit" value="Cari">
                                 </form>

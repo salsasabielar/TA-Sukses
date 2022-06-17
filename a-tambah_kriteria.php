@@ -60,6 +60,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                         <tr>
                                             <th>No.</th>
                                             <th>Kriteria</th>
+                                            <th>Aksi</th>
 
                                         </tr>
                                     </thead>

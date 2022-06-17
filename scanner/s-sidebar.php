@@ -35,7 +35,7 @@
                 </li>
                 <h3 class="menu-title"></h3>
                 <li>
-                    <a href="p-logout.php" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sign-out"></i>Logout</a>
+                    <a href="../p-logout.php" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-sign-out"></i>Logout</a>
                 </li>
             </ul>
         </div><!-- /.navbar-collapse -->

@@ -66,12 +66,12 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                     </thead>
                                     <?php
                                     include "config.php";
-                                    $query = mysqli_query($koneksi, "SELECT * FROM user ") or die(mysqli_error());
+                                    $query = mysqli_query($koneksi, "SELECT * FROM user") or die(mysqli_error());
                                     if (isset($_GET['cari'])) {
                                         $cari = $_GET['cari'];
                                         $query = mysqli_query($koneksi, "SELECT * FROM user WHERE username LIKE '%" . $cari . "%'");
                                     } else {
-                                        $query = mysqli_query($koneksi, "SELECT * FROM user ");
+                                        $query = mysqli_query($koneksi, "SELECT * FROM user ORDER BY username ASC");
                                     }
                                     $nomor = 1;
                                     if ($query) {
