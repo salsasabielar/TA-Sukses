@@ -36,11 +36,17 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
 
                     <div class="col-md-12">
                         <div class="card">
+                           <form action="a-data_survey.php" method="get">
                             <div class="card-header">
-                                <form action="s-data_survey.php" method="get">
-                                    <input type="text" name="cari">
+                                <div class="row form-group">
+                                    <div class="col-12 col-md-3">
+                                        <input type="text" name="cari" placeholder="Masukkan Kata Kunci" class="form-control">
+                                    </div>
+                                    <p style="text-indent: 1em;">&nbsp</p>
+
                                     <input class="btn btn-outline-primary btn-sm" type="submit" value="Cari">
-                                </form>
+
+                                </div>
                                 <?php
                                 if (isset($_GET['cari'])) {
                                     $cari = $_GET['cari'];
@@ -48,6 +54,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                 }
                                 ?>
                             </div>
+                            </form>
 
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
@@ -57,6 +64,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                             <th>NIK</th>
                                             <th>Nama</th>
                                             <th>Alamat</th>
+                                            <th>Keterangan</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -79,6 +87,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                                 <td><?php echo $data['nik']; ?></td>
                                                 <td><?php echo $data['nama']; ?></td>
                                                 <td><?php echo $data['alamat']; ?></td>
+                                                <td><?php echo $data['ket']; ?></td>
                                                 <td>
                                                     <a class="btn btn-sm btn-primary" href="s-kriteria.php?nik=<?php echo $data['nik']; ?>">Survey</a>
                                                     <!-- <a class="btn btn-danger btn-sm" href="p-delete_data.php?nik=<?php echo $data['nik']; ?>" onclick="return confirm()">Hapus</a> -->

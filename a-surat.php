@@ -44,7 +44,7 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                                         <div class="col-12 col-md-5">
                                             <select name="nik" id="select" class="form-control">
 
-                                                <option selected>Cari Nama...</option>
+                                                <option selected>Temukan Nama...</option>
                                                 <?php
                                                 include "config.php";
                                                 $nik = $_GET['nik'];

@@ -44,8 +44,15 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                             </div>
                             <div class="card-header">
                                 <form action="a-tambah_kriteria.php" method="get">
-                                    <input type="text" name="cari">
-                                    <input class="btn btn-outline-primary btn-sm" type="submit" value="Cari">
+                                    <div class="row form-group">
+                                        <div class="col-12 col-md-3">
+                                            <input type="text" name="cari" placeholder="Masukkan Kata Kunci" class="form-control">
+                                        </div>
+                                        <p style="text-indent: 1em;">&nbsp</p>
+
+                                        <input class="btn btn-outline-primary btn-sm" type="submit" value="Cari">
+
+                                    </div>
                                 </form>
                                 <?php
                                 if (isset($_GET['cari'])) {

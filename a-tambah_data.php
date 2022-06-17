@@ -43,8 +43,16 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                             </div>
                             <div class="card-header">
                                 <form action="a-tambah_data.php" method="get">
-                                    <input type="text" name="cari">
-                                    <input class="btn btn-outline-primary btn-sm" type="submit" value="Cari">
+                                    <div class="row form-group">
+                                        <div class="col-12 col-md-3">
+                                            <input type="text" name="cari" placeholder="Masukkan Kata Kunci" class="form-control">
+                                        </div>
+                                        <p style="text-indent: 1em;">&nbsp</p>
+
+                                        <input class="btn btn-outline-primary btn-sm" type="submit" value="Cari">
+
+                                    </div>
+
                                 </form>
                                 <?php
                                 if (isset($_GET['cari'])) {
@@ -66,8 +74,6 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                             <th>Tempat,Tanggal Lahir</th>
                                             <th>Pekerjaan</th>
                                             <th>Jenis Kelamin</th>
-                                            <!-- <th>Tanggal Survey</th> -->
-                                            <!-- <th>Status</th> -->
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -77,7 +83,9 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
 
                                     if (isset($_GET['cari'])) {
                                         $cari = $_GET['cari'];
-                                        $query = mysqli_query($koneksi, "SELECT * FROM warga WHERE nama LIKE '%" . $cari . "%' OR nik LIKE '%" . $cari . "%' OR alamat LIKE '%" . $cari . "%' OR pekerjaan LIKE '%" . $cari . "%' OR jenisKelamin LIKE '%" . $cari . "%'");
+                                        $query = mysqli_query($koneksi, "SELECT * FROM warga WHERE nama LIKE '%" . $cari . "%' OR nik LIKE '%" . $cari . "%' 
+                                        OR alamat LIKE '%" . $cari . "%' OR pekerjaan LIKE '%" . $cari . "%' 
+                                        OR jenisKelamin LIKE '%" . $cari . "%' OR tempat LIKE '%" . $cari . "%' OR tgl_lahir LIKE '%" . $cari . "%'");
                                     } else {
                                         $query = mysqli_query($koneksi, "SELECT * FROM warga");
                                     }
@@ -86,16 +94,14 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                         while ($data = mysqli_fetch_array($query)) {
                                     ?>
                                             <tr>
-                                            
+
                                                 <td><?php echo $nomor++; ?></td>
                                                 <td><?php echo $data['nik']; ?></td>
                                                 <td><?php echo $data['nama']; ?></td>
                                                 <td><?php echo $data['alamat']; ?></td>
-                                                <td><?php echo $data['tempat']; ?>, <?php echo date('d M Y', strtotime($data["tgl_lahir"]));  ?></td>
+                                                <td><?php echo $data['tempat']; ?>, <?php echo date('d-m-Y', strtotime($data["tgl_lahir"]));  ?></td>
                                                 <td><?php echo $data['pekerjaan']; ?></td>
                                                 <td><?php echo $data['jenisKelamin']; ?></td>
-                                                <!-- <td><?php echo $data['tanggalsurvey']; ?></td> -->
-                                                <!-- <td><?php echo $data['status']; ?></td> -->
                                                 <td>
                                                     <a class="btn btn-success btn-sm" href="a-form_edit_data.php?nik=<?php echo $data['nik']; ?>">Edit</a>
                                                     <a class="btn btn-danger btn-sm" href="p-hapus.php?nik=<?php echo $data['nik']; ?>" onclick="return confirm()">Hapus</a>

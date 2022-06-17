@@ -32,7 +32,6 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
         </div>
 
         <form action="p-tambah_data.php" method="post" class="form-horizontal">
-        <br></br>
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body card-block">

@@ -19,10 +19,12 @@
         <div class="col-sm-5">
             <div class="user-area dropdown float-right">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <?php echo $_SESSION['username'] ?><img class="user-avatar rounded-circle" src="../images/admin.jpg" alt="User Avatar">
+                    <img class="user-avatar rounded-circle" src="../images/user.png" alt="User Avatar">
                 </a>
             </div>
-
+            <div class="language-select dropdown" id="language-select">
+                <p><?php echo $_SESSION['username'] ?></p>
+            </div>
         </div>
     </div>
 

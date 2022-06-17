@@ -42,9 +42,16 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                 </a>
                             </div>
                             <div class="card-header">
-                                <form action="a-manage_user.php" method="get">                                                                       
-                                    <input type="text" name="cari">
-                                    <input class="btn btn-outline-primary btn-sm" type="submit" value="Cari">
+                                <form action="a-manage_user.php" method="get">
+                                    <div class="row form-group">
+                                        <div class="col-12 col-md-3">
+                                            <input type="text" name="cari" placeholder="Masukkan Kata Kunci" class="form-control">
+                                        </div>
+                                        <p style="text-indent: 1em;">&nbsp</p>
+
+                                        <input class="btn btn-outline-primary btn-sm" type="submit" value="Cari">
+
+                                    </div>
                                 </form>
                                 <?php
                                 if (isset($_GET['cari'])) {
@@ -69,7 +76,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                     $query = mysqli_query($koneksi, "SELECT * FROM user") or die(mysqli_error());
                                     if (isset($_GET['cari'])) {
                                         $cari = $_GET['cari'];
-                                        $query = mysqli_query($koneksi, "SELECT * FROM user WHERE username LIKE '%" . $cari . "%'");
+                                        $query = mysqli_query($koneksi, "SELECT * FROM user WHERE username LIKE '%" . $cari . "%' OR role LIKE '%" . $cari . "%'");
                                     } else {
                                         $query = mysqli_query($koneksi, "SELECT * FROM user ORDER BY username ASC");
                                     }

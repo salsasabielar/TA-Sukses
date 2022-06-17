@@ -15,7 +15,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
     <!-- Right Panel -->
     <div id="right-panel" class="right-panel">
 
-    <?php include 'sidebar2.php'; ?>
+        <?php include 'sidebar2.php'; ?>
 
         <div class="breadcrumbs">
             <div class="col-sm-auto">
@@ -32,9 +32,17 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <form action="s-laporan.php" method="get" class="mt-4">
-                                    <input type="text" name="cari">
-                                    <input class="btn btn-outline-primary btn-sm" type="submit" value="Cari">
+                                <form action="s-laporan.php" method="get">
+                                    <div class="row form-group">
+                                        <div class="col-12 col-md-3">
+                                            <input type="text" name="cari" placeholder="Masukkan Kata Kunci" class="form-control">
+                                        </div>
+                                        <p style="text-indent: 1em;">&nbsp</p>
+
+                                        <input class="btn btn-outline-primary btn-sm" type="submit" value="Cari">
+
+                                    </div>
+
                                 </form>
                                 <?php
                                 if (isset($_GET['cari'])) {
@@ -42,7 +50,6 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                     echo "<b>Hasil pencarian : " . $cari . "</b>";
                                 }
                                 ?>
-
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
@@ -56,7 +63,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                             <th>Jenis Kelamin</th>
                                             <th>Status</th>
                                             <th>Tanggal Survey</th>
-                                            <th>Action</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -66,7 +73,9 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                             // $query_mysqli = mysqli_query($koneksi, "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik ORDER BY id_survey DESC") or die(mysqli_error($koneksi));
                                             if (isset($_GET['cari'])) {
                                                 $cari = ($_GET['cari']);
-                                                $sql = "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik where warga.nama like '%" . $cari . "%'";
+                                                $sql = "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik where warga.nama like '%" . $cari . "%' OR warga.pekerjaan LIKE '%" . $cari . "%'
+                                                OR warga.alamat LIKE '%" . $cari . "%' OR warga.nik LIKE '%" . $cari . "%' OR warga.jenisKelamin LIKE '%" . $cari . "%' 
+                                                OR survey.status LIKE '%" . $cari . "%' OR survey.tglSurvey LIKE '%" . $cari . "%'";
                                                 $query_mysqli = mysqli_query($koneksi, $sql) or die(mysqli_error($koneksi));
                                             } else {
                                                 $query_mysqli = mysqli_query($koneksi, "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik ORDER BY id_survey DESC") or die(mysqli_error($koneksi));
@@ -85,7 +94,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                             <td><?php echo $data['status']; ?></td>
                                             <td><?php echo $data['tglSurvey']; ?></td>
                                             <td><a class="btn btn-sm btn-warning" href="s-detail.php?nik=<?php echo $data['nik']; ?>&id_survey=<?= $data['id_survey'] ?>">Detail</a></td>
-                                            
+
                                         </tr>
                                 <?php }
                                             } ?>
