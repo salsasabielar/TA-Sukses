@@ -88,9 +88,11 @@
  // koneksi database
  $koneksi = mysqli_connect("localhost","root","","bltdd");
 $tahun = $_GET['tahun'];
+$bulan = $_GET['bulan'];
+$tgl = $_GET['tgl'];
  // menampilkan data pegawai
 //  $data = mysqli_query($koneksi,"SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik where YEAR($tahun)");s
- $query = mysqli_query($koneksi,"SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik where YEAR(tglSurvey) = '$tahun'");
+ $query = mysqli_query($koneksi,"SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik where YEAR(tglSurvey) = '$tahun' AND MONTH(tglSurvey)='$bulan' AND DAY(tglSurvey) = '$tgl' " );
  $nomor = 1;
 //  query pertahun
  while($d = mysqli_fetch_array($query)){

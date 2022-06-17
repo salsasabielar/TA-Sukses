@@ -58,7 +58,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
 
 
 
-                                <!-- <form action="cetak laporan/p-cetak_tahun.php" class="mt-4">
+                                <form action="cetak laporan/p-cetak_tahun.php" class="mt-4">
                                     <div class="row form-group">
                                         <div class="col-12 col-md-2">
                                             <select name="tahun" class="form-control" required>
@@ -68,14 +68,30 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                                 <?php endfor; ?>
                                             </select>
                                         </div>
+                                        <div class="col-12 col-md-2">
+                                            <select name="bulan" class="form-control" required>
+                                                <option value="">Pilih Bulan</option>
+                                                <?php for ($i = 1; $i <= 12; $i++) : ?>
+                                                    <option value="<?= $i ?>" <?= $i == date('m') ? 'selected' : '' ?>><?= $i ?></option>
+                                                <?php endfor; ?>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-md-2">
+                                            <select name="tgl" class="form-control" required>
+                                                <option value="">Pilih Tanggal</option>
+                                                <?php for ($i = 1; $i <= 31; $i++) : ?>
+                                                    <option value="<?= $i ?>" <?= $i == date('d') ? 'selected' : '' ?>><?= $i ?></option>
+                                                <?php endfor; ?>
+                                            </select>
+                                        </div>
                                         <button type="submit" class="btn btn-primary btn-sm">
                                             Cetak
                                         </button>
                                         <p style="text-indent: 1em;">&nbsp</p>
 
-                                        <a href="cetak laporan/p-cetak.php" class="btn btn-outline-danger">Cetak Semua</a>
+                                        <!-- <a href="cetak laporan/p-cetak.php" class="btn btn-outline-danger">Cetak Semua</a> -->
                                     </div>
-                                </form> -->
+                                </form>
                                 <form action="a-laporan.php" method="get" class="mt-4">
                                     <input type="text" name="cari">
                                     <input type="text" name="carirtw">
