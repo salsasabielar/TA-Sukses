@@ -61,26 +61,26 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                 <form action="cetak laporan/p-cetak_tahun.php" class="mt-4">
                                     <div class="row form-group">
                                         <div class="col-12 col-md-2">
-                                            <select name="tahun" class="form-control" required>
-                                                <option value="">Pilih Tahun</option>
-                                                <?php for ($i = 1990; $i <= 2050; $i++) : ?>
-                                                    <option value="<?= $i ?>" <?= $i == date('Y') ? 'selected' : '' ?>><?= $i ?></option>
-                                                <?php endfor; ?>
-                                            </select>
-                                        </div>
-                                        <div class="col-12 col-md-2">
-                                            <select name="bulan" class="form-control" required>
-                                                <option value="">Pilih Bulan</option>
-                                                <?php for ($i = 1; $i <= 12; $i++) : ?>
-                                                    <option value="<?= $i ?>" <?= $i == date('m') ? 'selected' : '' ?>><?= $i ?></option>
-                                                <?php endfor; ?>
-                                            </select>
-                                        </div>
-                                        <div class="col-12 col-md-2">
-                                            <select name="tgl" class="form-control" required>
+                                            <select name="tgl" class="form-control">
                                                 <option value="">Pilih Tanggal</option>
                                                 <?php for ($i = 1; $i <= 31; $i++) : ?>
-                                                    <option value="<?= $i ?>" <?= $i == date('d') ? 'selected' : '' ?>><?= $i ?></option>
+                                                    <option value="<?= $i ?>" <?= $i == date('d') ?>><?= $i ?></option>
+                                                <?php endfor; ?>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-md-2">
+                                            <select name="bulan" class="form-control">
+                                                <option value="">Pilih Bulan</option>
+                                                <?php for ($i = 1; $i <= 12; $i++) : ?>
+                                                    <option value="<?= $i ?>" <?= $i == date('m') ?>><?= $i ?></option>
+                                                <?php endfor; ?>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-md-2">
+                                            <select name="tahun" class="form-control">
+                                                <option selected>Pilih Tahun</option>
+                                                <?php for ($i = 1990; $i <= 2050; $i++) : ?>
+                                                    <option value="<?= $i ?>" <?= $i == date('Y') ?>><?= $i ?></option>
                                                 <?php endfor; ?>
                                             </select>
                                         </div>
@@ -98,25 +98,11 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                     <input class="btn btn-outline-primary btn-sm" type="submit" value="Cari">
                                 </form>
                                 <?php
-                                if (isset($_GET['cari']) && ($_GET['carirtw']) ) {
+                                if (isset($_GET['cari']) && ($_GET['carirtw'])) {
                                     $cari = $_GET['cari'];
                                     $carirtw = $_GET['carirtw'];
                                     echo "<b>Hasil pencarian : " . $cari . "</b>";
                                     echo "<b>Hasil pencarian : " . $carirtw . "</b>";
-                                }
-                                ?>
-                                <form action="a-laporan.php" method="get" class="mt-4">
-                                    <input type="text" name="caritgl">
-                                    <input class="btn btn-outline-primary btn-sm" type="submit" value="Caritgl">
-                                </form>
-                                <?php
-                                include "config.php";
-                                if (isset($_GET['caritgl'])) {
-                                    $caritgl = date('d M Y', strtotime($_GET['caritgl']));
-                                    $p = "where survey.tglSurvey LIKE '%" . $caritgl . "%'";
-                                    $sql = "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik ".$p;
-                                    $query_mysqli = mysqli_query($koneksi, $sql) or die(mysqli_error($koneksi));
-                                    echo "<b>Hasil pencarian : " . $caritgl . "</b>";
                                 }
                                 ?>
 
@@ -143,9 +129,9 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                             // $query_mysqli = mysqli_query($koneksi, "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik ORDER BY id_survey DESC") or die(mysqli_error($koneksi));
                                             if (isset($_GET['cari'])) {
                                                 $cari = ($_GET['cari']);
-                                                
-                                                    $q = "";
-                                                 if (isset($_GET['cari']) && isset($_GET['carirtw'])){
+
+                                                $q = "";
+                                                if (isset($_GET['cari']) && isset($_GET['carirtw'])) {
                                                     $carirtw = ($_GET['carirtw']);
                                                     $q = "where (warga.alamat LIKE '%" . $carirtw . "%' AND warga.nama like '%" . $cari . "%' ) 
                                                     OR (warga.alamat LIKE '%" . $carirtw . "%' AND warga.nik LIKE '%" . $cari . "%' ) 
@@ -155,7 +141,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                                     OR (warga.alamat LIKE '%" . $carirtw . "%' AND survey.tglSurvey LIKE '%" . $cari . "%')
                                                     ";
                                                 }
-                                                $sql = "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik ".$q;
+                                                $sql = "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik " . $q;
                                                 $query_mysqli = mysqli_query($koneksi, $sql) or die(mysqli_error($koneksi));
                                             } else {
                                                 $query_mysqli = mysqli_query($koneksi, "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik ORDER BY id_survey DESC") or die(mysqli_error($koneksi));
