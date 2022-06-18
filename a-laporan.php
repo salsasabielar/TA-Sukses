@@ -132,6 +132,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                                     OR (warga.alamat LIKE '%" . $carirtw . "%' AND warga.pekerjaan LIKE '%" . $cari . "%' AND (YEAR(tglSurvey) = '$tahun' AND MONTH(tglSurvey)='$bulan' AND DAY(tglSurvey) = '$tgl'))
                                                     OR (warga.alamat LIKE '%" . $carirtw . "%' AND survey.status LIKE '%" . $cari . "%' AND (YEAR(tglSurvey) = '$tahun' AND MONTH(tglSurvey)='$bulan' AND DAY(tglSurvey) = '$tgl' ))
                                                     OR (warga.alamat LIKE '%" . $carirtw . "%' AND survey.tglSurvey LIKE '%" . $cari . "%' AND (YEAR(tglSurvey) = '$tahun' AND MONTH(tglSurvey)='$bulan' AND DAY(tglSurvey) = '$tgl'))
+                                                    OR (warga.alamat LIKE '%" . $carirtw . "%' AND user.username LIKE '%" . $cari . "%' AND (YEAR(tglSurvey) = '$tahun' AND MONTH(tglSurvey)='$bulan' AND DAY(tglSurvey) = '$tgl'))
                                                     ";
                                                 } else if ($_GET['tahun'] != '' && $_GET['bulan'] != '') {
                                                     $carirtw = ($_GET['carirtw']);
@@ -144,6 +145,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                                     OR (warga.alamat LIKE '%" . $carirtw . "%' AND warga.pekerjaan LIKE '%" . $cari . "%' AND (YEAR(tglSurvey) = '$tahun' AND MONTH(tglSurvey)='$bulan' ))
                                                     OR (warga.alamat LIKE '%" . $carirtw . "%' AND survey.status LIKE '%" . $cari . "%' AND (YEAR(tglSurvey) = '$tahun' AND MONTH(tglSurvey)='$bulan'  ))
                                                     OR (warga.alamat LIKE '%" . $carirtw . "%' AND survey.tglSurvey LIKE '%" . $cari . "%' AND (YEAR(tglSurvey) = '$tahun' AND MONTH(tglSurvey)='$bulan' ))
+                                                    OR (warga.alamat LIKE '%" . $carirtw . "%' AND user.username LIKE '%" . $cari . "%' AND (YEAR(tglSurvey) = '$tahun' AND MONTH(tglSurvey)='$bulan' ))
                                                     ";
                                                 } else if ($_GET['tgl'] != '' && $_GET['bulan'] != '') {
                                                     $carirtw = ($_GET['carirtw']);
@@ -156,6 +158,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                                     OR (warga.alamat LIKE '%" . $carirtw . "%' AND warga.pekerjaan LIKE '%" . $cari . "%' AND (DAY(tglSurvey) = '$tgl' AND MONTH(tglSurvey)='$bulan' ))
                                                     OR (warga.alamat LIKE '%" . $carirtw . "%' AND survey.status LIKE '%" . $cari . "%' AND (DAY(tglSurvey) = '$tgl' AND MONTH(tglSurvey)='$bulan'  ))
                                                     OR (warga.alamat LIKE '%" . $carirtw . "%' AND survey.tglSurvey LIKE '%" . $cari . "%' AND (DAY(tglSurvey) = '$tgl' AND MONTH(tglSurvey)='$bulan' ))
+                                                    OR (warga.alamat LIKE '%" . $carirtw . "%' AND user.username LIKE '%" . $cari . "%' AND (DAY(tglSurvey) = '$tgl' AND MONTH(tglSurvey)='$bulan' ))
                                                     ";
                                                 } else if ($_GET['tahun'] != '' && $_GET['tgl'] != '') {
                                                     $carirtw = ($_GET['carirtw']);
@@ -168,6 +171,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                                     OR (warga.alamat LIKE '%" . $carirtw . "%' AND warga.pekerjaan LIKE '%" . $cari . "%' AND (YEAR(tglSurvey) = '$tahun' AND DAY(tglSurvey)='$tgl' ))
                                                     OR (warga.alamat LIKE '%" . $carirtw . "%' AND survey.status LIKE '%" . $cari . "%' AND (YEAR(tglSurvey) = '$tahun' AND DAY(tglSurvey)='$tgl'  ))
                                                     OR (warga.alamat LIKE '%" . $carirtw . "%' AND survey.tglSurvey LIKE '%" . $cari . "%' AND (YEAR(tglSurvey) = '$tahun' AND DAY(tglSurvey)='$tgl' ))
+                                                    OR (warga.alamat LIKE '%" . $carirtw . "%' AND user.username LIKE '%" . $cari . "%' AND (YEAR(tglSurvey) = '$tahun' AND DAY(tglSurvey)='$tgl' ))
                                                     ";
                                                 } else if ($_GET['tahun'] != '' || $_GET['bulan'] != '' || $_GET['tgl'] != '') {
                                                     $carirtw = ($_GET['carirtw']);
@@ -180,6 +184,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                                     OR (warga.alamat LIKE '%" . $carirtw . "%' AND warga.pekerjaan LIKE '%" . $cari . "%' AND (YEAR(tglSurvey) = '$tahun' OR MONTH(tglSurvey)='$bulan' OR DAY(tglSurvey) = '$tgl'))
                                                     OR (warga.alamat LIKE '%" . $carirtw . "%' AND survey.status LIKE '%" . $cari . "%' AND (YEAR(tglSurvey) = '$tahun' OR MONTH(tglSurvey)='$bulan' OR DAY(tglSurvey) = '$tgl' ))
                                                     OR (warga.alamat LIKE '%" . $carirtw . "%' AND survey.tglSurvey LIKE '%" . $cari . "%' AND (YEAR(tglSurvey) = '$tahun' OR MONTH(tglSurvey)='$bulan' OR DAY(tglSurvey) = '$tgl'))
+                                                    OR (warga.alamat LIKE '%" . $carirtw . "%' AND user.username LIKE '%" . $cari . "%' AND (YEAR(tglSurvey) = '$tahun' OR MONTH(tglSurvey)='$bulan' OR DAY(tglSurvey) = '$tgl'))
                                                     ";
                                                 } else if ($_GET['cari'] != '' || $_GET['carirtw'] != '' && $_GET['tahun'] == '' && $_GET['bulan'] == '' && $_GET['tgl'] == '') {
                                                     $carirtw = ($_GET['carirtw']);
@@ -192,6 +197,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                                     OR (warga.alamat LIKE '%" . $carirtw . "%' AND warga.pekerjaan LIKE '%" . $cari . "%' )
                                                     OR (warga.alamat LIKE '%" . $carirtw . "%' AND survey.status LIKE '%" . $cari . "%')
                                                     OR (warga.alamat LIKE '%" . $carirtw . "%' AND survey.tglSurvey LIKE '%" . $cari . "%')
+                                                    OR (warga.alamat LIKE '%" . $carirtw . "%' AND user.username LIKE '%" . $cari . "%')
                                                     ";
                                                 } else {
                                                     $carirtw = ($_GET['carirtw']);
@@ -204,9 +210,10 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                                     OR (warga.alamat LIKE '%" . $carirtw . "%' AND warga.pekerjaan LIKE '%" . $cari . "%' AND (YEAR(tglSurvey) = '$tahun' AND MONTH(tglSurvey)='$bulan' AND DAY(tglSurvey) = '$tgl'))
                                                     OR (warga.alamat LIKE '%" . $carirtw . "%' AND survey.status LIKE '%" . $cari . "%' AND (YEAR(tglSurvey) = '$tahun' AND MONTH(tglSurvey)='$bulan' AND DAY(tglSurvey) = '$tgl' ))
                                                     OR (warga.alamat LIKE '%" . $carirtw . "%' AND survey.tglSurvey LIKE '%" . $cari . "%' AND (YEAR(tglSurvey) = '$tahun' AND MONTH(tglSurvey)='$bulan' AND DAY(tglSurvey) = '$tgl'))
+                                                    OR (warga.alamat LIKE '%" . $carirtw . "%' AND user.username LIKE '%" . $cari . "%' AND (YEAR(tglSurvey) = '$tahun' AND MONTH(tglSurvey)='$bulan' AND DAY(tglSurvey) = '$tgl'))
                                                     ";
                                                 }
-                                                $sql = "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik " . $q;
+                                                $sql = "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik INNER JOIN user ON survey.id_user = user.id_user " . $q;
                                                 $query_mysqli = mysqli_query($koneksi, $sql) or die(mysqli_error($koneksi));
                                             } else {
                                                 $query_mysqli = mysqli_query($koneksi, "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik INNER JOIN user ON survey.id_user = user.id_user ORDER BY id_survey DESC") or die(mysqli_error($koneksi));
