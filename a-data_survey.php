@@ -76,13 +76,13 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                     </thead>
                                     <?php
                                     include "config.php";
-                                    $query_mysqli = mysqli_query($koneksi, "SELECT * FROM warga") or die(mysqli_error($koneksi));
+                                    $query_mysqli = mysqli_query($koneksi, "SELECT * FROM wargaList") or die(mysqli_error($koneksi));
 
                                     if (isset($_GET['cari'])) {
                                         $cari = $_GET['cari'];
-                                        $query = mysqli_query($koneksi, "SELECT * FROM warga WHERE nama LIKE '%" . $cari . "%' OR nik LIKE '%" . $cari . "%' OR alamat LIKE '%" . $cari . "%'");
+                                        $query = mysqli_query($koneksi, "SELECT * FROM wargaList WHERE nama LIKE '%" . $cari . "%' OR nik LIKE '%" . $cari . "%' OR alamat LIKE '%" . $cari . "%'");
                                     } else {
-                                        $query = mysqli_query($koneksi, "SELECT * FROM warga");
+                                        $query = mysqli_query($koneksi, "SELECT * FROM wargaList");
                                     }
                                     $nomor = 1;
                                     if ($query) {
