@@ -227,9 +227,9 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                             <td><?php echo $data['nik']; ?></td>
                                             <td><?php echo $data['username']; ?></td>
                                             <td><?php echo $data['nama']; ?></td>
-                                            <td><?php echo $data['alamat']; ?></td>
-                                            <td><?php echo $data['pekerjaan']; ?></td>
+                                            <td><?php echo $data['alamat']; ?></td>                                            
                                             <td><?php echo $data['jenisKelamin']; ?></td>
+                                            <td><?php echo $data['pekerjaan']; ?></td>
                                             <td><?php echo $data['status']; ?></td>
                                             <td><?php echo $data['tglSurvey']; ?></td>
                                             <td><a class="btn btn-sm btn-warning" href="a-detail.php?nik=<?php echo $data['nik']; ?>&id_survey=<?= $data['id_survey'] ?>">Detail</a>
