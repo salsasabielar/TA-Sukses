@@ -38,7 +38,6 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                 </div>
                 <div class="card-body">
                     <table class="table">
-
                         <?php
                         $tglSurvey = $_GET['id_survey'];
                         if (isset($_GET['nik'])) {
@@ -47,10 +46,9 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                             die("Error. No ID Selected!");
                         }
                         include "config.php";
-                        $query    = mysqli_query($koneksi, "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik WHERE survey.id_survey='$tglSurvey'");
+                        $query    = mysqli_query($koneksi, "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik INNER JOIN user ON survey.id_user = user.id_user WHERE survey.id_survey='$tglSurvey'");
                         $data    = mysqli_fetch_array($query);
                         ?>
-
                         <tbody>
                             <tr>
                                 <th scope="row">NIK</th>
@@ -146,6 +144,19 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                             <tr>
                                 <th scope="row">Status</th>
                                 <td><?php echo $data['status'] ?></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Surveyor</th>
+                                <td><?php echo $data['username'] ?></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
