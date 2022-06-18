@@ -34,7 +34,6 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
         <form action="p-filter.php?nik=<?= $_GET['nik'] ?>" method="post" class="form-horizontal">
 
             <div class="col-lg-12">
-
                 <div class="card">
                     <div class="card-header">
                         <div class="row form-group">
@@ -42,7 +41,8 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                             <div class="col-12 col-md-5"><input type="date" name="tgl" id="tgl" class="form-control"><span class="help-block"></span></div>
                         </div>
                         <div class="row form-group">
-                            <div class="col-12 col-md-5">
+                            <div class="col col-md-2"><label for="nik" class=" form-control-label">Surveyor</label></div>
+                            <div class="col-12 col-md-3">
                                 <select name="id_user" id="select" class="form-control">
 
                                     <option selected>Temukan Nama...</option>
@@ -61,57 +61,61 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
 
                             </div>
                         </div>
-                        <div class="card-body">
+                    </div>
 
-                            <table class="table">
-                                <thead class="thead-light">
 
-                                    <tr>
+                    <div class="card-body">
 
-                                        <?php
-                                        include "config.php";
+                        <table class="table">
+                            <thead class="thead-light">
 
-                                        $tampil = "SELECT * FROM kriteria ORDER BY id_kriteria";
-                                        $hasil = mysqli_query($koneksi, $tampil);
-                                        $no1 = 0;
-                                        $no2 = 0;
+                                <tr>
 
-                                        $nomor = 1;
-                                        while ($data = mysqli_fetch_array($hasil)) {
+                                    <?php
+                                    include "config.php";
 
-                                            echo "<tr >
+                                    $tampil = "SELECT * FROM kriteria ORDER BY id_kriteria";
+                                    $hasil = mysqli_query($koneksi, $tampil);
+                                    $no1 = 0;
+                                    $no2 = 0;
+
+                                    $nomor = 1;
+                                    while ($data = mysqli_fetch_array($hasil)) {
+
+                                        echo "<tr >
                                     
                                     <td><input type=checkbox name='ya[]' value=$data[id_kriteria] id=id1$no1></td>
                                     <td>$data[nama]</td>";
 
-                                            $nomor++;
-                                            $no1++;
-                                            $no2++;
+                                        $nomor++;
+                                        $no1++;
+                                        $no2++;
 
-                                        ?>
-                                        <?php } ?>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table>
+                                    ?>
+                                    <?php } ?>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
 
 
-                        </div>
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-primary btn-sm">
-                                <i class="fa fa-dot-circle-o"></i> Submit
-                            </button>
-                            <!-- <a href="a-tambah_data.php">
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary btn-sm">
+                            <i class="fa fa-dot-circle-o"></i> Submit
+                        </button>
+                        <!-- <a href="a-tambah_data.php">
                             <button type="submit" class="btn btn-primary btn-sm">
                                 <i class="fa fa-dot-circle-o"></i> Submit
                             </button>
                         </a> -->
 
-                        </div>
                     </div>
                 </div>
-        </form>
+            </div>
+    </div>
+    </form>
 
 
     </div><!-- /#right-panel -->

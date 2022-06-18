@@ -14,7 +14,8 @@ $hasil = mysqli_query($koneksi, $tampil);
 while ($data = mysqli_fetch_array($hasil)) {
     $id_warga = $data['nik'];
     $date = $_POST['tgl'];
-    $newSurvey = mysqli_query($koneksi, "INSERT INTO `survey` VALUES (null,$nik,null,null,'$date',null)");
+    $id_user = $_POST['id_user'];
+    $newSurvey = mysqli_query($koneksi, "INSERT INTO `survey` VALUES (null,$nik,$id_user,null,'$date',null)");
 
     $survey = mysqli_query($koneksi, "SELECT * FROM survey WHERE nik = '$nik' ORDER BY id_survey DESC LIMIT 1");
     $dataSurvey = mysqli_fetch_array($survey);

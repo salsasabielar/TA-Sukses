@@ -5,8 +5,8 @@ $nama = $_POST['nama'];
 $alamat = $_POST['alamat'];
 $tempat = $_POST['tempat'];
 $tgl_lahir = $_POST['tgl_lahir'];
-$pekerjaan = $_POST['pekerjaan'];
 $jenisKelamin = $_POST['jenisKelamin'];
+$pekerjaan = $_POST['pekerjaan'];
 $ket = $_POST['ket'];
 // $status = $_POST['status'];
 

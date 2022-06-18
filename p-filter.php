@@ -2,7 +2,7 @@
 include "config.php";
 $ceka = @$_POST['ya'];
 $nik = $_GET['nik'];
-$username = $_GET[$_SESSION['username']];
+
 if(is_null($ceka)){
     echo "<script>alert('Pilih Kriteria Terlebih Dahulu');</script>";
     echo "<script>location='a-kriteria.php?nik=$nik';</script>";

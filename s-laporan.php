@@ -57,6 +57,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                         <tr>
                                             <th>No.</th>
                                             <th>NIK</th>
+                                            <th>Surveyor</th>
                                             <th>Nama</th>
                                             <th>Alamat</th>
                                             <th>Pekerjaan</th>
@@ -73,12 +74,12 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                             // $query_mysqli = mysqli_query($koneksi, "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik ORDER BY id_survey DESC") or die(mysqli_error($koneksi));
                                             if (isset($_GET['cari'])) {
                                                 $cari = ($_GET['cari']);
-                                                $sql = "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik where warga.nama like '%" . $cari . "%' OR warga.pekerjaan LIKE '%" . $cari . "%'
+                                                $sql = "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik INNER JOIN user ON survey.id_user = user.id_user where warga.nama like '%" . $cari . "%' OR warga.pekerjaan LIKE '%" . $cari . "%'
                                                 OR warga.alamat LIKE '%" . $cari . "%' OR warga.nik LIKE '%" . $cari . "%' OR warga.jenisKelamin LIKE '%" . $cari . "%' 
-                                                OR survey.status LIKE '%" . $cari . "%' OR survey.tglSurvey LIKE '%" . $cari . "%'";
+                                                OR survey.status LIKE '%" . $cari . "%' OR survey.tglSurvey LIKE '%" . $cari . "%' OR user.username LIKE '%" . $cari . "%' ";
                                                 $query_mysqli = mysqli_query($koneksi, $sql) or die(mysqli_error($koneksi));
                                             } else {
-                                                $query_mysqli = mysqli_query($koneksi, "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik ORDER BY id_survey DESC") or die(mysqli_error($koneksi));
+                                                $query_mysqli = mysqli_query($koneksi, "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik INNER JOIN user ON survey.id_user = user.id_user ORDER BY id_survey DESC") or die(mysqli_error($koneksi));
                                             }
                                             $nomor = 1;
                                             if ($query_mysqli) {
@@ -87,12 +88,13 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                         <tr>
                                             <td><?php echo $nomor++; ?></td>
                                             <td><?php echo $data['nik']; ?></td>
+                                            <td><?php echo $data['username']; ?></td>
                                             <td><?php echo $data['nama']; ?></td>
                                             <td><?php echo $data['alamat']; ?></td>
-                                            <td><?php echo $data['pekerjaan']; ?></td>
                                             <td><?php echo $data['jenisKelamin']; ?></td>
+                                            <td><?php echo $data['pekerjaan']; ?></td>
                                             <td><?php echo $data['status']; ?></td>
-                                            <td><?php echo $data['tglSurvey']; ?></td>
+                                            <td><?php echo date('d-m-Y', strtotime($data["tglSurvey"])); ?></td>
                                             <td><a class="btn btn-sm btn-warning" href="s-detail.php?nik=<?php echo $data['nik']; ?>&id_survey=<?= $data['id_survey'] ?>">Detail</a></td>
 
                                         </tr>

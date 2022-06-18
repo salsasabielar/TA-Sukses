@@ -49,7 +49,7 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                                                 include "config.php";
                                                 $nik = $_GET['nik'];
                                                 //query menampilkan nip pegawai ke dalam combobox
-                                                $query    = mysqli_query($koneksi, "SELECT * FROM warga ORDER BY nama");
+                                                $query    = mysqli_query($koneksi, "SELECT * FROM wargaList ORDER BY nama");
                                                 while ($data = mysqli_fetch_array($query)) {
                                                 ?>
                                                     <option value="<?= $data['nik']; ?>"><?php echo $data['nama']; ?></option>

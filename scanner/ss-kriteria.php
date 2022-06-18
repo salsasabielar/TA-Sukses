@@ -34,12 +34,32 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
         <form action="sp-filter.php?nik=<?= $_GET['nik'] ?>" method="post" class="form-horizontal">
 
             <div class="col-lg-12">
-                
                 <div class="card">
                     <div class="card-header">
                         <div class="row form-group">
                             <div class="col col-md-2"><label for="nik" class=" form-control-label">Pilih Tanggal Survey</label></div>
                             <div class="col-12 col-md-5"><input type="date" name="tgl" id="tgl" class="form-control"><span class="help-block"></span></div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col col-md-2"><label for="nik" class=" form-control-label">Surveyor</label></div>
+                            <div class="col-12 col-md-3">
+                                <select name="id_user" id="select" class="form-control">
+
+                                    <option selected>Temukan Nama...</option>
+                                    <?php
+                                    include "../config.php";
+                                    $id_user = $_GET['id_user'];
+                                    //query menampilkan nip pegawai ke dalam combobox
+                                    $query    = mysqli_query($koneksi, "SELECT * FROM user ORDER BY username");
+                                    while ($data = mysqli_fetch_array($query)) {
+                                    ?>
+                                        <option value="<?= $data['id_user']; ?>"><?php echo $data['username']; ?></option>
+                                    <?php
+                                    }
+                                    ?>
+                                </select>
+
+                            </div>
                         </div>
                     </div>
 
@@ -53,7 +73,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                     <?php
                                     include "../config.php";
 
-                                    $tampil = "SELECT * FROM kriteria ORDER BY id_kriteria";
+                                    $tampil = "SELECT * FROM kriteria ORDER BY id_kriteria asc";
                                     $hasil = mysqli_query($koneksi, $tampil);
                                     $no1 = 0;
                                     $no2 = 0;
@@ -63,7 +83,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
 
                                         echo "<tr >
                                     
-                                    <td><input type=checkbox name='ya[]' value=$data[id_kriteria] id=id1$no1></td>
+                                    <td><input type=checkbox name=ya[] value=$data[id_kriteria] id=id1$no1></td>
                                     <td>$data[nama]</td>";
 
                                         $nomor++;
@@ -81,14 +101,11 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
 
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary btn-sm">
-                            <i class="fa fa-dot-circle-o"></i> Submit
-                        </button>
-                        <!-- <a href="a-tambah_data.php">
+                        <a href="s-tambah_data.php">
                             <button type="submit" class="btn btn-primary btn-sm">
                                 <i class="fa fa-dot-circle-o"></i> Submit
                             </button>
-                        </a> -->
+                        </a>
 
                     </div>
                 </div>
