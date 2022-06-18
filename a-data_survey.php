@@ -40,14 +40,16 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                             <form action="a-data_survey.php" method="get">
                                 <div class="card-header">
                                     <div class="row form-group">
-                                        <input type="text" name="cari">
+                                        <div class="col-12 col-md-3">
+                                            <input type="text" name="cari" placeholder="Masukkan Kata Kunci" class="form-control">
+                                        </div>
                                         <p style="text-indent: 1em;">&nbsp</p>
 
                                         <input class="btn btn-outline-primary btn-sm" type="submit" value="Cari">
 
                                         <p style="text-indent: 1em;">&nbsp</p>
 
-                                        <a href="p-refresh.php" class="btn btn-outline-danger">Refresh</a>
+                                        <a href="p-refresh.php" class="btn btn-outline-danger">Reset</a>
 
 
                                     </div>
@@ -93,7 +95,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                                 <td><?php echo $data['alamat']; ?></td>
                                                 <td><?php echo $data['ket']; ?></td>
                                                 <td>
-                                                    <a class="btn btn-sm btn-primary" href="p-ket_survey.php?nik=<?php echo $data['nik']; ?>">Survey</a>
+                                                    <a class="btn btn-sm btn-primary" href="a-kriteria.php?nik=<?php echo $data['nik']; ?>">Survey</a>
                                                     <!-- <a class="btn btn-sm btn-primary" href="s-form_edit_data.php?nik=<?php echo $data['nik']; ?>">Survey</a> -->
                                                     <!-- <a class="btn btn-danger btn-sm" href="p-delete_data.php?id_warga=<?= $data['nik']; ?>" onclick="return confirm()">Hapus</a> -->
                                                     <a class='btn btn-success btn-sm' href="p-generate_code.php?nik=<?php echo $data['nik']; ?>&& nomor=<?php echo $data['nik']; ?>">QR-Code</a>

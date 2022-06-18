@@ -2,6 +2,7 @@
 include "config.php";
 $ceka = @$_POST['ya'];
 $nik = $_GET['nik'];
+$username = $_GET[$_SESSION['username']];
 if(is_null($ceka)){
     echo "<script>alert('Pilih Kriteria Terlebih Dahulu');</script>";
     echo "<script>location='a-kriteria.php?nik=$nik';</script>";
@@ -14,7 +15,8 @@ $hasil = mysqli_query($koneksi, $tampil);
 while ($data = mysqli_fetch_array($hasil)) {
     $id_warga = $data['nik'];
     $date = $_POST['tgl'];
-    $newSurvey = mysqli_query($koneksi, "INSERT INTO `survey` VALUES (null,$nik,null,null,'$date',null)");
+    $id_user = $_POST['username'];
+    $newSurvey = mysqli_query($koneksi, "INSERT INTO `survey` VALUES (null,$nik,$id_user,null,'$date',null)");
 
     $survey = mysqli_query($koneksi, "SELECT * FROM survey WHERE nik = '$nik' ORDER BY id_survey DESC LIMIT 1");
     $dataSurvey = mysqli_fetch_array($survey);
@@ -47,7 +49,7 @@ while ($data = mysqli_fetch_array($hasil)) {
     
     mysqli_query($koneksi, "UPDATE survey SET `status` = '$status' WHERE id_survey = '$id_survey'");
     echo "<script>alert('Data Berhasil Disimpan');</script>";
-    header("location:a-data_survey.php");
+    header('location:p-ket_survey.php?nik=' . $nik);
 }
 
 ?>

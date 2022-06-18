@@ -42,12 +42,12 @@ while ($data = mysqli_fetch_array($hasil)) {
     } else if (count($ceka) >= (int) $min['jumlah'] && count($ceka) <= (int) $max['jumlah']) {
         $status = 'Layak';
     } else {
-        $status = 'Tidak Layak';
+        $status = 'Tidak Memenuhi';
     }
     
     mysqli_query($koneksi, "UPDATE survey SET `status` = '$status' WHERE id_survey = '$id_survey'");
     echo "<script>alert('Data Berhasil Disimpan');</script>";
-    header("location:s-data_survey.php");
+    header('location:ps-ket_survey.php?nik=' . $nik);
 }
 
 ?>
