@@ -25,9 +25,6 @@
                     <a href="../s-generate_code.php"><i class="menu-icon fa fa-id-card-o"></i>Generate QR-Code</a>
                 </li> -->
                 <li>
-                    <a href="../s-surat.php"><i class="menu-icon fa fa-file-word-o"></i>Surat</a>
-                </li>
-                <li>
                     <a href="s-index.php"> <i class="menu-icon fa fa-laptop"></i>Scanner</a>
                 </li>
                 <li>

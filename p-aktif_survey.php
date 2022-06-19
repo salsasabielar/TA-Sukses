@@ -1,11 +1,10 @@
 <?php
 include "config.php";
 $nik=$_GET['nik'];
-$ket = $_POST['ket'];
 // $status = $_POST['status'];
 
 // $submit  = $_POST['submit'];
-$sql="UPDATE warga SET ket='Sudah di survey'  where nik=".$nik;
+$sql="UPDATE warga SET survey='AKTIF' where nik=".$nik;
 mysqli_query($koneksi, $sql);
-    header('location:a-data_survey.php');
+    header('location:a-tambah_data.php');
 ?>

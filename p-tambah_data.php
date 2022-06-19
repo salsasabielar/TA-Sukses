@@ -8,10 +8,12 @@ $tgl_lahir = $_POST['tgl_lahir'];
 $jenisKelamin = $_POST['jenisKelamin'];
 $pekerjaan = $_POST['pekerjaan'];
 $ket = $_POST['ket'];
+$survey = "AKTIF";
+
 // $status = $_POST['status'];
 
 // $submit  = $_POST['submit'];
-mysqli_query($koneksi, "INSERT INTO warga VALUES('$nik','$nama','$alamat','$tempat','$tgl_lahir','$jenisKelamin','$pekerjaan','$ket')");
-mysqli_query($koneksi, "INSERT INTO wargaList VALUES('$nik','$nama','$alamat','$tempat','$tgl_lahir','$jenisKelamin','$pekerjaan','$ket')");
+mysqli_query($koneksi, "INSERT INTO warga VALUES('$nik','$nama','$alamat','$tempat','$tgl_lahir','$jenisKelamin','$pekerjaan','$ket','$survey')");
+
     header("location:a-tambah_data.php");
 ?>

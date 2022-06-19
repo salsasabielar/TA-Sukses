@@ -34,7 +34,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-
+                            <a href="cetak laporan/p-cetak.php" class="btn btn-outline-danger">Cetak Semua</a>
                                 <form action="a-laporan.php" class="mt-4">
                                     <div class="row form-group">
                                         <div class="col-12 col-md-2">
@@ -75,6 +75,13 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                     </button> -->
 
                                     <input class="btn btn-outline-primary btn-sm" type="submit" value="Cari">
+                                    <?php
+                                    if (isset($_GET['cari'])) { ?>
+
+                                        <a href="cetak laporan/p-cetak_tahun.php?tgl=<?php echo $_GET['tgl']; ?>&&bulan=<?php echo $_GET['bulan']; ?>&&tahun=<?php echo $_GET['tahun']; ?>&&cari=<?php echo $_GET['cari']; ?>&&carirtw=<?php echo $_GET['carirtw']; ?>" class="btn btn-outline-danger btn-sm">Cetak</a>
+
+                                    <?php }
+                                    ?>
 
                                 </form>
                                 <?php
@@ -85,17 +92,6 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                     echo "<b>Hasil pencarian : " . $carirtw . "</b>";
                                 }
                                 ?>
-
-                                <?php
-                                if (isset($_GET['cari'])) { ?>
-
-                                    <a href="cetak laporan/p-cetak_tahun.php?tgl=<?php echo $_GET['tgl']; ?>&&bulan=<?php echo $_GET['bulan']; ?>&&tahun=<?php echo $_GET['tahun']; ?>&&cari=<?php echo $_GET['cari']; ?>&&carirtw=<?php echo $_GET['carirtw']; ?>" class="btn btn-outline-danger">Cetak</a>
-
-                                <?php }
-                                ?>
-
-
-
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">

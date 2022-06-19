@@ -74,20 +74,21 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                             <th>Tempat,Tanggal Lahir</th>
                                             <th>Jenis Kelamin</th>
                                             <th>Pekerjaan</th>
+                                            <th>Status Survey</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <?php
                                     include "config.php";
-                                    $query_mysqli = mysqli_query($koneksi, "SELECT * FROM wargaList") or die(mysqli_error());
+                                    $query_mysqli = mysqli_query($koneksi, "SELECT * FROM warga") or die(mysqli_error());
 
                                     if (isset($_GET['cari'])) {
                                         $cari = $_GET['cari'];
-                                        $query = mysqli_query($koneksi, "SELECT * FROM wargaList WHERE nama LIKE '%" . $cari . "%' OR nik LIKE '%" . $cari . "%' 
+                                        $query = mysqli_query($koneksi, "SELECT * FROM warga WHERE nama LIKE '%" . $cari . "%' OR nik LIKE '%" . $cari . "%' 
                                         OR alamat LIKE '%" . $cari . "%' OR pekerjaan LIKE '%" . $cari . "%' 
                                         OR jenisKelamin LIKE '%" . $cari . "%' OR tempat LIKE '%" . $cari . "%' OR tgl_lahir LIKE '%" . $cari . "%'");
                                     } else {
-                                        $query = mysqli_query($koneksi, "SELECT * FROM wargaList ORDER BY nama");
+                                        $query = mysqli_query($koneksi, "SELECT * FROM warga ORDER BY nama");
                                     }
                                     $nomor = 1;
                                     if ($query) {
@@ -102,9 +103,12 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                                 <td><?php echo $data['tempat']; ?>, <?php echo date('d-m-Y', strtotime($data["tgl_lahir"]));  ?></td>
                                                 <td><?php echo $data['jenisKelamin']; ?></td>
                                                 <td><?php echo $data['pekerjaan']; ?></td>
+                                                <td><?php echo $data['survey']; ?></td>
                                                 <td>
                                                     <a class="btn btn-success btn-sm" href="a-form_edit_data.php?nik=<?php echo $data['nik']; ?>">Edit</a>
-                                                    <a class="btn btn-danger btn-sm" href="p-hapus.php?nik=<?php echo $data['nik']; ?>" onclick="return confirm()">Hapus</a>
+                                                    <a class="btn btn-success btn-sm" href="p-hapus_survey.php?nik=<?php echo $data['nik']; ?>">Non-Aktif Survey</a>
+                                                    <a class="btn btn-success btn-sm" href="p-aktif_survey.php?nik=<?php echo $data['nik']; ?>">Aktif Survey</a>
+                                                    <!-- <a class="btn btn-danger btn-sm" href="p-hapus.php?nik=<?php echo $data['nik']; ?>" onclick="return confirm()">Hapus</a> -->
                                                     <a class="btn btn-sm btn-primary" href="a-detail_warga.php?nik=<?php echo $data['nik']; ?>">Detail</a>
 
                                                 </td>
