@@ -35,8 +35,7 @@
         <nav class="navbar navbar-expand-sm navbar-default">
 
             <div class="navbar-header">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
-                    aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
@@ -50,8 +49,7 @@
                     </li>
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Buttons</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Badges</a></li>
@@ -68,16 +66,14 @@
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li>
                             <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
                             <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
@@ -87,8 +83,7 @@
                     <h3 class="menu-title">Icons</h3><!-- /.menu-title -->
 
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-fort-awesome"></i><a href="font-fontawesome.html">Font
                                     Awesome</a></li>
@@ -100,8 +95,7 @@
                         <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-line-chart"></i><a href="charts-chartjs.html">Chart JS</a>
                             </li>
@@ -112,8 +106,7 @@
                     </li>
 
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Google Maps</a></li>
                             <li><i class="menu-icon fa fa-street-view"></i><a href="maps-vector.html">Vector Maps</a>
@@ -122,8 +115,7 @@
                     </li>
                     <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
                             <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
@@ -154,15 +146,13 @@
                         <button class="search-trigger"><i class="fa fa-search"></i></button>
                         <div class="form-inline">
                             <form class="search-form">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..."
-                                    aria-label="Search">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
                                 <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
                             </form>
                         </div>
 
                         <div class="dropdown for-notification">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="notification"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-bell"></i>
                                 <span class="count bg-danger">5</span>
                             </button>
@@ -184,8 +174,7 @@
                         </div>
 
                         <div class="dropdown for-message">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="message"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="message" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="ti-email"></i>
                                 <span class="count bg-primary">9</span>
                             </button>
@@ -230,16 +219,14 @@
 
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
                         </a>
 
                         <div class="user-menu dropdown-menu">
                             <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span
-                                    class="count">13</span></a>
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
 
                             <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
 
@@ -248,8 +235,7 @@
                     </div>
 
                     <div class="language-select dropdown" id="language-select">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="language" aria-haspopup="true"
-                            aria-expanded="true">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="language" aria-haspopup="true" aria-expanded="true">
                             <i class="flag-icon flag-icon-us"></i>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="language">
@@ -303,8 +289,7 @@
                         <div class="card text-white bg-flat-color-1">
                             <div class="card-body pb-0">
                                 <div class="dropdown float-right">
-                                    <button class="btn bg-transparent dropdown-toggle theme-toggle text-light"
-                                        type="button" id="dropdownMenuButton1" data-toggle="dropdown">
+                                    <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton1" data-toggle="dropdown">
                                         <i class="fa fa-cog"></i>
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -334,8 +319,7 @@
                     <div class="card text-white bg-flat-color-2">
                         <div class="card-body pb-0">
                             <div class="dropdown float-right">
-                                <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button"
-                                    id="dropdownMenuButton2" data-toggle="dropdown">
+                                <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton2" data-toggle="dropdown">
                                     <i class="fa fa-cog"></i>
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
@@ -364,8 +348,7 @@
                 <div class="card text-white bg-flat-color-3">
                     <div class="card-body pb-0">
                         <div class="dropdown float-right">
-                            <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button"
-                                id="dropdownMenuButton3" data-toggle="dropdown">
+                            <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton3" data-toggle="dropdown">
                                 <i class="fa fa-cog"></i>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
@@ -394,8 +377,7 @@
             <div class="card text-white bg-flat-color-4">
                 <div class="card-body pb-0">
                     <div class="dropdown float-right">
-                        <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button"
-                            id="dropdownMenuButton4" data-toggle="dropdown">
+                        <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton4" data-toggle="dropdown">
                             <i class="fa fa-cog"></i>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
@@ -554,33 +536,29 @@
             <div class="card-body">
                 <div class="h4 m-0">89.9%</div>
                 <div>Lorem ipsum...</div>
-                <div class="progress-bar bg-light mt-2 mb-2" role="progressbar" style="width: 20%; height: 5px;"
-                    aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-light mt-2 mb-2" role="progressbar" style="width: 20%; height: 5px;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                 <small class="text-light">Lorem ipsum dolor sit amet enim.</small>
             </div>
         </div>
     </div>
     <!--/.col-->
     <?php
-                            include "config.php";
-                            $nik = $_GET['nik'];
-                            $query_mysqli = mysqli_query($koneksi, "SELECT * FROM warga WHERE nik='$nik'") or die(mysqli_error($koneksi));
-                            $nomor = 1;
-                            while ($data = mysqli_fetch_array($query_mysqli)) {
-                            ?>
-    $result = mysqli_query($koneksi, "SELECT COUNT(*) as total FROM jawaban_survey WHERE nik = $nik");
+    include "config.php";
+    $nik = $_GET['nik'];
+    $result = mysqli_query($koneksi, "SELECT COUNT(*) as total FROM warga");
     $row = mysqli_fetch_array($result);
     $count = $row['total'];
-    echo $count;
+    // echo $count;
+    ?>
+
 
     <div class="col-md-6 col-lg-3">
         <div class="card bg-flat-color-3 text-light">
             <div class="card-body">
-                <div class="h4 m-0">12.124</div>
-                <div>Lorem ipsum...</div>
-                <div class="progress-bar bg-light mt-2 mb-2" role="progressbar" style="width: 20%; height: 5px;"
-                    aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                <small class="text-light">Lorem ipsum dolor sit amet enim.</small>
+                <div class="h4 m-0"><?php echo $count; ?></div>
+                <div>Jumlah Warga</div>
+                <div class="progress-bar bg-light mt-2 mb-2" role="progressbar" style="width: 20%; height: 5px;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                <small class="text-light"></small>
             </div>
         </div>
     </div>
@@ -591,8 +569,7 @@
             <div class="card-body">
                 <div class="h4 m-0">$98.111,00</div>
                 <div>Lorem ipsum...</div>
-                <div class="progress-bar bg-light mt-2 mb-2" role="progressbar" style="width: 20%; height: 5px;"
-                    aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-light mt-2 mb-2" role="progressbar" style="width: 20%; height: 5px;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                 <small class="text-light">Lorem ipsum dolor sit amet enim.</small>
             </div>
         </div>
@@ -604,8 +581,7 @@
             <div class="card-body">
                 <div class="h4 m-0">$98.111,00</div>
                 <div>Lorem ipsum...</div>
-                <div class="progress-bar bg-light mt-2 mb-2" role="progressbar" style="width: 20%; height: 5px;"
-                    aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-light mt-2 mb-2" role="progressbar" style="width: 20%; height: 5px;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                 <small class="text-light">Lorem ipsum dolor sit amet enim.</small>
             </div>
         </div>

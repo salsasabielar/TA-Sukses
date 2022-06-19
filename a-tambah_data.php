@@ -83,7 +83,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
 
                                     if (isset($_GET['cari'])) {
                                         $cari = $_GET['cari'];
-                                        $query = mysqli_query($koneksi, "SELECT * FROM wargaList WHERE nama LIKE '%" . $cari . "%' OR nik LIKE '%" . $cari . "%' 
+                                        $query = mysqli_query($koneksi, "SELECT * FROM warga WHERE nama LIKE '%" . $cari . "%' OR nik LIKE '%" . $cari . "%' 
                                         OR alamat LIKE '%" . $cari . "%' OR pekerjaan LIKE '%" . $cari . "%' 
                                         OR jenisKelamin LIKE '%" . $cari . "%' OR tempat LIKE '%" . $cari . "%' OR tgl_lahir LIKE '%" . $cari . "%'");
                                     } else {
@@ -104,7 +104,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                                 <td><?php echo $data['pekerjaan']; ?></td>
                                                 <td>
                                                     <a class="btn btn-success btn-sm" href="a-form_edit_data.php?nik=<?php echo $data['nik']; ?>">Edit</a>
-                                                    <a class="btn btn-danger btn-sm" href="p-hapus.php?nik=<?php echo $data['nik']; ?>" onclick="return confirm()">Hapus</a>
+                                                    <a class="btn btn-danger btn-sm" href="p-hapus.php?id_wargaList=<?php echo $data['id_wargaList']; ?>" onclick="return confirm()">Hapus</a>
                                                     <a class="btn btn-sm btn-primary" href="a-detail_warga.php?nik=<?php echo $data['nik']; ?>">Detail</a>
 
                                                 </td>

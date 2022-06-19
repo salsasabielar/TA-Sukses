@@ -75,6 +75,13 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                     </button> -->
 
                                     <input class="btn btn-outline-primary btn-sm" type="submit" value="Cari">
+                                    <?php
+                                    if (isset($_GET['cari'])) { ?>
+
+                                        <a href="cetak laporan/p-cetak_tahun.php?tgl=<?php echo $_GET['tgl']; ?>&&bulan=<?php echo $_GET['bulan']; ?>&&tahun=<?php echo $_GET['tahun']; ?>&&cari=<?php echo $_GET['cari']; ?>&&carirtw=<?php echo $_GET['carirtw']; ?>" class="btn btn-outline-danger btn-sm">Cetak</a>
+
+                                    <?php }
+                                    ?>
 
                                 </form>
                                 <?php
@@ -85,17 +92,6 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                     echo "<b>Hasil pencarian : " . $carirtw . "</b>";
                                 }
                                 ?>
-
-                                <?php
-                                if (isset($_GET['cari'])) { ?>
-
-                                    <a href="cetak laporan/p-cetak_tahun.php?tgl=<?php echo $_GET['tgl']; ?>&&bulan=<?php echo $_GET['bulan']; ?>&&tahun=<?php echo $_GET['tahun']; ?>&&cari=<?php echo $_GET['cari']; ?>&&carirtw=<?php echo $_GET['carirtw']; ?>" class="btn btn-outline-danger">Cetak</a>
-
-                                <?php }
-                                ?>
-
-
-
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
@@ -227,7 +223,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                             <td><?php echo $data['nik']; ?></td>
                                             <td><?php echo $data['username']; ?></td>
                                             <td><?php echo $data['nama']; ?></td>
-                                            <td><?php echo $data['alamat']; ?></td>                                            
+                                            <td><?php echo $data['alamat']; ?></td>
                                             <td><?php echo $data['jenisKelamin']; ?></td>
                                             <td><?php echo $data['pekerjaan']; ?></td>
                                             <td><?php echo $data['status']; ?></td>
