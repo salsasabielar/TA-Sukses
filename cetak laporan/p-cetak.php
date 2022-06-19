@@ -86,6 +86,7 @@
  <tr> 
     <th>No.</th>
     <th>NIK</th>
+	<th>Surveyor</th>
     <th>Nama</th>
     <th>Alamat</th>
     <th>Pekerjaan</th>
@@ -98,7 +99,7 @@
  $koneksi = mysqli_connect("localhost","root","","bltdd");
 
  // menampilkan data pegawai
- $data = mysqli_query($koneksi,"SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik ORDER BY id_survey DESC");
+ $data = mysqli_query($koneksi, "SELECT * FROM survey INNER JOIN warga ON survey.nik = warga.nik INNER JOIN user ON survey.id_user = user.id_user ORDER BY id_survey DESC");
  $nomor = 1;
  while($d = mysqli_fetch_array($data)){
  ?>
@@ -106,6 +107,7 @@
  <!-- <td style='text-align: center;'><?php echo $d['id_survey'] ?></td> -->
  <td><?php echo $nomor++; ?></td>
  <td><?php echo $d['nik']; ?></td>
+ <td><?php echo $d['username']; ?></td>
  <td><?php echo $d['nama']; ?></td>
  <td><?php echo $d['alamat']; ?></td>
  <td><?php echo $d['pekerjaan']; ?> </td>

@@ -34,7 +34,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-
+                            <a href="cetak laporan/p-cetak.php" class="btn btn-outline-danger">Cetak Semua</a>
                                 <form action="a-laporan.php" class="mt-4">
                                     <div class="row form-group">
                                         <div class="col-12 col-md-2">
