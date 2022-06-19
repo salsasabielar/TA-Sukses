@@ -4,7 +4,7 @@ $nik=$_GET['nik'];
 // $status = $_POST['status'];
 
 // $submit  = $_POST['submit'];
-$sql="UPDATE warga SET survey='AKTIF' where nik=".$nik;
+$sql="UPDATE warga SET survey='SURVEY' where nik=".$nik;
 mysqli_query($koneksi, $sql);
     header('location:a-tambah_data.php');
 ?>

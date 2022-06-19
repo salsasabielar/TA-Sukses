@@ -86,7 +86,8 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                         $cari = $_GET['cari'];
                                         $query = mysqli_query($koneksi, "SELECT * FROM warga WHERE nama LIKE '%" . $cari . "%' OR nik LIKE '%" . $cari . "%' 
                                         OR alamat LIKE '%" . $cari . "%' OR pekerjaan LIKE '%" . $cari . "%' 
-                                        OR jenisKelamin LIKE '%" . $cari . "%' OR tempat LIKE '%" . $cari . "%' OR tgl_lahir LIKE '%" . $cari . "%'");
+                                        OR jenisKelamin LIKE '%" . $cari . "%' OR tempat LIKE '%" . $cari . "%' OR tgl_lahir LIKE '%" . $cari . "%' 
+                                        OR survey LIKE '%" . $cari . "%'");
                                     } else {
                                         $query = mysqli_query($koneksi, "SELECT * FROM warga ORDER BY nama");
                                     }
