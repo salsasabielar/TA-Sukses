@@ -78,7 +78,9 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                     <?php
                                     if (isset($_GET['cari'])) { ?>
 
-                                        <a href="cetak laporan/p-cetak_tahun.php?tgl=<?php echo $_GET['tgl']; ?>&&bulan=<?php echo $_GET['bulan']; ?>&&tahun=<?php echo $_GET['tahun']; ?>&&cari=<?php echo $_GET['cari']; ?>&&carirtw=<?php echo $_GET['carirtw']; ?>" class="btn btn-outline-danger">Cetak</a>
+                                        <a href="cetak laporan/p-cetak_tahun.php?tgl=<?php echo $_GET['tgl']; ?>&&bulan=<?php echo $_GET['bulan']; 
+                                        ?>&&tahun=<?php echo $_GET['tahun']; ?>&&cari=<?php echo $_GET['cari']; ?>&&carirtw=<?php echo $_GET['carirtw']; 
+                                        ?>" class="btn btn-outline-danger">Cetak</a>
 
                                     <?php }
                                     ?>
