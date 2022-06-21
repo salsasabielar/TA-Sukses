@@ -84,6 +84,12 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                                     </div>
                                 </div>
                             </div>
+                            <div class="row form-group">
+                                <div class="col-12 col-md-5"><input type="hidden" name="survey" value="<?php echo $data['survey'] ?>" class="form-control"><span class="help-block"></span></div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-12 col-md-5"><input type="hidden" name="ket" value="<?php echo $data['ket'] ?>" class="form-control"><span class="help-block"></span></div>
+                            </div>
 
                             <?php } ?>
 
