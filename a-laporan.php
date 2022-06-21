@@ -34,64 +34,86 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                            <a href="cetak laporan/p-cetak.php" class="btn btn-outline-danger">Cetak Semua</a>
-                                <form action="a-laporan.php" class="mt-4">
-                                    <div class="row form-group">
-                                        <div class="col-12 col-md-2">
-                                            <select name="tgl" class="form-control">
-                                                <option value="">Pilih Tanggal</option>
-                                                <?php for ($i = 1; $i <= 31; $i++) : ?>
-                                                    <option value="<?= $i ?>" <?= $i == date('d') ?>><?= $i ?></option>
-                                                <?php endfor; ?>
-                                            </select>
-                                        </div>
-                                        <div class="col-12 col-md-2">
-                                            <select name="bulan" class="form-control">
-                                                <option value="">Pilih Bulan</option>
-                                                <?php for ($i = 1; $i <= 12; $i++) : ?>
-                                                    <option value="<?= $i ?>" <?= $i == date('m') ?>><?= $i ?></option>
-                                                <?php endfor; ?>
-                                            </select>
-                                        </div>
-                                        <div class="col-12 col-md-2">
-                                            <select name="tahun" class="form-control">
-                                                <option value="">Pilih Tahun</option>
-                                                <?php for ($i = 2010; $i <= 2100; $i++) : ?>
-                                                    <option value="<?= $i ?>" <?= $i == date('Y') ?>><?= $i ?></option>
-                                                <?php endfor; ?>
-                                            </select>
-                                        </div>
-                                        <!-- <a href="cetak laporan/p-cetak.php" class="btn btn-outline-danger">Cetak Semua</a> -->
-                                    </div>
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Cetak</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="cetak laporan/p-cetak.php">Cetak Semua</a>
+                                    </li>
 
-                                    <div class="col-12 col-md-3">
-                                        <input type="text" name="cari" placeholder="Masukkan Kata Kunci" class="form-control">
-                                    </div>
-                                    <div class="col-12 col-md-3">
-                                        <input type="text" name="carirtw" placeholder="Masukkan Alamat" class="form-control">
-                                    </div>
-                                    <!-- <button type="submit" class="btn btn-primary btn-sm">
+                                </ul>
+                                <div class="tab-content pl-3 p-1" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <form action="a-laporan.php" class="mt-4">
+                                            <div class="row form-group">
+                                                <div class="col-12 col-md-2">
+                                                    <select name="tgl" class="form-control">
+                                                        <option value="">Pilih Tanggal</option>
+                                                        <?php for ($i = 1; $i <= 31; $i++) : ?>
+                                                            <option value="<?= $i ?>" <?= $i == date('d') ?>><?= $i ?></option>
+                                                        <?php endfor; ?>
+                                                    </select>
+                                                </div>
+                                                <div class="col-12 col-md-2">
+                                                    <select name="bulan" class="form-control">
+                                                        <option value="">Pilih Bulan</option>
+                                                        <?php for ($i = 1; $i <= 12; $i++) : ?>
+                                                            <option value="<?= $i ?>" <?= $i == date('m') ?>><?= $i ?></option>
+                                                        <?php endfor; ?>
+                                                    </select>
+                                                </div>
+                                                <div class="col-12 col-md-2">
+                                                    <select name="tahun" id="select" class="form-control">
+
+                                                        <option selected>Pilih Tahun</option>
+                                                        <?php
+                                                        include "config.php";
+                                                        $tahun = $_GET['tglSurvey'];
+                                                        //query menampilkan nip pegawai ke dalam combobox                                                
+                                                        $query    = mysqli_query($koneksi, "SELECT YEAR(tglSurvey) AS tahun FROM `survey` GROUP BY YEAR(tglSurvey)");
+                                                        while ($th = mysqli_fetch_array($query)) {
+                                                        ?>
+                                                            <option value="<?= $th['tahun']; ?>"><?php echo $th['tahun']; ?></option>
+                                                        <?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-md-3">
+                                                <input type="text" name="cari" placeholder="Masukkan Kata Kunci" class="form-control">
+                                            </div>
+                                            <div class="col-12 col-md-3">
+                                                <input type="text" name="carirtw" placeholder="Masukkan Alamat" class="form-control">
+                                            </div>
+                                            <!-- <button type="submit" class="btn btn-primary btn-sm">
                                         Cetak
                                     </button> -->
 
-                                    <input class="btn btn-outline-primary btn-sm" type="submit" value="Cari">
-                                    <?php
-                                    if (isset($_GET['cari'])) { ?>
+                                            <input class="btn btn-outline-primary" type="submit" value="Cari">
+                                            <?php
+                                            if (isset($_GET['cari'])) { ?>
 
-                                        <a href="cetak laporan/p-cetak_tahun.php?tgl=<?php echo $_GET['tgl']; ?>&&bulan=<?php echo $_GET['bulan']; ?>&&tahun=<?php echo $_GET['tahun']; ?>&&cari=<?php echo $_GET['cari']; ?>&&carirtw=<?php echo $_GET['carirtw']; ?>" class="btn btn-outline-danger btn-sm">Cetak</a>
+                                                <a href="cetak laporan/p-cetak_tahun.php?tgl=<?php echo $_GET['tgl']; ?>&&bulan=<?php echo $_GET['bulan']; ?>&&tahun=<?php echo $_GET['tahun']; ?>&&cari=<?php echo $_GET['cari']; ?>&&carirtw=<?php echo $_GET['carirtw']; ?>" class="btn btn-outline-danger">Cetak</a>
 
-                                    <?php }
-                                    ?>
+                                            <?php }
+                                            ?>
 
-                                </form>
-                                <?php
-                                if (isset($_GET['cari']) && ($_GET['carirtw'])) {
-                                    $cari = $_GET['cari'];
-                                    $carirtw = $_GET['carirtw'];
-                                    echo "<b>Hasil pencarian : " . $cari . "</b>";
-                                    echo "<b>Hasil pencarian : " . $carirtw . "</b>";
-                                }
-                                ?>
+                                        </form>
+                                        <?php
+                                        if (isset($_GET['cari']) && ($_GET['carirtw'])) {
+                                            $cari = $_GET['cari'];
+                                            $carirtw = $_GET['carirtw'];
+                                            echo "<b>Hasil pencarian : " . $cari . "</b>";
+                                            echo "<b>Hasil pencarian : " . $carirtw . "</b>";
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
+                                <!-- <a href="cetak laporan/p-cetak.php" class="btn btn-outline-danger">Cetak Semua</a> -->
+
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
