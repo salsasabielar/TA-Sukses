@@ -40,22 +40,22 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
 
                         <div class="row form-group">
                             <div class="col col-md-2"><label for="hf-email" class=" form-control-label">Username</label></div>
-                            <div class="col-12 col-md-5"><input type="text" name="username" placeholder="Masukkan Username..." class="form-control"><span class="help-block"></span></div>
+                            <div class="col-12 col-md-5"><input type="text" name="username" placeholder="Masukkan Username..." class="form-control"><span class="help-block" required></span></div>
                         </div>
                         <div class="row form-group">
                             <div class="col col-md-2"><label for="hf-email" class=" form-control-label">Password</label></div>
-                            <div class="col-12 col-md-5"><input type="text" name="password" placeholder="Masukkan Password..." class="form-control"><span class="help-block"></span></div>
+                            <div class="col-12 col-md-5"><input type="text" name="password" placeholder="Masukkan Password..." class="form-control"><span class="help-block" required></span></div>
                         </div>
                         <div class="row form-group">
                             <div class="col col-md-2"><label class=" form-control-label">Role</label></div>
                             <div class="col col-md-9">
                                 <div class="form-check-inline form-check">
                                     <label for="inline-radio1" class="form-check-label ">
-                                        <input type="radio" id="inline-radio1" name="role" value="admin" class="form-check-input">Admin
+                                        <input type="radio" id="inline-radio1" name="role" value="admin" class="form-check-input" required>Admin
                                     </label>
                                     <p style="text-indent: 5em;">&nbsp</p>
                                     <label for="inline-radio2" class="form-check-label ">
-                                        <input type="radio" id="inline-radio2" name="role" value="surveyor" class="form-check-input">Surveyor
+                                        <input type="radio" id="inline-radio2" name="role" value="surveyor" class="form-check-input" required>Surveyor
                                     </label>
 
                                 </div>

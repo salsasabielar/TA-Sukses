@@ -57,7 +57,7 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                             <div class="row form-group">
                                 <div class="col col-md-2"><label for="nama" class=" form-control-label">Masukkan Kriteria</label></div>
                                 <input type="hidden" name="id_kriteria" value="<?php echo $data['id_kriteria'] ?>">
-                                <div class="col-12 col-md-7"><textarea name="nama" rows=" 7" class="form-control"><?php echo $data['nama'] ?></textarea></div>
+                                <div class="col-12 col-md-7"><textarea name="nama" required rows=" 7" class="form-control"><?php echo $data['nama'] ?></textarea></div>
 
                             </div>
                         </div>

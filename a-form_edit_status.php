@@ -48,11 +48,11 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                             <div class="row form-group">
                                 
                                 <input type="hidden" name="id_status" value="<?php echo $data['id_status'] ?>">
-                                <div class="col-12 col-md-5"><input type="hidden" name="nama_status" value="<?php echo $data['nama_status'] ?>" placeholder="Masukkan Status" class="form-control"><span class="help-block"></span></div>
+                                <div class="col-12 col-md-5"><input type="hidden" name="nama_status" required value="<?php echo $data['nama_status'] ?>" placeholder="Masukkan Status" class="form-control"><span class="help-block"></span></div>
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-2"><label class=" form-control-label">Jumlah</label></div>
-                                <div class="col-12 col-md-5"><input type="text" name="jumlah" value="<?php echo $data['jumlah'] ?>" placeholder="Masukkan Jumlah" class="form-control"><span class="help-block"></span></div>
+                                <div class="col-12 col-md-5"><input type="text" name="jumlah" required value="<?php echo $data['jumlah'] ?>" placeholder="Masukkan Jumlah" class="form-control"><span class="help-block"></span></div>
                             </div>
 
                         <?php } ?>

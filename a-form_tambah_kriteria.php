@@ -39,7 +39,7 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
 
                         <div class="row form-group">
                             <div class="col col-md-2"><label for="nama" class=" form-control-label">Masukkan Kriteria</label></div>
-                            <div class="col-12 col-md-7"><textarea name="nama" rows="7" placeholder="Content..." class="form-control"></textarea></div>
+                            <div class="col-12 col-md-7"><textarea name="nama" rows="7" placeholder="Content..." class="form-control" required></textarea></div>
                         </div>
 
                     </div>
