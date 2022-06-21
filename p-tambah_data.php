@@ -8,7 +8,7 @@ $tgl_lahir = $_POST['tgl_lahir'];
 $jenisKelamin = $_POST['jenisKelamin'];
 $pekerjaan = $_POST['pekerjaan'];
 $ket = $_POST['ket'];
-$survey = "AKTIF";
+$survey = "SURVEY";
 
 // $status = $_POST['status'];
 
