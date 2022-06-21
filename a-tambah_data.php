@@ -74,7 +74,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                             <th>Tempat,Tanggal Lahir</th>
                                             <th>Jenis Kelamin</th>
                                             <th>Pekerjaan</th>
-                                            <th>Status Survey</th>
+                                            <th>Status Aktif</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -107,8 +107,8 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                                 <td><?php echo $data['survey']; ?></td>
                                                 <td>
                                                     <a class="btn btn-success btn-sm" href="a-form_edit_data.php?nik=<?php echo $data['nik']; ?>">Edit</a>
-                                                    <a class="btn btn-success btn-sm" href="p-hapus_survey.php?nik=<?php echo $data['nik']; ?>">Non-Aktif Survey</a>
-                                                    <a class="btn btn-success btn-sm" href="p-aktif_survey.php?nik=<?php echo $data['nik']; ?>">Aktif Survey</a>
+                                                    <a class="btn btn-warning btn-sm" href="p-hapus_survey.php?nik=<?php echo $data['nik']; ?>">Non-Aktif</a>
+                                                    <a class="btn btn-danger btn-sm" href="p-aktif_survey.php?nik=<?php echo $data['nik']; ?>">Aktif</a>
                                                     <!-- <a class="btn btn-danger btn-sm" href="p-hapus.php?nik=<?php echo $data['nik']; ?>" onclick="return confirm()">Hapus</a> -->
                                                     <a class="btn btn-sm btn-primary" href="a-detail_warga.php?nik=<?php echo $data['nik']; ?>">Detail</a>
 

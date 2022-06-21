@@ -68,7 +68,7 @@ include "config_tgl.php";
                                         <tr>
                                             <th scope="row">Tanggal Lahir</th>
                                             <td></td>
-                                            <td> : <?php echo $data['tempat']; ?>, <?php echo date('j M Y', strtotime($data["tgl_lahir"])); ?></td>
+                                            <td> : <?php echo $data['tempat']; ?>, <?php echo date('d-m-Y', strtotime($data["tgl_lahir"])); ?></td>
                                             
                                         </tr>
                                         <tr>
@@ -86,7 +86,7 @@ include "config_tgl.php";
                                         <tr>
                                             <th scope="row">Tanggal Survey</th>
                                             <td></td>
-                                            <td> : <?php echo date('j M Y', strtotime($data["tglSurvey"])); ?></td>
+                                            <td> : <?php echo date('d-m-Y', strtotime($data["tglSurvey"])); ?></td>
                                             
                                         </tr>
                                         <tr>

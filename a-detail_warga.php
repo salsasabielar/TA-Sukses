@@ -93,7 +93,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                             </tr>
                             <tr>
                                 <th scope="row">Tempat, Tanggal Lahir</th>
-                                <td><?php echo $data['tempat']; ?>, <?php echo date('j M Y', strtotime($data["tgl_lahir"])); ?></td>
+                                <td><?php echo $data['tempat']; ?>, <?php echo date('d-m-Y', strtotime($data["tgl_lahir"])); ?></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>

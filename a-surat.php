@@ -102,7 +102,7 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                                                 </tr>
                                                 <tr>
                                                     <td>Tempat,Tanggal Lahir</td>
-                                                    <td><?php echo $tpeg['tempat'] ?>, <?php echo date('j M Y', strtotime($tpeg["tgl_lahir"])); ?></td>
+                                                    <td><?php echo $tpeg['tempat'] ?>, <?php echo date('d-m-Y', strtotime($tpeg["tgl_lahir"])); ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Pekerjaan</td>
