@@ -44,7 +44,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                 </ul>
                                 <div class="tab-content pl-3 p-1" id="myTabContent">
                                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                        
+
                                         <form action="a-laporan.php" class="mt-4">
                                             <div class="row form-group">
                                                 <div class="col-12 col-md-2">
@@ -63,12 +63,29 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                                         <?php endfor; ?>
                                                     </select>
                                                 </div>
-                                                <div class="col-12 col-md-2">
+                                                <!-- <div class="col-12 col-md-2">
                                                     <select name="tahun" class="form-control">
                                                         <option value="">Pilih Tahun</option>
                                                         <?php for ($i = 2010; $i <= 2100; $i++) : ?>
                                                             <option value="<?= $i ?>" <?= $i == date('Y') ?>><?= $i ?></option>
                                                         <?php endfor; ?>
+                                                    </select>
+                                                </div> -->
+                                                <div class="col-12 col-md-2">
+                                                    <select name="tahun" id="select" class="form-control">
+
+                                                        <option value="">Pilih Tahun</option>
+                                                        <?php
+                                                        include "config.php";
+                                                        $tahun = $_GET['tglSurvey'];
+                                                        //query menampilkan nip pegawai ke dalam combobox                                                
+                                                        $query    = mysqli_query($koneksi, "SELECT YEAR(tglSurvey) AS tahun FROM `survey` GROUP BY YEAR(tglSurvey)");
+                                                        while ($th = mysqli_fetch_array($query)) {
+                                                        ?>
+                                                            <option value="<?= $th['tahun']; ?>"><?php echo $th['tahun']; ?></option>
+                                                        <?php
+                                                        }
+                                                        ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -84,8 +101,8 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
                                             <?php
                                             if (isset($_GET['cari'])) { ?>
                                                 <a href="cetak laporan/p-cetak_tahun.php?tgl=<?php echo $_GET['tgl']; ?>&&bulan=<?php echo $_GET['bulan'];
-                                                ?>&&tahun=<?php echo $_GET['tahun']; ?>&&cari=<?php echo $_GET['cari']; ?>&&carirtw=<?php echo $_GET['carirtw'];
-                                                ?>" class="btn btn-outline-danger">Cetak</a>
+                                                                                                                                ?>&&tahun=<?php echo $_GET['tahun']; ?>&&cari=<?php echo $_GET['cari']; ?>&&carirtw=<?php echo $_GET['carirtw'];
+                                                                                                                                    ?>" class="btn btn-outline-danger">Cetak</a>
 
                                             <?php }
                                             ?>
