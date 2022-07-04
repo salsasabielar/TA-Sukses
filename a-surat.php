@@ -2,8 +2,8 @@
 session_start(); // Start session nya
 // Kita cek apakah user sudah login atau belum
 // Cek nya dengan cara cek apakah terdapat session username atau tidak
-if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti dia belum login
-  header("location: index.php"); // Kita Redirect ke halaman index.php karena belum login
+if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti dia belum login
+    header("location: index.php"); // Kita Redirect ke halaman index.php karena belum login
 }
 ?>
 <!doctype html>
@@ -42,21 +42,39 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
 
                                     <div class="row form-group">
                                         <div class="col-12 col-md-5">
-                                            <select name="nik" id="select" class="form-control">
 
-                                                <option selected>Temukan Nama...</option>
-                                                <?php
-                                                include "config.php";
-                                                $nik = $_GET['nik'];
-                                                //query menampilkan nip pegawai ke dalam combobox
-                                                $query    = mysqli_query($koneksi, "SELECT * FROM warga ORDER BY nama");
-                                                while ($data = mysqli_fetch_array($query)) {
-                                                ?>
-                                                    <option value="<?= $data['nik']; ?>"><?php echo $data['nama']; ?></option>
-                                                <?php
-                                                }
-                                                ?>
-                                            </select>
+                                            <head>
+
+                                                <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+                                                <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+                                                <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+                                            </head>
+
+                                            <body>
+                                                <form method="POST">
+                                                    <select id="nik" name="nik" class="form-control">
+                                                        <option></option>
+                                                        <?php
+                                                        include "config.php";
+                                                        $nik = $_GET['nik'];
+                                                        //query menampilkan nip pegawai ke dalam combobox
+                                                        $query    = mysqli_query($koneksi, "SELECT * FROM warga ORDER BY nama");
+                                                        while ($data = mysqli_fetch_array($query)) {
+                                                        ?>
+                                                            <option value="<?= $data['nik']; ?>"><?php echo $data['nama']; ?></option>
+                                                        <?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </form>
+                                                <script type="text/javascript">
+                                                    $(document).ready(function() {
+                                                        $('#nik').select2();
+                                                    });
+                                                </script>
+                                            </body>
+
+
 
                                         </div>
 
@@ -64,8 +82,8 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                                             Cari
                                         </button>
                                         <p style="text-indent: 1em;">&nbsp</p>
+                                        <a href="./a-surat.php" class="btn btn-outline-danger btn-sm">Refresh</a>
 
-                                        <a href="./a-surat.php" class="btn btn-outline-danger">Refresh</a>
 
                                     </div>
 
@@ -115,10 +133,10 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
                                                 <tr>
                                                     <td></td>
                                                     <td>
-                                                        <a class='btn btn-danger btn-sm' href='a-surat_miskin.php?nik=<?=$tpeg['nik']?>'>Surat Kehilangan Mata Pencaharian</a>
+                                                        <a class='btn btn-danger btn-sm' href='a-surat_miskin.php?nik=<?= $tpeg['nik'] ?>'>Surat Kehilangan Mata Pencaharian</a>
                                                         <!-- <input type="submit" value="Save"> -->
-                                                        <a class='btn btn-primary btn-sm' href='a-surat_penyakit.php?nik=<?=$tpeg['nik']?>'>Surat Penyakit Kronis</a>
-                                                        
+                                                        <a class='btn btn-primary btn-sm' href='a-surat_penyakit.php?nik=<?= $tpeg['nik'] ?>'>Surat Penyakit Kronis</a>
+
 
 
                                                 </tr>

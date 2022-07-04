@@ -80,7 +80,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
 
                                     if (isset($_GET['cari'])) {
                                         $cari = $_GET['cari'];
-                                        $query = mysqli_query($koneksi, "SELECT * FROM warga WHERE nama LIKE '%" . $cari . "%' OR nik LIKE '%" . $cari . "%' OR alamat LIKE '%" . $cari . "%'");
+                                        $query = mysqli_query($koneksi, "SELECT * FROM warga WHERE nama LIKE '%" . $cari . "%' AND survey='SURVEY' OR nik LIKE '%" . $cari . "%' AND survey='SURVEY' OR alamat LIKE '%" . $cari . "%' AND survey='SURVEY'");
                                     } else {
                                         $query = mysqli_query($koneksi, "SELECT * FROM warga WHERE survey='SURVEY' ORDER BY ket ASC");
                                     }

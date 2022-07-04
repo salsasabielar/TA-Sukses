@@ -13,7 +13,7 @@ if( ! isset($_SESSION['username'])){ // Jika tidak ada session username berarti 
 
 <body>
 
-    <?php include 'sidebar.php'; ?>
+    <?php include 's-sidebar.php'; ?>
 
     <!-- Right Panel -->
 

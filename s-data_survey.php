@@ -36,7 +36,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
 
                     <div class="col-md-12">
                         <div class="card">
-                           <form action="a-data_survey.php" method="get">
+                           <form action="s-data_survey.php" method="get">
                             <div class="card-header">
                                 <div class="row form-group">
                                     <div class="col-12 col-md-3">
@@ -74,7 +74,7 @@ if (!isset($_SESSION['username'])) { // Jika tidak ada session username berarti 
 
                                     if (isset($_GET['cari'])) {
                                         $cari = $_GET['cari'];
-                                        $query = mysqli_query($koneksi, "SELECT * FROM warga WHERE nama LIKE '%" . $cari . "%' OR nik LIKE '%" . $cari . "%' OR alamat LIKE '%" . $cari . "%'");
+                                        $query = mysqli_query($koneksi, "SELECT * FROM warga WHERE nama LIKE '%" . $cari . "%' AND survey='SURVEY' OR nik LIKE '%" . $cari . "%' AND survey='SURVEY' OR alamat LIKE '%" . $cari . "%' AND survey='SURVEY'");
                                     } else {
                                         $query = mysqli_query($koneksi, "SELECT * FROM warga WHERE survey='SURVEY' ORDER BY ket ASC");
                                     }
